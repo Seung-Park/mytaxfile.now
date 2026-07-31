@@ -1,0 +1,16 @@
+skills:
+  - name: build-mytaxfile-website-with-claude-code
+    project: mytaxfile
+    task_code: build-mytaxfile-website-with-claude-code
+    path: skills/mytaxfile/build-mytaxfile-website-with-claude-code/SKILL.md
+    status: Active
+    aliases:
+      - myTAXfile website build
+      - mytaxfile.now website prototype
+    supported_platforms:
+      - claude (adapters/claude.md)
+    last_approved_change: >
+      2026-07-31: English-only scope (supersedes bilingual), 6-state launch
+      list (WA/CA/NY/IL/TX/FL, others "Coming Soon"), static HTML/CSS/JS
+      stack, frame hierarchy + color palette approved, Main Box confirmed
+      image-only.
