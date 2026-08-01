@@ -141,6 +141,15 @@ Decided by Claude Code under the standing Tier 1–2 authority granted 2026-08-0
 | 87 | Skip link added to `index.html`; `<main id="main">` added | Homepage previously lacked one, which the Accessibility page listed as a known limitation. Limitation entry updated | Accessibility defect fix under Tier 1 | Yes |
 | 88 | Resources linked from the primary nav on all five pages | The nav link was `href="#"` on every page | Dead nav link removed | Yes |
 
+## Drive folder scope — verified 2026-08-01
+
+| # | Subject | Finding |
+|---|---|---|
+| 89 | Designated folder scope | **Verified by Seung Park's screenshot of the live Drive UI.** Breadcrumb reads `My Drive › 2.1 myTaxfile`. The folder sits directly in My Drive root — there is **no parent project folder** and no sibling numbered folders. The folder ID in `CLAUDE.md` (`1-At9BI6PtD0rroP14TnF_aMsIwcjOAJy`) is confirmed correct against the address bar |
+| 90 | Inventory completeness | **Confirmed complete.** Six items visible in the UI match the six returned by the API listing: `Archive` (folder), Claude Code Work Order, Master Plan.docx, Private Operations Portal Requirements, Website Plan v2, Workflow. No document was missed |
+| 91 | Earlier scoping concern | **Withdrawn.** The worry that "2.1" implied an unread "2." parent was unfounded. The Price Book (row 73) and all prior reconciliation stand — they were not built on a partial view |
+| 92 | `Archive` subfolder | **Still unopened.** Workflow Phase 5 specifies "Archive only clearly superseded policies and plans," so it should hold superseded material only. Low risk, but unverified — open it when the Drive connector is available |
+
 ## Missing / not yet approved
 
 - Canonical Price Book, Service Catalog, State Eligibility Matrix, Responsibility Matrix, Vendor Register, Risk & Exception Register (Workflow's "Required Control Registers") — none exist yet.
