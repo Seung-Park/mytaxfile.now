@@ -26,8 +26,10 @@ Control hierarchy (per `myTAXfile | Workflow`, section 7): the Workflow doc is t
 | 16 | Workflow.docx | File naming | New project files named `myTAXfile \| Short Summary` | Approved | Applies to Drive docs; repo files use standard code-repo naming |
 | 17 | SKILL.md | Change control | No deletion/reduction/rename of approved work without explicit approval; feature branch only, no direct push to protected branch without authorization | Approved | Governs git workflow |
 | 18 | This conversation, 2026-07-31 | Tech stack | Static HTML/CSS/JS, no build framework | **Approved — decided 2026-07-31** | `website/` contains plain HTML/CSS/JS |
-| 19 | This conversation, 2026-07-31 | Frame hierarchy | Global/Category/Subcategory/Individual frame hierarchy and color palette (White / Deep Navy `#0B2545` / Teal `#0F766E` / Muted Gold `#C58A2A`) confirmed | **Approved — decided 2026-07-31** | See Skill file for full hierarchy |
+| 19 | This conversation, 2026-07-31 | Frame hierarchy | Global/Category/Subcategory/Individual frame hierarchy confirmed. Color palette: White / Deep Navy `#0B2545` / Teal `#0F766E` / Muted Gold `#C58A2A` | **Superseded — see row 21** | See Skill file for full hierarchy |
 | 20 | This conversation, 2026-07-31 | Main Box | Image-only Main Box (no text/overlay); headline/value-prop goes in Content/Body instead | **Approved — decided 2026-07-31 (per `design-stable-web-frames` default)** | Hero section design |
+| 21 | This conversation, 2026-08-01 | Color palette | Light/warm palette — supersedes the dark-navy palette in row 19: warm ivory background `#FDF8F0`, warm brown ink `#4A3728`, terracotta accent/CTA `#D97742`, warm gold `#E3A857`, warm dark-brown footer `#3D2B20` | **Approved — decided 2026-08-01** | Applies to all pages going forward |
+| 22 | This conversation, 2026-08-01 | Home page content | Real content approved for Home page's six Content/Body boxes (HOME-C-001–006), replacing the placeholder frame skeleton | **Approved — decided 2026-08-01** | `website/index.html` now has finished draft copy, pending review |
 
 ## Missing / not yet approved
 

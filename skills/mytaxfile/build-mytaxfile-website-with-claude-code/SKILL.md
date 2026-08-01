@@ -64,7 +64,7 @@ Confirmed 2026-07-31:
 - Header: wordmark "myTAXfile" (working name — not separately confirmed, see register), nav (Home · Individual Tax · Business Tax · Find My Service · Resources/FAQ · About · Contact), persistent "Request a Review & Quote" CTA.
 - Main Box: full-width, **image-only, no text/overlay** (default per `design-stable-web-frames`; headline/value-prop lives in Content/Body instead).
 - Footer: contact, active-state list (WA/CA/NY/IL/TX/FL + "Coming Soon"), Privacy/Terms/Accessibility links.
-- Colors: White background, Deep Navy `#0B2545` (headings), Teal `#0F766E` (CTA/action), Muted Gold `#C58A2A` (limited accent).
+- Colors (updated 2026-08-01, supersedes the prior dark-navy palette): warm ivory background `#FDF8F0`, warm brown ink `#4A3728` (headings/text), terracotta `#D97742` (CTA/action), warm gold `#E3A857` (limited accent), warm dark-brown `#3D2B20` (footer background).
 - Sizing: desktop Content/Body 75% width, max 1600px, centered; mobile ~92%; breakpoint 768px; Header/Footer inner content max 1200px centered.
 
 **Category frames** (shared templates)
@@ -150,3 +150,4 @@ Phase 2 is complete only when the sitemap, page wireframes, customer-flow protot
 ## Change history
 
 - 2026-07-31 — Initial repo scaffold. English-only scope, 6-state launch list, static HTML/CSS/JS stack, frame hierarchy + palette, and Main Box image-only confirmed. Superseded the prior bilingual and Washington-only pilot requirements from the Workflow doc, Work Order, and Master Plan.
+- 2026-08-01 — Color palette changed to light/warm (supersedes the dark-navy palette). Home page moved from empty frame skeleton to finished draft content for all six Content/Body boxes, pending review.
