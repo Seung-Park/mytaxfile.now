@@ -193,6 +193,18 @@ Connector became available. Four owed records cleared. Both documents were verif
 | 115 | Honest-limits content included | Extension gives more time to file, not to pay. No guaranteed refund or outcome, with an explicit caution about anyone who promises one. WA/TX/FL noted as having no personal state income tax |
 | 116 | Navigation wired across all six pages | "Individual Tax" was `href="#"` everywhere; now resolves. Homepage service card changed from a dead "Estimate My Fee" to "Explore Individual Tax". Accessibility page's known-limitations list updated so it no longer names Individual Tax as unbuilt |
 
+## Business Tax page — built 2026-08-01
+
+| # | Subject | Detail |
+|---|---|---|
+| 117 | **`website/business-tax.html` created** — second service category page, on Seung Park's go under rule 16 | 10 sections `BUS-C-001`–`010`: what we file, who it's for, what's included, deadlines, document checklist, how it works, pricing approach, states, FAQ, CTA |
+| 118 | Scope matches rows 1, 2, and 25 exactly | **1120-S available.** **1065 conditional**, labelled as such, offered only when a qualified preparer *and* reviewer are available. **Form 1120 (C-Corp), payroll, standalone bookkeeping, non-profit, and international explicitly listed as NOT offered**, with an offer to refer instead |
+| 119 | Sole proprietors routed away, not sold to | A card explains that unincorporated business income belongs on the personal return and links to Individual Tax — prevents a mis-sale at the top of the page |
+| 120 | Deadline section carries the per-shareholder penalty warning | Entity returns are due before personal returns, late filing is penalised per shareholder per month, and an extension moves the filing date not the payment date. **No specific calendar date published** — dates vary by state and fiscal year-end |
+| 121 | Reasonable-compensation question answered honestly | Framed as a judgement call depending on role, industry, and finances, to be discussed with a preparer — not reduced to a rule of thumb |
+| 122 | Pricing method only, no figures | Base covers federal 1120-S, one state, and shareholder K-1s. Additional states per state; bookkeeping cleanup quoted after seeing records and named as the largest variable. Verified: zero dollar figures |
+| 123 | Navigation wired across all seven pages | "Business Tax" was `href="#"` everywhere; now resolves. Homepage card changed from a dead "Estimate My Fee" to "Explore Business Tax". Accessibility known-limitations updated — only Find My Service, About, and Contact remain unbuilt |
+
 ## Missing / not yet approved
 
 - Canonical Price Book, Service Catalog, State Eligibility Matrix, Responsibility Matrix, Vendor Register, Risk & Exception Register (Workflow's "Required Control Registers") — none exist yet.
