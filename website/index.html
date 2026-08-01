@@ -25,18 +25,35 @@
     </div>
   </header>
 
-  <!-- ============ Main Box (Global frame — image only, no text) ============ -->
-  <div class="main-box main-box--placeholder" role="img" aria-label="Hero image placeholder — pending approved brand image">
-    Hero image placeholder — pending approved asset
-  </div>
+  <!-- ============ Hero (Global frame) ============
+       The .main-box image layer is independently replaceable — swap
+       its background/img without touching the overlay or text below. -->
+  <section class="hero" aria-label="Introduction">
+    <div class="main-box main-box--placeholder" role="img" aria-label="Hero image placeholder — pending approved brand image"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Individual &amp; Business Tax Services</p>
+      <h1 class="hero__headline">Clear Tax Filing for Individuals, Small Businesses, and Real Estate Investors</h1>
+      <p class="hero__support">Start with a simple base price and pay only for the forms and services you actually need. We guide you clearly from document collection through filing.</p>
+      <div class="hero__ctas">
+        <a class="cta-button" href="#">Request a Review &amp; Quote</a>
+        <a class="cta-button--outline-light" href="#how-it-works">See How It Works</a>
+      </div>
+      <ul class="hero__trust">
+        <li>Secure Document Handling</li>
+        <li>Clear Pricing Before Filing</li>
+        <li>Guided Individual and Business Tax Support</li>
+      </ul>
+    </div>
+  </section>
 
-  <!-- ============ Content / Body (empty outlines only — no real copy yet) ============ -->
+  <!-- ============ Content / Body ============ -->
   <main class="content">
 
     <section class="content-box" data-section-id="HOME-C-001">
       <span class="section-id-label">HOME-C-001</span>
-      <h1>Tax filing, made simple and guided.</h1>
-      <p>We help individuals and small businesses file Form 1040, Schedule C, Schedule E, and Form 1120-S with confidence. Every recommendation and estimate is preliminary and confirmed by a qualified professional before you file.</p>
+      <h2>Tax filing, made simple and guided.</h2>
+      <p>We help individuals, small businesses, and real estate investors file Form 1040, Schedule C, Schedule E, and Form 1120-S with confidence. Every recommendation and estimate is preliminary and confirmed by a qualified professional before you file.</p>
       <p class="state-note">Currently serving Washington, California, New York, Illinois, Texas, and Florida — more states coming soon.</p>
     </section>
 
@@ -46,15 +63,15 @@
       <div class="service-cards">
         <div class="service-card">
           <h3>Individual Tax</h3>
-          <p>Form 1040, Schedule C, Schedule E</p>
+          <p>Form 1040, Schedule C, Schedule E (Rental Property)</p>
           <p class="service-card__note">For employees, freelancers, and rental property owners.</p>
-          <a href="#">Explore Individual Tax →</a>
+          <a href="#">Estimate My Fee →</a>
         </div>
         <div class="service-card">
           <h3>Business Tax</h3>
           <p>Form 1120-S (S Corporation)</p>
           <p class="service-card__note">Form 1065 offered when a qualified reviewer is available.</p>
-          <a href="#">Explore Business Tax →</a>
+          <a href="#">Estimate My Fee →</a>
         </div>
       </div>
       <div class="find-service-prompt">
@@ -63,13 +80,13 @@
       </div>
     </section>
 
-    <section class="content-box" data-section-id="HOME-C-003">
+    <section class="content-box" data-section-id="HOME-C-003" id="how-it-works">
       <span class="section-id-label">HOME-C-003</span>
       <h2>How it works</h2>
       <ol class="steps">
         <li><strong>Tell us about your situation.</strong> A few quick questions — no sensitive documents required.</li>
         <li><strong>Get a preliminary recommendation.</strong> We suggest a service and you request a review.</li>
-        <li><strong>We confirm scope and quote.</strong> A team member follows up within one business day.</li>
+        <li><strong>We confirm scope and quote.</strong> We'll review your request and explain the next step.</li>
         <li><strong>File with confidence.</strong> Your return is reviewed by a qualified tax professional before filing.</li>
       </ol>
     </section>
@@ -79,7 +96,7 @@
       <h2>Your information, handled carefully</h2>
       <ul class="trust-list">
         <li>We never ask for your SSN, tax documents, or bank details on this website.</li>
-        <li>Sensitive documents are only collected through a secure, encrypted portal after your request is reviewed.</li>
+        <li>Sensitive documents are never collected on this website. After reviewing your request, we'll explain how to share them separately.</li>
         <li>Every return is reviewed by a qualified tax professional before filing.</li>
       </ul>
     </section>
@@ -108,7 +125,7 @@
       <span class="section-id-label">HOME-C-006</span>
       <div class="final-cta">
         <h2>Ready to get started?</h2>
-        <p>Send us a few details and we'll follow up within one business day.</p>
+        <p>Send us a few details. We'll review your request and explain the next step.</p>
         <a class="cta-button" href="#">Request a Review &amp; Quote</a>
       </div>
     </section>
