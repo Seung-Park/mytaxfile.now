@@ -182,6 +182,16 @@ Connector became available. Four owed records cleared. Both documents were verif
 | 108 | **`myTAXfile \| Decision and Implementation Log` created** — the Decision Log required by Workflow §10 Status Standard and the change log referenced in §9. Neither existed. 4,724 bytes verified | [Doc](https://docs.google.com/document/d/1S9OEIFimHFeqPY4HmgjvIj2tsggcicEi-6T-lPAa0Vo) · records what is live, the eight Tier 2 decisions, the tax rules system, and the six open items |
 | 109 | Existing Docs **not modified** | The Drive connector exposes `create_file` but no update or edit tool, so Website Plan v2 §8 and Workflow §2G could not be corrected from here. Both remain listed as actions for Seung |
 | 110 | No duplicate canonical document created | Both new Docs cover subjects with no existing Doc, per rule 9. Naming follows the Workflow standard `myTAXfile \| Short Summary`. Neither contains client names, SSNs, tax IDs, or sensitive data |
+## Individual Tax page — built 2026-08-01
+
+| # | Subject | Detail |
+|---|---|---|
+| 111 | **`website/individual-tax.html` created** — first service category page, built on Seung Park's go under the rule 16 page protocol | 9 sections `IND-C-001`–`009`: who it's for, what a return includes, extensions/amended/prior-year, document checklist, how it works, pricing approach, states, FAQ, CTA |
+| 112 | Content sourced from the approved catalog only | Website Plan v2 §3 and §6 audience (employees, self-employed, investors, rental owners, retirees) and content rules (scope, documents, process, cost guidance, FAQ). Forms limited to 1040 + Schedules A/C/D/E/SE per register row 1 |
+| 113 | **Pricing method described, no figures published** | Base plus additions for schedules, states, complexity; per-property rental pricing; bookkeeping cleanup quoted separately. Verified: zero dollar figures on the page. Price Book publication remains Tier 3 |
+| 114 | Compliance verified by automated check | No dollar figure · no response-time promise · no "qualified tax professional" credential implication · no guarantee wording · no nationwide claim · no 1120/1065 offered as available · approved secure-document copy verbatim with the "launching soon" qualifier |
+| 115 | Honest-limits content included | Extension gives more time to file, not to pay. No guaranteed refund or outcome, with an explicit caution about anyone who promises one. WA/TX/FL noted as having no personal state income tax |
+| 116 | Navigation wired across all six pages | "Individual Tax" was `href="#"` everywhere; now resolves. Homepage service card changed from a dead "Estimate My Fee" to "Explore Individual Tax". Accessibility page's known-limitations list updated so it no longer names Individual Tax as unbuilt |
 
 ## Missing / not yet approved
 
