@@ -39,7 +39,7 @@ Control hierarchy (per `myTAXfile | Workflow`, section 7): the Workflow doc is t
 
 Recorded from Seung Park's written instruction of 2026-08-01 establishing the canonical project Skill. Rows 28–47 have **no implementation in this repository** — they are approved requirements, not built features. The private operations portal does not exist yet.
 
-Provenance note: rows 28–44 were written from Seung's instruction text and have **not** been reconciled against the canonical Private Portal Requirements Google Doc, which was unreachable from the authoring session. Reconcile before implementation.
+Provenance note: rows 28–44 were originally written from Seung's instruction text. **Reconciled 2026-08-01** against the canonical Google Doc `myTAXfile | Private Operations Portal Requirements` (modified 2026-08-01T05:54); see rows 56–62 for what the reconciliation added or corrected.
 
 | # | Source | Section | Requirement | Status | Impact |
 |---|---|---|---|---|---|
@@ -64,6 +64,37 @@ Provenance note: rows 28–44 were written from Seung's instruction text and hav
 | 45 | Seung Park, 2026-08-01 | Translations | Tax, legal, pricing, qualification, security, and compliance translations require human review before publication; machine translation alone is never sufficient | **Approved** | Gates any multilingual rollout under row 27 |
 | 46 | Seung Park, 2026-08-01 | Documentation | Record approved business decisions and user-facing requirements in the designated Drive folder; update the existing relevant Doc when the subject exists; new Doc only for a genuinely different subject; avoid duplicate canonical documents | **Approved** | Extends row 16. Designated folder: `https://drive.google.com/drive/folders/1-At9BI6PtD0rroP14TnF_aMsIwcjOAJy` |
 | 47 | Seung Park, 2026-08-01 | Approval safeguards | No commit, push, merge, PR, branch deletion, Netlify deploy, DNS change, env-var change, or production configuration change without Seung Park's express approval | **Approved — hard constraint** | Extends row 17 to cover Netlify and PRs |
+
+## Index security guidance and personal-account upload — approved 2026-08-01
+
+From Work Order *Index Security Guidance & Personal Account Upload*. **Documentation and planning only** — the website text change, account/portal development, GitHub actions, and Netlify deployment are separate approval steps. Rows 49–55 have no implementation.
+
+| # | Source | Section | Requirement | Status | Impact |
+|---|---|---|---|---|---|
+| 48 | Work Order, 2026-08-01 | Index copy | Approved Index copy, verbatim: *"To protect your information, please do not send sensitive documents through this public page or regular email. After you start, you can securely upload documents from your personal account. We may also provide a secure upload link in your confirmation email."* Supersedes the absolutist wording in `website/index.html` HOME-C-004 lines 98–99 | **Copy approved 2026-08-01. NOT applied to the website.** Publication gated: the copy names an account and secure link in present tense, and the work order forbids implying either is operational before it is built and tested | Needs the account live, or Seung's approval of a "planned / after enrollment" framing, plus separate website-change approval |
+| 49 | Work Order, 2026-08-01 | Personal account | Personal account is the primary place for document upload, case status, messages, e-signature access, invoices/payments, completed-return delivery, and prior records | **Approved — not built** | Portal scope; see reference §1a |
+| 50 | Work Order, 2026-08-01 | Confirmation email | May contain a personal-account link or a verified secure-upload link; **no sensitive attachments** | **Approved — not built** | Email template rules |
+| 51 | Work Order, 2026-08-01 | Secure link | Expiration, identity verification, client/case scope, access check, revocation, audit logging, rate limiting — all required | **Approved — not built** | Seven mandatory controls |
+| 52 | Work Order, 2026-08-01 | Upload handling | File-type and size controls, malware scanning, encryption in transit and at rest, version history, role-based access | **Approved — not built** | Portal upload pipeline |
+| 53 | Work Order, 2026-08-01 | Records | Members may archive but may **not** permanently delete; final disposition limited to the authorized Records Administrator under the approved retention policy | **Approved — refines rows 39–40.** Retention policy does not exist yet | Role-naming conflict with area 15 "Restricted Records Administrator" — unresolved, see reference §7 |
+| 54 | Work Order, 2026-08-01 | Audit trail | Must record upload, access, download, archive, restoration, assignment, review, signature, and filing events | **Approved — extends row 42** | Plus secure-link issuance, access, revocation |
+| 55 | Work Order, 2026-08-01 | Sensitive data | Never place SSNs, tax documents, bank information, passwords, or other sensitive client data in ordinary email, public-page forms, source code, logs, analytics, or **URL query strings** | **Approved — hard constraint** | Extends row 10 beyond forms to email, code, logs, analytics, and URLs |
+
+## Canonical Google Doc reconciliation — 2026-08-01
+
+Source: `myTAXfile | Private Operations Portal Requirements` (Doc ID `1OFPURq0SsEkM0t2OGa91asXnslYmISqyTULnHqZIP40`, modified 2026-08-01T05:54). Read directly once the Drive connector became available. Detail in `.claude/skills/mytaxfile/references/private-portal-requirements.md`.
+
+| # | Source | Section | Requirement | Status | Impact |
+|---|---|---|---|---|---|
+| 56 | Doc §2 | Roles | Six roles: Business Owner/Super Admin, Operations Manager, Authorized Employee/Preparer, CPA/EA Reviewer, Attorney, Client — plus Company Records Administrator (§6). Three-tier employee assignment authority: None / Team / Operations | **Approved — corrects rows 30–31 and 41.** Operations Manager was missing from the repo record | Attorney gets minimum-necessary records only; attorney access does not imply every return receives legal review |
+| 57 | Doc §3 | Private pages | Five required pages: Owner Dashboard, Employee Operations Dashboard, Professional Review Center, Attorney Review Center, Client Portal | **Approved — not built.** Was entirely absent from the repo record | Portal page map |
+| 58 | Doc §7 | Assignment & status | Assignment records must capture 13 fields; material changes after approval invalidate the approval and reopen review; ten-step status sequence New → … → Completed | **Approved — extends row 32** | Was absent from the repo record |
+| 59 | Doc §4 | Comments | Tiers are **Client-visible / Company internal / Restricted professional-legal**; client-visible requires an explicit **Publish** action and, when configured, owner or authorized-employee approval; attorney privileged designation is separate and **the label alone does not create legal privilege** | **Approved — corrects and extends row 34** | Publish gate and privilege caveat were missing |
+| 60 | Doc §5 | E-signature | Candidates may include eSign or Authentisign; provider still TBD. **Do not build a proprietary signature engine** or present a drawn-signature field as a complete system. Preserve previously signed versions and record which version each person signed | **Approved — extends rows 35–36** | Integration must support identity, consent, signing order, timestamps, reminders, expiration, sealing, tamper-evident history, retrieval, export |
+| 61 | Doc §6 | Document vault | Store in approved cloud object storage with database metadata — **not** on an employee computer, **not** in the public website repository, **not** via a public form. Must not imply local-device files are automatically captured. Final disposition requires **dual approval** under an approved retention schedule | **Approved — extends rows 37–40 and 53** | Storage-location prohibition and dual approval were missing |
+| 62 | Doc §9 | Multilingual | English default; locale switching **through approved locale files**; translate UI, validation, errors, and accessibility labels — not only marketing text. **Do not send confidential customer-entered tax data to an unapproved external translation service** | **Approved — extends rows 27 and 45.** No locale-file architecture exists | Resolves what "shared translation architecture" means: approved locale files, still to be built |
+
+Also confirmed: Doc §12 already contains the approved Index copy verbatim (row 48), and a work-order Doc already exists in the folder — **no Drive write was performed**, to avoid duplicating a canonical source. Doc §8 explicitly warns that security controls are implementation requirements, **not** marketing claims, and names "guaranteed professional review" among the claims requiring verification before publication.
 
 ## Missing / not yet approved
 

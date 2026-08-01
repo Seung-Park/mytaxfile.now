@@ -54,7 +54,7 @@ Make this a primary conversion path from Home, Individual Tax, Business Tax, Fin
 - Collect only name, email, optional phone, state, customer category, short non-sensitive description, and preferred contact method.
 - Display: "We'll review your request and explain the next step." (Supersedes the earlier "within one business day" wording, per Seung's 2026-08-01 correction — no specific response-time promise may appear anywhere on the site until staffing capacity and operating procedures are confirmed.)
 - After submission, route internally to one of: service available and quote; professional review required; referral/general guidance.
-- Clearly warn users not to enter or upload SSNs, tax documents, bank information, or identity documents on the public form.
+- Guide users away from sending sensitive material through the public page or ordinary email, using the approved non-alarming wording (see "Index security guidance" below). The system-level constraint is unchanged: the public form must not collect SSNs, tax documents, bank information, or identity documents.
 
 ## Frame system (per `design-stable-web-frames`)
 
@@ -173,6 +173,25 @@ Phase 2 is complete only when the sitemap, page wireframes, customer-flow protot
 - "Expert Tax Preparation" wording, until professional qualifications and review structure are verified.
 
 Business Tax card intentionally excludes Form 1120 (C-Corp) and Payroll & Bookkeeping — these remain future-phase per the approved Phase 1 catalog; not added without separate approval.
+
+## Index security guidance (approved 2026-08-01, Work Order: Index Security Guidance & Personal Account Upload)
+
+**Approved Index page copy — exact, verbatim:**
+
+> To protect your information, please do not send sensitive documents through this public page or regular email. After you start, you can securely upload documents from your personal account. We may also provide a secure upload link in your confirmation email.
+
+**Superseded wording — do not reuse on the Index page or in active instructions:**
+
+- "We never ask for your SSN, tax documents, or bank details on this website."
+- "Sensitive documents are never collected on this website. After reviewing your request, we'll explain how to share them separately."
+
+Both were judged overly strict and alarming. The replacement guides clients toward the personal account or a secure upload link instead of issuing absolute prohibitions.
+
+**Not yet applied to `website/index.html`.** The copy names a personal account and a secure upload link in the present tense; neither exists. Per the work order, the site must not imply an account, portal, or secure link is operational until it has been implemented and tested — so publishing this verbatim needs either the account to be live or Seung's express approval of a "planned / after enrollment" framing. The website text change is a separate approval step in any case.
+
+Unchanged by this entry: the public form must still not collect SSNs, tax documents, bank information, or identity documents. That is a system constraint, distinct from customer-facing wording.
+
+Full requirement: canonical Skill area 23 and `.claude/skills/mytaxfile/references/private-portal-requirements.md` §1a.
 
 ## Change history
 

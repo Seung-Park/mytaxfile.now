@@ -1,6 +1,6 @@
 ---
 name: mytaxfile
-description: Canonical operating rules and approved requirements for the myTAXfilenow project (mytaxfile.now) — public website, private operations portal, pricing authority, employee and professional assignment, professional review and comments, e-signature and agreements, member document storage and version history, archive-instead-of-delete, Restricted Records Administrator, audit logs, role-based access, six-language support, security separation, Google Drive documentation, and GitHub/Netlify approval safeguards. Use this Skill before planning, designing, writing, reviewing, or modifying ANY myTAXfilenow work — including website pages, portal features, workflows, pricing, staffing, professional review, documents, translations, security, and deployment. Read it in full before proposing or making changes.
+description: Canonical operating rules and approved requirements for the myTAXfilenow project (mytaxfile.now) — public website, private operations portal, pricing authority, employee and professional assignment, professional review and comments, e-signature and agreements, member document storage and version history, archive-instead-of-delete, Records Administrator authority, audit logs, role-based access, six-language support, security separation, Google Drive documentation, and GitHub/Netlify approval safeguards. Use this Skill before planning, designing, writing, reviewing, or modifying ANY myTAXfilenow work — including website pages, portal features, workflows, pricing, staffing, professional review, documents, translations, security, and deployment. Read it in full before proposing or making changes.
 ---
 
 # myTAXfilenow — Canonical Project Skill
@@ -86,7 +86,9 @@ Hard constraint: public website forms must never collect SSNs, tax documents, ba
 
 ### 2. Private operations portal
 
-A separate, authenticated operations portal for staff, professionals, and members. Not built. No repo presence yet. See `references/private-portal-requirements.md`.
+A separate, authenticated operations portal for staff, professionals, and members. Not built. No repo presence yet. See `references/private-portal-requirements.md` — **reconciled against the canonical Google Doc on 2026-08-01**, and now the authoritative in-repo summary of roles, required pages, assignment/status model, review and comment rules, e-signature, document vault, retention, audit, security controls, multilingual operation, and the phased approval gates.
+
+Current approval covers requirements, page maps, permission rules, workflows, wireframes, and prototypes only. Production handling of real tax data, uploads, authentication, payments, professional sign-off, filing, legal matters, or e-signatures requires separate architecture, vendor, security, legal, and operating approval.
 
 ### 3. Owner pricing authority
 
@@ -142,9 +144,11 @@ Work saves automatically. Documents keep full version history. A new version nev
 
 Archiving replaces deletion throughout. Archived records remain retrievable, auditable, and intact.
 
-### 15. Restricted Records Administrator authority
+### 15. Records Administrator authority
 
-A designated **Restricted Records Administrator** role governs legally restricted records. Only this role may grant, revoke, or alter access to legally restricted material. The role is assigned by Seung Park.
+A designated, **narrowly limited** Records Administrator role governs restricted records: legal holds, restoration of archived records, export of complete case histories, and final disposition. Final disposition is permitted only under an approved written retention schedule, applicable law, contractual duties, privacy obligations, and **dual approval**. The role is assigned by Seung Park. The retention schedule does not exist yet.
+
+> **Naming unresolved.** Three names are in circulation: the canonical Google Doc §6 says "**Company** Records Administrator"; this Skill originally said "**Restricted** Records Administrator"; the 2026-08-01 work order says plain "Records Administrator." The Doc's definition is the most detailed and is reflected above. Confirm the single correct name with Seung Park before implementing. See `references/private-portal-requirements.md` §2.
 
 ### 16. Audit logs and access history
 
@@ -162,6 +166,8 @@ Approved 2026-08-01. This supersedes register row 7 ("English only," decided 202
 
 The live website is **English-only today** and stays that way until multilingual implementation is separately approved and built. Per rule 8 of the Skill update rule, documenting this requirement does not authorize changing the website. Do not describe the site as multilingual, and do not claim this is implemented.
 
+Mechanism (canonical Doc §9): English is the default; the same page structure switches locale **through approved locale files**. No locale-file architecture exists yet. Translation must cover navigation, buttons, forms, validation, confirmations, errors, messages, accessibility labels, and document instructions — not only marketing text. **Never send confidential customer-entered tax information to an unapproved external translation service.**
+
 ### 19. Human review for high-risk translations
 
 Translations touching tax, legal, pricing, qualification, security, or compliance content require human review before publication. Machine translation alone is never sufficient for these categories.
@@ -178,6 +184,32 @@ Approved business decisions and user-facing requirements are recorded in the des
 
 No commit, push, merge, pull request, branch deletion, Netlify deploy, DNS change, environment-variable change, or production configuration change without Seung Park's express approval. Prefer a named feature branch. Never push directly to a protected production branch without explicit authorization. Never commit secrets, `.env` files, credentials, client information, or tax data. Never claim a push or deployment succeeded without evidence.
 
+### 23. Index security guidance and personal-account upload
+
+Approved 2026-08-01 (Work Order: *Index Security Guidance & Personal Account Upload*).
+
+**Approved Index page copy — exact, verbatim:**
+
+> To protect your information, please do not send sensitive documents through this public page or regular email. After you start, you can securely upload documents from your personal account. We may also provide a secure upload link in your confirmation email.
+
+This supersedes the earlier absolutist Index wording ("We never ask for your SSN, tax documents, or bank details on this website." / "Sensitive documents are never collected on this website. After reviewing your request, we'll explain how to share them separately."), which was judged overly strict and alarming. Do not reuse the superseded wording on the Index page or in active instructions.
+
+**Publication gate — the copy is approved but not yet publishable.** The copy references a personal account and a secure upload link in the present tense. Neither exists. The site **must not imply that an account, portal, or secure link is already operational until it has actually been implemented and tested.** Where the account or upload system is not yet implemented, present the feature as *planned* or *coming after enrollment* — never as currently available. Publishing this copy verbatim therefore requires either (a) the account being live, or (b) Seung Park's express approval of a not-yet-live framing. See register row 48.
+
+**Approved customer experience**
+
+- The personal account is the primary place for document upload, case status, messages, signatures, invoices, and final documents.
+- The confirmation email may provide either a personal-account link or a verified secure-upload link.
+- Sensitive documents must not be attached to ordinary email.
+- Public pages request only the minimum information needed to begin service.
+- A direct upload link sent by email must expire, require appropriate identity verification, and be limited to the intended client or case.
+
+**Data-handling prohibition (hard constraint).** Never place SSNs, tax documents, bank information, passwords, or other sensitive client data in ordinary email, public-page forms, source code, logs, analytics, or URL query strings.
+
+Functional detail — account scope, confirmation email, secure-link controls, upload handling, records, and audit trail — is in `references/private-portal-requirements.md` §1a.
+
+**Already recorded in Drive.** The approved copy is in canonical Doc §12 (modified 2026-08-01T05:54), and the work order is preserved as `myTAXfile | Claude Code Work Order — Index Security & Personal Account Upload`. No further Drive write is needed for this subject; creating another would duplicate a canonical source.
+
 ## Proposed / unverified — never present as approved
 
 - E-signature provider selection (area 9).
@@ -185,7 +217,9 @@ No commit, push, merge, pull request, branch deletion, Netlify deploy, DNS chang
 - Final display name / logo treatment — "myTAXfile" is a working wordmark, not confirmed.
 - Any EA/CPA/IRS Authorized e-file Provider badge, IRS affiliation, "bank-grade security," "256-bit encryption," or specific regulatory-compliance claim.
 - Guaranteed professional review, guaranteed response time, or guaranteed filing time. **No specific response-time promise may appear anywhere on the site.**
-- Multilingual website implementation (area 18) — requirement approved, implementation not.
+- Multilingual website implementation (area 18) — requirement approved, implementation not. **There is no shared translation architecture in the repository yet**; instructions to "use the shared translation architecture" describe a system still to be built.
+- Personal account / client portal availability (area 23) — the account, secure upload, and secure-link systems do not exist. Never state or imply on the public site that they are operational.
+- Publication of the approved Index copy in present tense (area 23) — approved as copy, gated on the account being live or on an approved not-yet-live framing.
 
 ## Definition of done
 
@@ -196,3 +230,5 @@ For each approved batch: inspect first; make the smallest coherent change; run a
 - **2026-08-01** — Canonical project Skill created at `.claude/skills/mytaxfile/SKILL.md` so Claude Code discovers and auto-invokes it. Consolidated the permanent operating rules, source priority, Skill update rule, and 22 approved requirement areas. The existing website Skill at `skills/mytaxfile/build-mytaxfile-website-with-claude-code/SKILL.md` was left unchanged and is referenced as the website-execution spec. Approved by Seung Park.
 - **2026-08-01** — Languages requirement approved: English, Korean, Spanish, Simplified Chinese, Traditional Chinese, Japanese (area 18). Supersedes register row 7 "English only" as a planning requirement. Website implementation not authorized by this entry.
 - **2026-08-01** — Private operations portal requirement areas recorded (areas 2, 5–17, 20). Sourced from Seung Park's written instruction; not yet reconciled against the canonical Private Portal Requirements Google Doc, which was unreachable when this Skill was written.
+- **2026-08-01** — Work Order *Index Security Guidance & Personal Account Upload* approved. Added area 23: exact approved Index copy superseding the earlier absolutist wording, personal account as the primary secure workspace, confirmation-email and secure-link rules, and the sensitive-data prohibition covering email, forms, source code, logs, analytics, and URL query strings. Functional detail added to `references/private-portal-requirements.md`. **Documentation and planning only** — the `website/index.html` text change, account/portal development, GitHub actions, and Netlify deployment remain separate approval steps. Google Doc not updated in that session: the Drive connector was unavailable.
+- **2026-08-01** — Drive connector became available. `references/private-portal-requirements.md` **reconciled against the canonical Google Doc** and substantially expanded: full role table including Operations Manager and Company Records Administrator, three-tier employee assignment authority, five required private pages, assignment record fields, ten-step status sequence, Publish action for client-visible comments, attorney privilege caveat, e-signature candidates and the proprietary-engine prohibition, document-vault storage rules, dual-approval final disposition, expanded security controls, locale-file multilingual mechanism, five-phase development sequence, and the Drive documentation rule. Skill area 15 corrected (Records Administrator scope and dual approval; name still unresolved across three sources), area 2 and area 18 expanded. **No Drive write performed** — Doc §12 already contains the approved Index copy and a work-order Doc already exists; writing again would duplicate a canonical source.
