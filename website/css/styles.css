@@ -1,50 +1,54 @@
 /* myTAXfile — shared frame styles
    Frame hierarchy, sizing, and section-ID scheme per Seung Park's
    design-stable-web-frames standard.
-   Palette: brighter/near-white — updated 2026-08-01 (refines the
-   light/warm palette from earlier the same day: body lightened from
-   warm ivory to near-white; orange/dark-brown brand colors preserved;
-   warm beige reduced to a subtle border/accent only).
+   Palette: cool/institutional — adopted 2026-08-01 by Seung Park after
+   a side-by-side preview (supersedes the warm terracotta palette from
+   earlier the same day). Anchored to the navy/teal/muted-gold family:
+   deep-navy footer #0b2545, teal action color #0f766e, cool near-white
+   body. White-first discipline unchanged: accents never dominate.
+   All 18 text/UI pairs verified >= WCAG AA on adoption; lowest is the
+   footer gold heading at 5.16:1.
 */
 
 :root {
-  --color-bg: #fcfcfa;
+  --color-bg: #fafbfc;
   --color-card-bg: #ffffff;
-  --color-ink: #4a3728;
-  --color-ink-soft: #6b5a49;
-  --color-accent: #d97742;
-  --color-accent-dark: #c2632f;
-  --color-accent-tint: #fbe6d8;
-  /* Text-safe accent. --color-accent-dark (#c2632f) is 4.10:1 on white and
-     3.99:1 on the body background — below the WCAG AA 4.5:1 threshold for
-     normal-size text. Use --color-accent-dark for fills, borders, and focus
-     rings; use --color-accent-text for any text. */
-  --color-accent-text: #9e4a1f;
-  --color-gold: #e3a857;
-  --color-footer-bg: #3d2b20;
-  --color-border: #efeae1;
-  /* Tokenization pass — 2026-08-01. Every value below is identical to the
-     raw hex it replaced further down this file; this block introduces no
-     visual change. It exists so a future palette change is a single edit
-     here instead of a hunt through the stylesheet. */
-  --color-accent-pressed: #a8531f;        /* CTA :active fill */
-  --color-accent-pale: #fce8d6;           /* pale peach text on dark surfaces */
-  --color-accent-tint-border: #f0c9ae;    /* border partner of --color-accent-tint */
-  --color-footer-ink: #fdf8f0;            /* footer text and links */
-  --color-surface-warm: #fdfaf5;          /* quoted-guidance / caution surfaces */
+  --color-ink: #1c2b3a;
+  --color-ink-soft: #48596a;
+  --color-accent: #0f766e;
+  --color-accent-dark: #0c5f59;
+  --color-accent-tint: #d9eeeb;
+  /* Text-safe accent. Role rule kept from the warm palette era: text uses
+     --color-accent-text; --color-accent-dark is reserved for fills, borders,
+     and focus rings. (In this palette accent-dark happens to pass AA too —
+     7.51:1 on white — but keeping the role split means a future value change
+     cannot silently break text contrast.) --color-accent-text measures
+     6.35:1 on white, 6.13:1 on the body background, 5.26:1 on the tint. */
+  --color-accent-text: #0e6b64;
+  --color-gold: #c58a2a;
+  --color-footer-bg: #0b2545;
+  --color-border: #e2e8ee;
+  /* Extended tokens (added in the 2026-08-01 tokenization pass; retoned to
+     the cool palette the same day). A palette change is a single edit to
+     this block — never hard-code a hue below this line. */
+  --color-accent-pressed: #094c47;        /* CTA :active fill, 9.83:1 under white */
+  --color-accent-pale: #c9e6e2;           /* pale accent text on dark surfaces */
+  --color-accent-tint-border: #b3d8d2;    /* border partner of --color-accent-tint */
+  --color-footer-ink: #eef3f8;            /* footer text and links, 13.78:1 */
+  --color-surface-soft: #f4f8f7;          /* quoted-guidance / caution surfaces */
   --color-warning: #b8860b;               /* placeholder + needs-review borders */
   --color-warning-text: #6b5300;
   --color-warning-tint: #fff3cd;          /* placeholder background */
   --color-warning-surface: #fffdf5;       /* needs-review background */
-  --color-neutral-tint: #f3f0ea;          /* "Coming soon" chip background */
-  --color-neutral-text: #5c5145;
+  --color-neutral-tint: #eef1f4;          /* "Coming soon" chip background */
+  --color-neutral-text: #46525e;
   --color-scope-federal-text: #2f5d50;    /* calculator scope badges */
   --color-scope-federal-tint: #eaf3f0;
   --color-scope-federal-border: #cbe0d8;
   --color-scope-combined-text: #5a4a86;
   --color-scope-combined-tint: #efecf7;
   --color-scope-combined-border: #d8d0ea;
-  --card-shadow: 0 1px 2px rgba(61, 43, 32, 0.05), 0 6px 16px rgba(61, 43, 32, 0.05);
+  --card-shadow: 0 1px 2px rgba(11, 37, 69, 0.06), 0 6px 16px rgba(11, 37, 69, 0.06);
   --header-footer-inner-max: 1200px;
   --content-max: 1220px;
   --content-width-desktop: 83%;
@@ -250,7 +254,7 @@ button:focus-visible,
   width: 100%;
   height: 100%;
   display: block;
-  background: linear-gradient(135deg, #f2b366 0%, #e3833f 55%, #c2703d 100%);
+  background: linear-gradient(135deg, #35608f 0%, #1d3f66 55%, #0b2545 100%);
 }
 
 .main-box img {
@@ -275,7 +279,7 @@ button:focus-visible,
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(61, 43, 32, 0.25) 0%, rgba(61, 43, 32, 0.65) 100%);
+  background: linear-gradient(180deg, rgba(11, 37, 69, 0.25) 0%, rgba(11, 37, 69, 0.65) 100%);
 }
 
 .hero__content {
@@ -609,7 +613,7 @@ button:focus-visible,
 
 .site-footer__legal {
   width: 100%;
-  border-top: 1px solid rgba(253, 248, 240, 0.15);
+  border-top: 1px solid rgba(238, 243, 248, 0.15);
   margin-top: 24px;
   padding-top: 16px;
   font-size: var(--fs-small);
@@ -831,7 +835,7 @@ button:focus-visible,
 /* Quoted approved customer guidance. */
 .legal-quote {
   border-left: 3px solid var(--color-gold);
-  background: var(--color-surface-warm);
+  background: var(--color-surface-soft);
   padding: 16px 20px;
   margin: 0 0 14px;
   border-radius: 0 6px 6px 0;
@@ -1002,7 +1006,7 @@ button:focus-visible,
 
 .calc-card__caution {
   border-left: 3px solid var(--color-gold);
-  background: var(--color-surface-warm);
+  background: var(--color-surface-soft);
   padding: 10px 14px;
   border-radius: 0 6px 6px 0;
 }
