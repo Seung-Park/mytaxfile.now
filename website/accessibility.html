@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accessibility — myTAXfile</title>
+  <meta name="description" content="myTAXfile's accessibility commitment, what we have built in so far, known limitations, and how to request assistance or give feedback." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============ Header (Global frame) ============ -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">myTAXfile</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#">Individual Tax</a>
+        <a href="#">Business Tax</a>
+        <a href="#">Find My Service</a>
+        <a href="#">Resources</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+      <a class="cta-button" href="#">Request a Review &amp; Quote</a>
+    </div>
+  </header>
+
+  <!-- ============ Content / Body ============ -->
+  <main class="content content--narrow" id="main">
+
+    <div class="page-head">
+      <p class="page-head__eyebrow">Legal</p>
+      <h1>Accessibility</h1>
+      <p class="page-head__intro">Filing taxes is stressful enough. We want everyone to be able to use this site — including people who navigate by keyboard, use a screen reader, enlarge text, or rely on high contrast.</p>
+      <p class="page-head__dates"><strong>Effective:</strong> August 1, 2026 &nbsp;·&nbsp; <strong>Last revised:</strong> August 1, 2026</p>
+    </div>
+
+    <div class="review-banner">
+      <h2>Draft — pending review</h2>
+      <p>This statement is a working draft. The accessibility standard named below is a <strong>recommendation</strong> and has not yet been formally adopted. The site has not been independently audited, and we have not yet run assistive-technology testing.</p>
+      <p>We would rather list our known gaps honestly than claim a level of conformance we have not verified.</p>
+    </div>
+
+    <nav class="legal-toc" aria-labelledby="toc-heading">
+      <h2 id="toc-heading">On this page</h2>
+      <ol>
+        <li><a href="#s1">Our commitment</a></li>
+        <li><a href="#s2">The standard we are working toward</a></li>
+        <li><a href="#s3">What we have built in</a></li>
+        <li><a href="#s4">Forms and error messages</a></li>
+        <li><a href="#s5">Media, captions, and transcripts</a></li>
+        <li><a href="#s6">Known limitations</a></li>
+        <li><a href="#s7">Getting help another way</a></li>
+        <li><a href="#s8">Give us feedback</a></li>
+        <li><a href="#s9">Testing and improvement</a></li>
+        <li><a href="#s10">This work is ongoing</a></li>
+      </ol>
+    </nav>
+
+    <section class="legal-section" id="s1" data-section-id="ACCESS-C-001">
+      <h2>1. Our commitment</h2>
+      <p>We are committed to making myTAXfile usable by as many people as possible, regardless of ability, device, or assistive technology.</p>
+      <p>We treat accessibility as a development requirement rather than a notice to be posted. It is considered when a page is designed, built, and reviewed — not added afterwards.</p>
+    </section>
+
+    <section class="legal-section" id="s2" data-section-id="ACCESS-C-002">
+      <h2>2. The standard we are working toward</h2>
+      <p>We are working toward <strong>WCAG 2.2 Level AA</strong> — the Web Content Accessibility Guidelines published by the World Wide Web Consortium, at the level most commonly used as a benchmark for public websites.</p>
+      <span class="needs-review">This target is a <strong>recommendation</strong> and has not been formally approved. We have not been independently audited, and we do not claim conformance. Adopting a target and claiming conformance are separate steps, and only the first is proposed here.</span>
+    </section>
+
+    <section class="legal-section" id="s3" data-section-id="ACCESS-C-003">
+      <h2>3. What we have built in</h2>
+      <p>The following are in place on this site today:</p>
+      <ul>
+        <li><strong>Keyboard navigation.</strong> Every link and control can be reached and operated with the keyboard alone, in a logical order, with a visible focus indicator showing where you are.</li>
+        <li><strong>Skip link.</strong> A "Skip to main content" link appears when you press Tab, so keyboard and screen-reader users can bypass the navigation.</li>
+        <li><strong>Meaningful structure.</strong> Pages use real headings in order, landmark regions for header, navigation, main content, and footer, and lists marked up as lists — so a screen reader can announce and navigate the page properly.</li>
+        <li><strong>Readable text and contrast.</strong> Body text is set at a comfortable size with generous line spacing, and colours were chosen for contrast against their backgrounds rather than for decoration alone.</li>
+        <li><strong>Text alternatives.</strong> Meaningful images carry a text description. Purely decorative graphics are hidden from screen readers so they do not add noise.</li>
+        <li><strong>Responsive layout and zoom.</strong> Pages reflow to fit small screens and can be enlarged without content being cut off or requiring horizontal scrolling.</li>
+        <li><strong>No motion or timing traps.</strong> Nothing auto-plays, flashes, moves unexpectedly, or imposes a time limit.</li>
+        <li><strong>No reliance on colour alone.</strong> Information is not conveyed by colour by itself.</li>
+      </ul>
+    </section>
+
+    <section class="legal-section" id="s4" data-section-id="ACCESS-C-004">
+      <h2>4. Forms and error messages</h2>
+      <p><strong>This website currently has no forms.</strong> There is nothing to fill in and nothing to submit.</p>
+      <p>When we do add forms — a quote request, and later a personal account — we will build them so that every field has a visible label that is programmatically linked to it, instructions and formatting requirements appear before you need them, required fields are identified in text rather than by colour or an asterisk alone, errors are described in words that explain how to fix the problem, and errors are announced to assistive technology rather than only shown visually.</p>
+    </section>
+
+    <section class="legal-section" id="s5" data-section-id="ACCESS-C-005">
+      <h2>5. Media, captions, and transcripts</h2>
+      <p><strong>This website currently contains no audio or video.</strong></p>
+      <p>If we add media, we will provide captions for video with speech, a transcript for audio-only content, and audio description where important information is shown visually but not spoken.</p>
+    </section>
+
+    <section class="legal-section" id="s6" data-section-id="ACCESS-C-006">
+      <h2>6. Known limitations</h2>
+      <p>We would rather tell you what is not finished than imply everything is. As of the revision date above:</p>
+      <ul>
+        <li><strong>Several navigation and call-to-action links do not lead anywhere yet.</strong> The site is a prototype, and pages such as Individual Tax, Business Tax, Find My Service, Resources, About, and Contact have not been built. Links to them are placeholders. This is confusing for everyone, and particularly so for screen-reader users.</li>
+        <li><strong>The homepage does not yet have a skip link.</strong> This page, Privacy Notice, and Terms of Use do. The homepage will be updated.</li>
+        <li><strong>Faint section reference codes appear on the homepage.</strong> These are internal build labels, visible at very low contrast. They are development scaffolding and will be removed before launch.</li>
+        <li><strong>The homepage hero image is a placeholder</strong> with no final artwork or description.</li>
+        <li><strong>No independent audit or assistive-technology testing has been carried out yet</strong> — see section 9.</li>
+      </ul>
+    </section>
+
+    <section class="legal-section" id="s7" data-section-id="ACCESS-C-007">
+      <h2>7. Getting help another way</h2>
+      <p>If any part of this website prevents you from getting the information or service you need, contact us and we will help you another way — including providing information in a different format, or working through your enquiry directly with you.</p>
+      <p>You will never be disadvantaged, or charged more, for needing to reach us by a different route.</p>
+    </section>
+
+    <section class="legal-section" id="s8" data-section-id="ACCESS-C-008">
+      <h2>8. Give us feedback</h2>
+      <p>If you run into a barrier, please tell us. It helps to know the page, what you were trying to do, and the browser or assistive technology you were using — but please get in touch even if you cannot supply all of that.</p>
+      <div class="legal-contact">
+        <p><strong>Accessibility feedback and assistance</strong></p>
+        <p>Email: <span class="placeholder">[PLACEHOLDER — accessibility contact email]</span></p>
+        <p>Mail: <span class="placeholder">[PLACEHOLDER — business mailing address]</span></p>
+        <p><span class="placeholder">[PLACEHOLDER — target response time, once staffing is confirmed]</span></p>
+      </div>
+      <span class="needs-review">No response-time commitment may be published until staffing and operating procedures are confirmed.</span>
+    </section>
+
+    <section class="legal-section" id="s9" data-section-id="ACCESS-C-009">
+      <h2>9. Testing and improvement</h2>
+      <p>Accessibility is checked as part of building and reviewing each page. Current practice includes keyboard-only navigation of every page, checking heading order and landmark structure, checking colour contrast against the WCAG AA thresholds, and confirming pages remain usable when text is enlarged and on small screens.</p>
+      <p>Planned additions, not yet in place:</p>
+      <ul>
+        <li>testing with screen readers on more than one platform;</li>
+        <li>automated accessibility checks as part of our build process;</li>
+        <li>an independent accessibility audit; and</li>
+        <li>testing with people who use assistive technology.</li>
+      </ul>
+    </section>
+
+    <section class="legal-section" id="s10" data-section-id="ACCESS-C-010">
+      <h2>10. This work is ongoing</h2>
+      <p>Accessibility is not a box we expect to tick once. As we add pages, forms, documents, and the personal account, each will bring new requirements, and we expect to find and fix problems as we go.</p>
+      <p>This statement will be updated as the site changes. The revision date at the top tells you when it was last reviewed.</p>
+    </section>
+
+  </main>
+
+  <!-- ============ Footer (Global frame) ============ -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div>
+        <h3>Contact</h3>
+        <a href="#">Request a Review &amp; Quote</a>
+      </div>
+      <div>
+        <h3>Service Areas</h3>
+        <ul class="state-list">
+          <li>Washington</li>
+          <li>California</li>
+          <li>New York</li>
+          <li>Illinois</li>
+          <li>Texas</li>
+          <li>Florida</li>
+          <li class="state-list__coming-soon">More states coming soon</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <a href="privacy-notice.html">Privacy Notice</a><br />
+        <a href="terms-of-use.html">Terms of Use</a><br />
+        <a href="accessibility.html">Accessibility</a>
+      </div>
+      <div class="site-footer__legal">
+        &copy; 2026 myTAXfile. All rights reserved.<br />
+        Prototype — not a live production site.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

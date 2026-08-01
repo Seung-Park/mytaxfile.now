@@ -618,3 +618,279 @@ button:focus-visible,
     padding: 36px 20px;
   }
 }
+
+/* ============================================================
+   Legal & information pages (Privacy Notice, Terms of Use,
+   Accessibility). Additive only — no rules above are modified.
+   ============================================================ */
+
+/* Text-safe accent. --color-accent-dark (#c2632f) measures 4.10:1 on white
+   and 3.40:1 on the accent tint, below the WCAG AA 4.5:1 threshold for
+   normal-size text. This darker sibling stays in the brand family and
+   clears 5.0:1 on every background used on these pages. Scoped to the
+   legal pages — the existing index design is untouched. */
+:root {
+  --color-accent-text: #9e4a1f;
+}
+
+/* Skip link — keyboard users jump past the nav to content. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--color-accent-dark);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 0 0 6px 0;
+  font-size: var(--fs-body);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+/* Comfortable reading measure for prose-heavy pages.
+   The default .content (83% / 1220px) is too wide for legal text. */
+.content--narrow {
+  max-width: 780px;
+}
+
+/* ---------- Page head ---------- */
+
+.page-head {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 28px;
+  margin-bottom: 8px;
+}
+
+.page-head__eyebrow {
+  font-size: var(--fs-small);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent-text);
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+.page-head h1 {
+  font-size: 2.125rem;
+  line-height: 1.2;
+  color: var(--color-ink);
+  margin: 0 0 14px;
+}
+
+.page-head__intro {
+  font-size: 1.0625rem;
+  color: var(--color-ink-soft);
+  margin: 0 0 18px;
+}
+
+.page-head__dates {
+  font-size: var(--fs-small);
+  color: var(--color-ink-soft);
+  margin: 0;
+}
+
+/* ---------- Review / status banner ---------- */
+
+.review-banner {
+  background: var(--color-accent-tint);
+  border: 1px solid #f0c9ae;
+  border-left: 4px solid var(--color-accent-dark);
+  border-radius: 6px;
+  padding: 18px 20px;
+  margin: 28px 0;
+}
+
+.review-banner h2 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-accent-text);
+  margin: 0 0 8px;
+}
+
+.review-banner p {
+  font-size: var(--fs-small);
+  color: var(--color-ink);
+  margin: 0 0 8px;
+}
+
+.review-banner p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Table of contents ---------- */
+
+.legal-toc {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  padding: 22px 24px;
+  margin: 28px 0 8px;
+}
+
+.legal-toc h2 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-ink-soft);
+  margin: 0 0 12px;
+}
+
+.legal-toc ol {
+  margin: 0;
+  padding-left: 20px;
+  columns: 2;
+  column-gap: 32px;
+}
+
+.legal-toc li {
+  margin-bottom: 7px;
+  break-inside: avoid;
+  font-size: var(--fs-small);
+}
+
+@media (max-width: 768px) {
+  .legal-toc ol {
+    columns: 1;
+  }
+}
+
+/* ---------- Legal prose ---------- */
+
+.legal-section {
+  padding-top: 30px;
+}
+
+.legal-section h2 {
+  font-size: 1.375rem;
+  color: var(--color-ink);
+  margin: 0 0 12px;
+  scroll-margin-top: 20px;
+}
+
+.legal-section h3 {
+  font-size: 1.0625rem;
+  color: var(--color-ink);
+  margin: 22px 0 8px;
+}
+
+.legal-section p,
+.legal-section li {
+  color: var(--color-ink-soft);
+  line-height: 1.7;
+}
+
+.legal-section p {
+  margin: 0 0 14px;
+}
+
+.legal-section ul,
+.legal-section ol {
+  margin: 0 0 14px;
+  padding-left: 22px;
+}
+
+.legal-section li {
+  margin-bottom: 8px;
+}
+
+.legal-section strong {
+  color: var(--color-ink);
+}
+
+.legal-section a {
+  color: var(--color-accent-text);
+}
+
+.legal-toc a {
+  color: var(--color-accent-text);
+}
+
+/* Quoted approved customer guidance. */
+.legal-quote {
+  border-left: 3px solid var(--color-gold);
+  background: #fdfaf5;
+  padding: 16px 20px;
+  margin: 0 0 14px;
+  border-radius: 0 6px 6px 0;
+}
+
+.legal-quote p {
+  margin: 0;
+  color: var(--color-ink);
+}
+
+.legal-quote em {
+  display: block;
+  margin-top: 8px;
+  font-size: var(--fs-small);
+  color: var(--color-ink-soft);
+}
+
+/* Unresolved operational facts. Deliberately loud: these must be
+   replaced with approved values before this page is published. */
+.placeholder {
+  background: #fff3cd;
+  border: 1px dashed #b8860b;
+  border-radius: 3px;
+  padding: 1px 7px;
+  font-size: 0.9375em;
+  color: #6b5300;
+  font-style: normal;
+  white-space: normal;
+}
+
+/* Items awaiting qualified professional review. */
+.needs-review {
+  display: block;
+  border-left: 3px solid #b8860b;
+  background: #fffdf5;
+  padding: 12px 16px;
+  margin: 0 0 14px;
+  border-radius: 0 6px 6px 0;
+  font-size: var(--fs-small);
+  color: var(--color-ink-soft);
+}
+
+/* ---------- Contact block ---------- */
+
+.legal-contact {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  padding: 22px 24px;
+  margin-top: 14px;
+}
+
+.legal-contact p {
+  margin: 0 0 8px;
+}
+
+.legal-contact p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Footer legal link row ---------- */
+
+.site-footer__links a {
+  display: inline-block;
+  margin-right: 14px;
+}
+
+@media (max-width: 768px) {
+  .page-head h1 {
+    font-size: 1.75rem;
+  }
+
+  .legal-toc,
+  .legal-contact,
+  .review-banner {
+    padding: 16px 18px;
+  }
+}

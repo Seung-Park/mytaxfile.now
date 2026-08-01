@@ -96,6 +96,23 @@ Source: `myTAXfile | Private Operations Portal Requirements` (Doc ID `1OFPURq0Ss
 
 Also confirmed: Doc §12 already contains the approved Index copy verbatim (row 48), and a work-order Doc already exists in the folder — **no Drive write was performed**, to avoid duplicating a canonical source. Doc §8 explicitly warns that security controls are implementation requirements, **not** marketing claims, and names "guaranteed professional review" among the claims requiring verification before publication.
 
+## Public legal and information pages — approved 2026-08-01
+
+Work package: Privacy Notice, Terms of Use, Accessibility. Built and validated; **not committed, not deployed**. All three are drafts pending qualified review.
+
+| # | Source | Section | Requirement | Status | Impact |
+|---|---|---|---|---|---|
+| 63 | Seung Park, 2026-08-01 | Legal pages | Three public pages created: `privacy-notice.html`, `terms-of-use.html`, `accessibility.html`, linked from every public footer as **Privacy Notice \| Terms of Use \| Accessibility** | **Approved and built.** Draft content — **not** attorney reviewed | Replaces the three dead `href="#"` links |
+| 64 | Seung Park, 2026-08-01 | Footer | Copyright line `© 2026 myTAXfile. All rights reserved.` | **Approved and applied** | Prototype disclaimer **retained** on a second line — register row 15 records launch as HOLD and all CTAs remain inert. Reversible if Seung wants it removed |
+| 65 | Verified 2026-08-01 | Privacy accuracy | The public website collects **no** personal information: 0 forms, 0 inputs, 0 cookies, 0 analytics, 0 scripts, 0 external requests, 0 images | **Verified fact** | Privacy Notice states this plainly. Must be updated **before** any collecting feature ships |
+| 66 | Canonical Doc §6 | Privacy | Company retrieval rights over client records must be disclosed in privacy notices | **Satisfied** — Privacy Notice §7 | Was an approved requirement with no prior implementation |
+| 67 | Canonical Doc §8 | Security claims | No encryption, security-grade, certification, or compliance claim published until verified | **Satisfied** — Privacy Notice §9 frames all controls as design requirements, not completed safeguards | |
+| 68 | Seung Park, 2026-08-01 | Accessibility target | **WCAG 2.2 Level AA** | **PROPOSED — not adopted.** No audit, no conformance claim | Accessibility page states this explicitly |
+| 69 | Measured 2026-08-01 | Contrast defect | Global `a` colour `--color-accent-dark` `#c2632f` = **4.10:1** on white, below the AA 4.5:1 threshold. Also affects `.content-box__eyebrow` | **Open defect — not fixed** | Legal pages use scoped `--color-accent-text` `#9e4a1f` (≥5.04:1). Site-wide fix would change approved index design and needs separate approval |
+| 70 | Built 2026-08-01 | Placeholders | 15 unresolved operational facts marked in-page: legal entity ×2, mailing address ×3, contact emails ×3, hosting log practices, service-provider register, retention periods, limitation of liability, governing law, dispute procedure, accessibility response time | **Blocking publication** | Rendered in a loud amber box so they cannot ship unnoticed |
+| 71 | Identified 2026-08-01 | Professional review | Requires review against: IRC §7216 (taxpayer information disclosure/use), GLBA / FTC Safeguards Rule, CCPA/CPRA (California is a launch state), Circular 230, ADA Title III | **Not started** | Flagged in-page; not asserted as applicable or satisfied |
+| 72 | Built 2026-08-01 | Skip link | `.skip-link` added to all three legal pages | **Applied to legal pages only.** Index has none | Recorded as a known limitation on the Accessibility page; index fix needs separate approval |
+
 ## Missing / not yet approved
 
 - Canonical Price Book, Service Catalog, State Eligibility Matrix, Responsibility Matrix, Vendor Register, Risk & Exception Register (Workflow's "Required Control Registers") — none exist yet.
