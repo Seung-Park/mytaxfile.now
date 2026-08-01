@@ -1,0 +1,14 @@
+{
+  "wa-dor-reet": {
+    "last_attempt": "2026-08-01",
+    "last_result": "unreachable: HTTP 403"
+  },
+  "wa-wac-458-61a-1001": {
+    "last_attempt": "2026-08-01",
+    "last_result": "unreachable: HTTP 403"
+  },
+  "wa-dor-local-reet-rates": {
+    "last_attempt": "2026-08-01",
+    "last_result": "unreachable: HTTP 403"
+  }
+}

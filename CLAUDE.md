@@ -91,4 +91,5 @@ When Seung Park approves a permanent new requirement: update the canonical `SKIL
 - Website execution Skill (binding for all `website/` work, referenced by the canonical Skill, not superseded by it): `skills/mytaxfile/build-mytaxfile-website-with-claude-code/SKILL.md`
 - Claude adapter (if it diverges from that website Skill): `skills/mytaxfile/build-mytaxfile-website-with-claude-code/adapters/claude.md`
 - General website-build standards that also apply here (loaded from Seung's personal skill set, not part of this repo): `design-stable-web-frames`, `apply-world-class-expert-standard`, `maintain-project-skill-folders`.
+- Tax Rules and Parameters framework (binding for **all** calculator work): `docs/tax-rules-framework.md`. No calculator may hard-code a tax figure; no figure may be published below `approved_for_publication`; never populate a figure from model training data.
 - Requirements register: `docs/requirements-register.md` — check for superseded/conflicting items before building against any planning doc.

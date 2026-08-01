@@ -150,6 +150,24 @@ Decided by Claude Code under the standing Tier 1–2 authority granted 2026-08-0
 | 91 | Earlier scoping concern | **Withdrawn.** The worry that "2.1" implied an unread "2." parent was unfounded. The Price Book (row 73) and all prior reconciliation stand — they were not built on a partial view |
 | 92 | `Archive` subfolder | **Still unopened.** Workflow Phase 5 specifies "Archive only clearly superseded policies and plans," so it should hold superseded material only. Low risk, but unverified — open it when the Drive connector is available |
 
+## Tax Rules and Parameters system — 2026-08-01
+
+Built under standing Tier 1–2 authority. Governing document: `docs/tax-rules-framework.md`.
+
+| # | Subject | Status |
+|---|---|---|
+| 93 | **Tax Rules and Parameters framework approved and built.** Engine code contains no tax figures; parameter files contain no logic. Rates are integer basis points, money is integer cents — no tax figure passes through binary floating point | **Implemented.** `website/js/engine/`, `website/js/tax-rules/`, `website/js/calculators/` |
+| 94 | **Five-rung verification ladder** — `unverified` → `source_verified` → `professional_review_pending` → `professionally_reviewed` → `approved_for_publication`. Only the top rung may produce a customer-facing result | **Implemented and enforced.** `calculateReet()` throws `NotPublishableError` below the top rung |
+| 95 | **Consistency enforced, not trusted.** A set claiming `professionally_reviewed` without a named reviewer throws; claiming `source_verified` without a URL and verification date throws | **Implemented**, covered by test |
+| 96 | **Source registry** — a parameter may cite only a registered `.gov` authority publishing the rule itself. Summaries, news, and firm blogs are not sources | **Implemented.** Enforced by test: every registry root must end `.gov` |
+| 97 | **Effective-date versioning.** Half-open intervals; a sale computes under the rules in force on its own date. Past versions are never edited — a change adds a new version. Overlaps and uncovered dates throw | **Implemented**, covered by test |
+| 98 | **Change-review workflow** — `source detected → change compared → review pending → approved → effective-date activation → prior version retained`. `tools/check-sources.mjs` fingerprints each source and writes a change record; **it never edits a parameter** | **Implemented.** `npm run check-sources` |
+| 99 | **Automated test harness** — 35 tests covering version selection, effective dates, bracket boundaries, exemptions, rounding, missing parameters, malformed input, unapproved changes, and the no-invented-reviewer rule | **35/35 passing**, verified by direct run |
+| 100 | **Washington REET calculator implemented** — graduated state brackets, flat exception for agricultural land and timberland, optional user-supplied local rate, federal/state/local reported separately | **Implemented and tested. NOT publishable** |
+| 101 | **All REET parameters are `unverified`** — this environment cannot reach `dor.wa.gov` or `app.leg.wa.gov`; both return HTTP 403 at network egress, confirmed by direct fetch and by the source monitor. Candidate values recorded from a search summary, which is **not** a primary source and **not** verification | **Blocking publication.** `publicationReadiness()` returns `ready: false` and lists every blocker |
+| 102 | **Local REET deliberately unpopulated** — rates vary by city and county. The calculator asks the user rather than guessing | **By design** |
+| 103 | **2026 open questions** — whether the upper brackets moved on 2026-01-01, and the separate 1% real estate transfer tax reported above $3,025,000, which is **not modelled** | **Recorded in the parameter set**, unresolved |
+
 ## Missing / not yet approved
 
 - Canonical Price Book, Service Catalog, State Eligibility Matrix, Responsibility Matrix, Vendor Register, Risk & Exception Register (Workflow's "Required Control Registers") — none exist yet.
