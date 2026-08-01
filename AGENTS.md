@@ -4,7 +4,8 @@ This file is the canonical, platform-neutral instruction set for any agent (Clau
 
 ## Before making material edits
 
-1. Read `skills/mytaxfile/build-mytaxfile-website-with-claude-code/SKILL.md` in full — it is the binding execution spec for this project.
+0. Read `.claude/skills/mytaxfile/SKILL.md` in full — it is the **canonical project Skill** covering the whole project (public website, private operations portal, pricing authority, employee and professional authority, professional review, documents, languages, security, deployment), plus the source-priority order and the Skill update rule. Claude Code discovers it automatically; other agents must open it explicitly.
+1. Read `skills/mytaxfile/build-mytaxfile-website-with-claude-code/SKILL.md` in full — it is the binding execution spec for **website** work, referenced by the canonical Skill and not superseded by it.
 2. Read `docs/requirements-register.md` for current approved requirements, superseded items, and open TBDs.
 3. Inspect current repo state (`git status`, `git log`, `git branch -a`) before assuming what exists.
 4. Do not treat Google Docs planning material as directly buildable — only requirements marked `Approved` in the register are in scope. Items marked `Proposed`, `TBD`, or drawn only from `myTAXfile | Master Plan` (strategic reference, not build-authoritative) are out of scope until promoted.

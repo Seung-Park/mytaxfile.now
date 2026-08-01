@@ -1,9 +1,43 @@
 skills:
+  - name: mytaxfile
+    project: mytaxfile
+    task_code: mytaxfile-canonical-project-skill
+    path: .claude/skills/mytaxfile/SKILL.md
+    status: Active
+    canonical: true
+    scope: >
+      Whole-project canonical Skill: operating rules, source priority, Skill
+      update rule, and the approved requirement areas covering the public
+      website, private operations portal, pricing authority, employee and
+      professional authority, assignment/acceptance workflow, professional
+      review, comment confidentiality tiers, e-signature, agreements, member
+      document storage, versioning, archive-instead-of-delete, Restricted
+      Records Administrator, audit logs, role-based access, six-language
+      support, security separation, Google Drive documentation, and
+      GitHub/Netlify approval safeguards.
+    references:
+      - .claude/skills/mytaxfile/references/private-portal-requirements.md
+    discoverable_by_claude_code: true
+    invocation: /mytaxfile
+    supported_platforms:
+      - claude (native Skill discovery)
+    last_approved_change: >
+      2026-08-01: Canonical project Skill created at
+      .claude/skills/mytaxfile/SKILL.md so Claude Code discovers and
+      auto-invokes it. Six-language requirement approved as planning
+      requirement (supersedes register row 7 "English only"); website
+      implementation not authorized. Private portal requirement areas
+      recorded, pending reconciliation against the canonical Google Doc.
+
   - name: build-mytaxfile-website-with-claude-code
     project: mytaxfile
     task_code: build-mytaxfile-website-with-claude-code
     path: skills/mytaxfile/build-mytaxfile-website-with-claude-code/SKILL.md
     status: Active
+    scope: >
+      Website-execution spec for all work under website/. Child of the
+      canonical `mytaxfile` Skill; referenced by it, not superseded by it.
+    parent_skill: mytaxfile
     aliases:
       - myTAXfile website build
       - mytaxfile.now website prototype
