@@ -92,7 +92,13 @@ Current approval covers requirements, page maps, permission rules, workflows, wi
 
 ### 3. Owner pricing authority
 
-Seung Park holds sole authority over pricing. No price, rate, discount, fee schedule, or quote figure is published, quoted, or committed without his express approval. The canonical Price Book does not yet exist; source docs disagree on Schedule C and entity figures (register row 9). Publish no dollar figures until a Price Book is approved.
+Seung Park holds sole authority over pricing. No price, rate, discount, fee schedule, or quote figure is published, quoted, or committed without his express approval.
+
+**The canonical Price Book was approved 2026-08-01** — see `references/price-book.md`. It is the single authoritative pricing source; website copy, quotes, estimates, invoices, and code read from it and nothing else. It resolves the long-standing $299/$399 Schedule C and $795/$799 entity conflicts (register row 9) and closes Website Plan v2 §14 launch-blocker #6.
+
+**Approval of the register is not approval to publish.** Displaying any figure on the website is a separate decision. When prices are published, Website Plan v2 §14 governs: "starting at" or "estimate" only, never a guaranteed final fee before scope review, and no promise of refund amount, tax saving, filing time, acceptance, or audit outcome.
+
+Tax year, effective date, minimum fee, discount authority, refund rule, and gross-margin validation remain **TBD** and block publication of any figure.
 
 ### 4. Owner authority over employees and professionals
 

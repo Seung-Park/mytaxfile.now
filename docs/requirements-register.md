@@ -16,7 +16,7 @@ Control hierarchy (per `myTAXfile | Workflow`, section 7): the Workflow doc is t
 | 6 | SKILL.md; Work Order; Workflow "Phase 1 승인기록"; Master Plan | Languages | English **and Korean**, equal coverage | **Superseded** | — |
 | 7 | This conversation, 2026-07-31 | Scope change | Languages: **English only** | **Superseded as a planning requirement by row 27 (2026-08-01).** Still describes the *implemented* state of the live site until multilingual work is separately approved and built. | Site is English-only today; no language switcher built |
 | 8 | SKILL.md | Pricing | Low base + form/state/complexity add-ons; no final prices published | Approved | "Starting at / estimate" language only, no numbers |
-| 9 | Website Plan v2 §12 vs Workflow §3 | Pricing tables | Schedule C: $299 (Plan v2) vs $399 (Workflow) · S-Corp/entity: $795 vs $799 | **Not approved / conflicting** — flagged as unresolved by the source docs themselves (Workflow §14) | Publish no dollar figures until a canonical Price Book is approved |
+| 9 | Website Plan v2 §12 vs Workflow §3 | Pricing tables | Schedule C: $299 (Plan v2) vs $399 (Workflow) · S-Corp/entity: $795 vs $799 | **RESOLVED 2026-08-01 by the approved Price Book** (row 73). Schedule C → $399; entity → $795 | See `.claude/skills/mytaxfile/references/price-book.md`. Publication of any figure remains a separate decision |
 | 10 | SKILL.md | Public forms | No SSN, tax documents, bank information, or identity documents on public forms | Approved — hard constraint | Applies to every intake/contact/quote form |
 | 11 | SKILL.md | Required functions | "Find My Service" preliminary-recommendation tool | Approved (Phase 2 scope) | Build per Phase 2 order |
 | 12 | SKILL.md | Required functions | "Request a Review & Quote" | Approved (Phase 2 scope) | Entry points: Home, Individual Tax, Business Tax, Find My Service, FAQ, Contact |
@@ -112,6 +112,17 @@ Work package: Privacy Notice, Terms of Use, Accessibility. Built and validated; 
 | 70 | Built 2026-08-01 | Placeholders | 15 unresolved operational facts marked in-page: legal entity ×2, mailing address ×3, contact emails ×3, hosting log practices, service-provider register, retention periods, limitation of liability, governing law, dispute procedure, accessibility response time | **Blocking publication** | Rendered in a loud amber box so they cannot ship unnoticed |
 | 71 | Identified 2026-08-01 | Professional review | Requires review against: IRC §7216 (taxpayer information disclosure/use), GLBA / FTC Safeguards Rule, CCPA/CPRA (California is a launch state), Circular 230, ADA Title III | **Not started** | Flagged in-page; not asserted as applicable or satisfied |
 | 72 | Built 2026-08-01 | Skip link | `.skip-link` added to all three legal pages | **Applied to legal pages only.** Index has none | Recorded as a known limitation on the Accessibility page; index fix needs separate approval |
+
+## Canonical Price Book — approved 2026-08-01
+
+| # | Source | Section | Requirement | Status | Impact |
+|---|---|---|---|---|---|
+| 73 | Seung Park, 2026-08-01 | Pricing | **Canonical Price Book approved.** Base-plus-add-on model. `MTF-1040-BASE` $199 · `MTF-1040-SCHC` $399 · `MTF-1120S-CORP` $795 · `MTF-1065-PART` $795 (conditional) · `MTF-UNK-INTAKE` quote after review. Add-ons: state +$50, Sch A +$75, Sch D +$100, Sch E +$120/unit, bookkeeping from +$250 | **APPROVED — internal register only** | Resolves row 9. Closes Website Plan v2 §14 blocker #6. Full detail in `.claude/skills/mytaxfile/references/price-book.md` |
+| 74 | Derived, 2026-08-01 | Pricing model | Website Plan v2 §12 bundle table retired in favour of base-plus-add-on (row 8). The $299 bundle point is reached arithmetically as $199 + $100 Sch D | **Approved as part of row 73** | Prevents two prices for the same work |
+| 75 | Seung Park, 2026-08-01 | Publication | Approving the register does **not** authorize publishing prices. Publication is a separate decision; when made, §14 requires "starting at"/"estimate" only | **Register approved; publication NOT approved** | No figure appears on the website today |
+| 76 | Workflow §7 | Price Book completeness | Tax year, effective date, minimum fee, discount authority, refund/cancellation rule, rush/amended/prior-year fees, per-SKU inclusions, state variation, and gross-margin validation | **TBD — block publication** | Workflow §10 3단계 requires unit-economics review before pricing is final |
+| 77 | Website Plan v2 §10.3 | Fee Calculator | Interactive "Simple Fee Calculator" approved in concept; was blocked pending the Price Book | **Unblocked by row 73 — still needs separate build approval** | Must display ranges, never fixed fees |
+| 78 | Website Plan v2 §12 | Out-of-scope pricing | C Corp $895 and Form 1041 $650 appear in the doc but the services are not in the approved Phase 1 catalog | **Excluded from the Price Book** | Add only after the service is approved |
 
 ## Missing / not yet approved
 
