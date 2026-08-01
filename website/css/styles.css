@@ -1,12 +1,14 @@
 /* myTAXfile — shared frame styles
    Frame hierarchy, sizing, and section-ID scheme per Seung Park's
    design-stable-web-frames standard.
-   Palette: light/warm — updated 2026-08-01 (supersedes the prior
-   white/navy/teal/gold palette confirmed 2026-07-31).
+   Palette: brighter/near-white — updated 2026-08-01 (refines the
+   light/warm palette from earlier the same day: body lightened from
+   warm ivory to near-white; orange/dark-brown brand colors preserved;
+   warm beige reduced to a subtle border/accent only).
 */
 
 :root {
-  --color-bg: #fdf8f0;
+  --color-bg: #fcfcfa;
   --color-card-bg: #ffffff;
   --color-ink: #4a3728;
   --color-ink-soft: #7a6a5a;
@@ -14,7 +16,8 @@
   --color-accent-dark: #c2632f;
   --color-gold: #e3a857;
   --color-footer-bg: #3d2b20;
-  --color-border: #eae0d5;
+  --color-border: #efeae1;
+  --card-shadow: 0 1px 2px rgba(61, 43, 32, 0.05), 0 6px 16px rgba(61, 43, 32, 0.05);
   --header-footer-inner-max: 1200px;
   --content-max: 1600px;
   --content-width-desktop: 75%;
@@ -218,6 +221,7 @@ a {
   border: 1px solid var(--color-border);
   border-radius: 12px;
   padding: 24px;
+  box-shadow: var(--card-shadow);
 }
 
 .service-card h3 {
@@ -252,6 +256,7 @@ a {
   border: 1px solid var(--color-border);
   border-radius: 12px;
   padding: 18px 24px;
+  box-shadow: var(--card-shadow);
 }
 
 .find-service-prompt p {
@@ -279,6 +284,7 @@ a {
   padding: 20px;
   font-size: 0.9rem;
   color: var(--color-ink-soft);
+  box-shadow: var(--card-shadow);
 }
 
 .steps li::before {
@@ -355,6 +361,7 @@ a {
   border: 1px solid var(--color-border);
   border-radius: 16px;
   padding: 40px 24px;
+  box-shadow: var(--card-shadow);
 }
 
 .final-cta p {
