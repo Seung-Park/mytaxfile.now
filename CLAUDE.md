@@ -57,6 +57,17 @@ Owner and sole approval authority: **Seung Park**.
 
     This authority does not weaken rules 1–14. Preservation, verification, privacy, security, and owner-approval safeguards remain in full force.
 
+16. **Page-build protocol — approved 2026-08-01.**
+
+    New website pages are built **one at a time, on Seung Park's go for that specific page.** Do not begin a page he has not named.
+
+    - **Confirm at the start.** State which page is beginning before work on it starts.
+    - **Then build it fully.** Once a page is authorised, deliver it complete — best-in-class content, layout, structure, accessibility, and responsive behaviour — without stopping to ask about ordinary content or design choices. Those are Tier 2.
+    - **Finish before moving on.** Do not start the next page until the current one is delivered and Seung has given the next go.
+    - **Report on delivery:** what was built, decisions made, verification results, and any Tier 3 items the page surfaced.
+
+    Every page inherits the existing approved header, footer, palette, typography, spacing, section-ID scheme, and accessibility baseline. Copy must match the approved Service Catalog, Price Book, State Eligibility Matrix, and legal notices — never exceed them.
+
 ## Source priority
 
 1. Seung Park's latest express approval
