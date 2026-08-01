@@ -92,7 +92,13 @@ Current approval covers requirements, page maps, permission rules, workflows, wi
 
 ### 3. Owner pricing authority
 
-Seung Park holds sole authority over pricing. No price, rate, discount, fee schedule, or quote figure is published, quoted, or committed without his express approval. The canonical Price Book does not yet exist; source docs disagree on Schedule C and entity figures (register row 9). Publish no dollar figures until a Price Book is approved.
+Seung Park holds sole authority over pricing. No price, rate, discount, fee schedule, or quote figure is published, quoted, or committed without his express approval.
+
+**The canonical Price Book was approved 2026-08-01** — see `references/price-book.md`. It is the single authoritative pricing source; website copy, quotes, estimates, invoices, and code read from it and nothing else. It resolves the long-standing $299/$399 Schedule C and $795/$799 entity conflicts (register row 9) and closes Website Plan v2 §14 launch-blocker #6.
+
+**Approval of the register is not approval to publish.** Displaying any figure on the website is a separate decision. When prices are published, Website Plan v2 §14 governs: "starting at" or "estimate" only, never a guaranteed final fee before scope review, and no promise of refund amount, tax saving, filing time, acceptance, or audit outcome.
+
+Tax year, effective date, minimum fee, discount authority, refund rule, and gross-margin validation remain **TBD** and block publication of any figure.
 
 ### 4. Owner authority over employees and professionals
 
@@ -212,6 +218,49 @@ Functional detail — account scope, confirmation email, secure-link controls, u
 
 **Already recorded in Drive.** The approved copy is in canonical Doc §12 (modified 2026-08-01T05:54), and the work order is preserved as `myTAXfile | Claude Code Work Order — Index Security & Personal Account Upload`. No further Drive write is needed for this subject; creating another would duplicate a canonical source.
 
+### 24. Public legal and information pages
+
+Approved 2026-08-01. Three pages built: `website/privacy-notice.html`, `website/terms-of-use.html`, `website/accessibility.html`, linked from the footer of every public page as **Privacy Notice | Terms of Use | Accessibility**.
+
+**Accuracy is the governing rule.** These pages describe what myTAXfile actually does, not what it plans to build. Verified as of 2026-08-01: the public site contains no forms, inputs, cookies, analytics, scripts, external requests, or images, so the Privacy Notice states plainly that the public website collects no personal information. If any collecting feature is added, the Privacy Notice must be updated **before** that feature goes live.
+
+**Standing rules for these pages**
+
+- Never copy another company's legal pages.
+- Never present draft language as attorney-approved. All three carry a visible "Draft — pending review" banner.
+- Never invent an entity name, address, licence, governing law, dispute procedure, refund policy, or professional guarantee. Unknown operational facts use a visibly marked `<span class="placeholder">` and must be replaced before publication.
+- No response-time commitment anywhere, including the accessibility contact.
+- No security, encryption, certification, or compliance claim until independently verified (canonical Doc §8).
+- The Privacy Notice must disclose company retrieval rights over client records (canonical Doc §6).
+- The approved Index security copy and its "launching soon" qualifier appear on both the Privacy Notice and Terms of Use; keep all three copies in sync with area 23.
+
+**Accessibility target: WCAG 2.2 Level AA — PROPOSED, not adopted.** No conformance claim may be published, and no audit has been performed. All legal-page colour pairs measure ≥5.04:1.
+
+**Contrast — fixed site-wide 2026-08-01.** `--color-accent-dark` `#c2632f` measured 4.10:1 on white and 3.99:1 on the body background, below AA for normal text. `--color-accent-text` `#9e4a1f` now sits in the primary `:root` and carries **all text** usage; `--color-accent-dark` is reserved for fills, borders, and focus rings. Lowest text pair is 5.04:1. **Rule: never use `--color-accent-dark` for text.** Register rows 69 and 85.
+
+**No shared component system.** The approved stack is static HTML with no build step, so the header and footer are duplicated across all four pages. Any footer change must be applied to every page by hand.
+
+### 25. Resources and the calculator suite
+
+Approved 2026-08-01. `website/resources.html` — **Tax Calculators & Estimators**, linked from the primary nav on every page.
+
+**Nothing is operational.** Nine Phase 1 calculators are carded (6 federal, 3 Washington), 10 planned, plus Process / Checklists / FAQ / Guides. Every card reads "Coming soon" in text, never by colour alone.
+
+**Standing rules when these are built**
+
+- Calculations run **entirely in the browser**. No network call, no storage, no analytics, no values in the URL. This is what lets the Privacy Notice keep its "collects nothing" claim.
+- Never request an SSN, bank details, or a document upload.
+- Tax parameters live in **per-tax-year data files**, separate from interface code. Each value carries `source_url`, `source_name`, `tax_year`, `verified_by`, `verified_date`. **No calculator ships until those fields are populated** — the review gate is mechanical, not a promise.
+- Never populate a tax figure from model training data. Primary sources only, verified by the assigned professional.
+- Show tax year and last-updated on every tool; show ranges where an exact figure would mislead; separate federal, state, and combined results.
+- The result disclaimer is mandatory and verbatim (register row 63 area). It does not reduce myTAXfile's responsibilities.
+
+**Washington facts already established** (Website Plan v2 §10.1, Workflow): no state income tax, no inheritance tax. The capital gains **excise** tax does **not** apply to real-estate sales or to gains inside retirement accounts. Washington has an estate tax and a real estate excise tax.
+
+**Permanently excluded — no return-level income tax calculator.** Approved by Seung Park 2026-08-01: **no calculator for Form 1040 and none for Form 1120.** These are the returns myTAXfile sells; a public calculator that computes a customer's own return undercuts the service and puts the highest-liability computation on an unsupervised page. Transaction-specific estimators (REET, capital gains, home sale, depreciation recapture, self-employment, quarterly) remain in scope — they surface a situation that then needs professional help. "Business Entity Tax Comparison" stays permitted as a *comparative* tool only, never a 1120 calculation.
+
+**Excluded from Phase 1:** estate, inheritance, and gift calculators — Referral/Specialist per Workflow §10C, and the highest-liability tools in the set. Tax Filing Fee Estimator is unblocked by the approved Price Book but still requires a published-fee-method decision.
+
 ## Proposed / unverified — never present as approved
 
 - E-signature provider selection (area 9).
@@ -219,6 +268,8 @@ Functional detail — account scope, confirmation email, secure-link controls, u
 - Final display name / logo treatment — "myTAXfile" is a working wordmark, not confirmed.
 - Any EA/CPA/IRS Authorized e-file Provider badge, IRS affiliation, "bank-grade security," "256-bit encryption," or specific regulatory-compliance claim.
 - Guaranteed professional review, guaranteed response time, or guaranteed filing time. **No specific response-time promise may appear anywhere on the site.**
+- Every claim in the Privacy Notice, Terms of Use, and Accessibility pages (area 24) — drafted, **not** reviewed by an attorney or privacy counsel. 15 placeholders remain unresolved.
+- WCAG 2.2 AA as the accessibility target (area 24) — recommended, not adopted.
 - Multilingual website implementation (area 18) — requirement approved, implementation not. **There is no shared translation architecture in the repository yet**; instructions to "use the shared translation architecture" describe a system still to be built.
 - Personal account / client portal availability (area 23) — the account, secure upload, and secure-link systems do not exist. Never state or imply on the public site that they are operational.
 - Publication of the approved Index copy in present tense (area 23) — approved as copy, gated on the account being live or on an approved not-yet-live framing.
@@ -233,4 +284,5 @@ For each approved batch: inspect first; make the smallest coherent change; run a
 - **2026-08-01** — Languages requirement approved: English, Korean, Spanish, Simplified Chinese, Traditional Chinese, Japanese (area 18). Supersedes register row 7 "English only" as a planning requirement. Website implementation not authorized by this entry.
 - **2026-08-01** — Private operations portal requirement areas recorded (areas 2, 5–17, 20). Sourced from Seung Park's written instruction; not yet reconciled against the canonical Private Portal Requirements Google Doc, which was unreachable when this Skill was written.
 - **2026-08-01** — Work Order *Index Security Guidance & Personal Account Upload* approved. Added area 23: exact approved Index copy superseding the earlier absolutist wording, personal account as the primary secure workspace, confirmation-email and secure-link rules, and the sensitive-data prohibition covering email, forms, source code, logs, analytics, and URL query strings. Functional detail added to `references/private-portal-requirements.md`. **Documentation and planning only** — the `website/index.html` text change, account/portal development, GitHub actions, and Netlify deployment remain separate approval steps. Google Doc not updated in that session: the Drive connector was unavailable.
+- **2026-08-01** — Area 24 added. Privacy Notice, Terms of Use, and Accessibility pages built and linked from every public footer; copyright line changed to "© 2026 myTAXfile. All rights reserved." with the prototype disclaimer retained beneath it. Legal-page CSS appended (263 lines, zero modifications to existing rules) including a scoped `--color-accent-text` that fixes three WCAG AA contrast failures introduced by the brand accent. All three pages are drafts pending attorney, privacy, and accessibility review, carrying 15 marked placeholders. Google Doc not updated — the Drive connector was unavailable in this session.
 - **2026-08-01** — Drive connector became available. `references/private-portal-requirements.md` **reconciled against the canonical Google Doc** and substantially expanded: full role table including Operations Manager and Company Records Administrator, three-tier employee assignment authority, five required private pages, assignment record fields, ten-step status sequence, Publish action for client-visible comments, attorney privilege caveat, e-signature candidates and the proprietary-engine prohibition, document-vault storage rules, dual-approval final disposition, expanded security controls, locale-file multilingual mechanism, five-phase development sequence, and the Drive documentation rule. Skill area 15 corrected (Records Administrator scope and dual approval; name still unresolved across three sources), area 2 and area 18 expanded. **No Drive write performed** — Doc §12 already contains the approved Index copy and a work-order Doc already exists; writing again would duplicate a canonical source.

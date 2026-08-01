@@ -1,0 +1,10 @@
+{
+  "name": "mytaxfile-tax-rules",
+  "private": true,
+  "type": "module",
+  "description": "Tax Rules and Parameters system + calculator engine for mytaxfile.now. Static site; this manifest exists only so the test harness and source monitor can be run with plain node.",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "check-sources": "node tools/check-sources.mjs"
+  }
+}

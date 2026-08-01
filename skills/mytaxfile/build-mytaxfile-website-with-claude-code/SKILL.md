@@ -193,6 +193,22 @@ Unchanged by this entry: the public form must still not collect SSNs, tax docume
 
 Full requirement: canonical Skill area 23 and `.claude/skills/mytaxfile/references/private-portal-requirements.md` §1a.
 
+## Legal and information pages (approved 2026-08-01)
+
+Pages: `website/privacy-notice.html`, `website/terms-of-use.html`, `website/accessibility.html`. Footer links on every public page read exactly **Privacy Notice | Terms of Use | Accessibility**.
+
+**Page pattern.** Same header and footer as Index. No hero — legal pages open with `.page-head` (eyebrow, `h1`, intro, effective/revision dates), then a `.review-banner`, then a two-column `.legal-toc`, then `.legal-section` blocks with `PRIV-C-NNN` / `TERMS-C-NNN` / `ACCESS-C-NNN` section IDs. Reading width is capped by `.content--narrow` (780px) because the default `.content` (83% / 1220px) is far too wide for prose.
+
+**Section-ID labels are not rendered on legal pages.** The `data-section-id` attribute is present for traceability, but the visible `.section-id-label` used on Index is omitted — these are customer-trust pages, and the faint codes read as unfinished. Index keeps its labels unchanged.
+
+**Skip link.** All three legal pages carry `.skip-link`. **Index does not** — adding it would be an unrelated edit, so it is recorded as a known limitation on the Accessibility page and needs separate approval.
+
+**Contrast.** `--color-accent-dark` `#c2632f` fails WCAG AA for normal text (4.10:1 on white, 3.40:1 on the accent tint). Legal pages use a scoped `--color-accent-text` `#9e4a1f` instead; lowest measured pair is 5.04:1. The global `a` rule still uses the failing colour — a site-wide fix needs separate approval.
+
+**Copyright.** `© 2026 myTAXfile. All rights reserved.` on line one, `Prototype — not a live production site.` retained on line two. The disclaimer was kept because register row 15 records public launch as HOLD and every CTA is still inert.
+
+**Placeholders.** 15 unresolved operational facts are marked with `<span class="placeholder">` and render in a loud amber box so they cannot ship unnoticed. They must be replaced before these pages are treated as final.
+
 ## Change history
 
 - 2026-07-31 — Initial repo scaffold. English-only scope, 6-state launch list, static HTML/CSS/JS stack, frame hierarchy + palette, and Main Box image-only confirmed. Superseded the prior bilingual and Washington-only pilot requirements from the Workflow doc, Work Order, and Master Plan.

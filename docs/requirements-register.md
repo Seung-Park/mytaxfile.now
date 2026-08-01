@@ -16,7 +16,7 @@ Control hierarchy (per `myTAXfile | Workflow`, section 7): the Workflow doc is t
 | 6 | SKILL.md; Work Order; Workflow "Phase 1 승인기록"; Master Plan | Languages | English **and Korean**, equal coverage | **Superseded** | — |
 | 7 | This conversation, 2026-07-31 | Scope change | Languages: **English only** | **Superseded as a planning requirement by row 27 (2026-08-01).** Still describes the *implemented* state of the live site until multilingual work is separately approved and built. | Site is English-only today; no language switcher built |
 | 8 | SKILL.md | Pricing | Low base + form/state/complexity add-ons; no final prices published | Approved | "Starting at / estimate" language only, no numbers |
-| 9 | Website Plan v2 §12 vs Workflow §3 | Pricing tables | Schedule C: $299 (Plan v2) vs $399 (Workflow) · S-Corp/entity: $795 vs $799 | **Not approved / conflicting** — flagged as unresolved by the source docs themselves (Workflow §14) | Publish no dollar figures until a canonical Price Book is approved |
+| 9 | Website Plan v2 §12 vs Workflow §3 | Pricing tables | Schedule C: $299 (Plan v2) vs $399 (Workflow) · S-Corp/entity: $795 vs $799 | **RESOLVED 2026-08-01 by the approved Price Book** (row 73). Schedule C → $399; entity → $795 | See `.claude/skills/mytaxfile/references/price-book.md`. Publication of any figure remains a separate decision |
 | 10 | SKILL.md | Public forms | No SSN, tax documents, bank information, or identity documents on public forms | Approved — hard constraint | Applies to every intake/contact/quote form |
 | 11 | SKILL.md | Required functions | "Find My Service" preliminary-recommendation tool | Approved (Phase 2 scope) | Build per Phase 2 order |
 | 12 | SKILL.md | Required functions | "Request a Review & Quote" | Approved (Phase 2 scope) | Entry points: Home, Individual Tax, Business Tax, Find My Service, FAQ, Contact |
@@ -95,6 +95,81 @@ Source: `myTAXfile | Private Operations Portal Requirements` (Doc ID `1OFPURq0Ss
 | 62 | Doc §9 | Multilingual | English default; locale switching **through approved locale files**; translate UI, validation, errors, and accessibility labels — not only marketing text. **Do not send confidential customer-entered tax data to an unapproved external translation service** | **Approved — extends rows 27 and 45.** No locale-file architecture exists | Resolves what "shared translation architecture" means: approved locale files, still to be built |
 
 Also confirmed: Doc §12 already contains the approved Index copy verbatim (row 48), and a work-order Doc already exists in the folder — **no Drive write was performed**, to avoid duplicating a canonical source. Doc §8 explicitly warns that security controls are implementation requirements, **not** marketing claims, and names "guaranteed professional review" among the claims requiring verification before publication.
+
+## Public legal and information pages — approved 2026-08-01
+
+Work package: Privacy Notice, Terms of Use, Accessibility. Built and validated; **not committed, not deployed**. All three are drafts pending qualified review.
+
+| # | Source | Section | Requirement | Status | Impact |
+|---|---|---|---|---|---|
+| 63 | Seung Park, 2026-08-01 | Legal pages | Three public pages created: `privacy-notice.html`, `terms-of-use.html`, `accessibility.html`, linked from every public footer as **Privacy Notice \| Terms of Use \| Accessibility** | **Approved and built.** Draft content — **not** attorney reviewed | Replaces the three dead `href="#"` links |
+| 64 | Seung Park, 2026-08-01 | Footer | Copyright line `© 2026 myTAXfile. All rights reserved.` | **Approved and applied** | Prototype disclaimer **retained** on a second line — register row 15 records launch as HOLD and all CTAs remain inert. Reversible if Seung wants it removed |
+| 65 | Verified 2026-08-01 | Privacy accuracy | The public website collects **no** personal information: 0 forms, 0 inputs, 0 cookies, 0 analytics, 0 scripts, 0 external requests, 0 images | **Verified fact** | Privacy Notice states this plainly. Must be updated **before** any collecting feature ships |
+| 66 | Canonical Doc §6 | Privacy | Company retrieval rights over client records must be disclosed in privacy notices | **Satisfied** — Privacy Notice §7 | Was an approved requirement with no prior implementation |
+| 67 | Canonical Doc §8 | Security claims | No encryption, security-grade, certification, or compliance claim published until verified | **Satisfied** — Privacy Notice §9 frames all controls as design requirements, not completed safeguards | |
+| 68 | Seung Park, 2026-08-01 | Accessibility target | **WCAG 2.2 Level AA** | **PROPOSED — not adopted.** No audit, no conformance claim | Accessibility page states this explicitly |
+| 69 | Measured 2026-08-01 | Contrast defect | Global `a` colour `--color-accent-dark` `#c2632f` = **4.10:1** on white, below the AA 4.5:1 threshold. Also affects `.content-box__eyebrow` | **CLOSED 2026-08-01 — fixed site-wide, see row 85** | `--color-accent-text` `#9e4a1f` promoted to the primary `:root`; six text usages remapped. Fills, borders, and focus rings unchanged |
+| 70 | Built 2026-08-01 | Placeholders | 15 unresolved operational facts marked in-page: legal entity ×2, mailing address ×3, contact emails ×3, hosting log practices, service-provider register, retention periods, limitation of liability, governing law, dispute procedure, accessibility response time | **Blocking publication** | Rendered in a loud amber box so they cannot ship unnoticed |
+| 71 | Identified 2026-08-01 | Professional review | Requires review against: IRC §7216 (taxpayer information disclosure/use), GLBA / FTC Safeguards Rule, CCPA/CPRA (California is a launch state), Circular 230, ADA Title III | **Not started** | Flagged in-page; not asserted as applicable or satisfied |
+| 72 | Built 2026-08-01 | Skip link | `.skip-link` added to all three legal pages | **Applied to legal pages only.** Index has none | Recorded as a known limitation on the Accessibility page; index fix needs separate approval |
+
+## Canonical Price Book — approved 2026-08-01
+
+| # | Source | Section | Requirement | Status | Impact |
+|---|---|---|---|---|---|
+| 73 | Seung Park, 2026-08-01 | Pricing | **Canonical Price Book approved.** Base-plus-add-on model. `MTF-1040-BASE` $199 · `MTF-1040-SCHC` $399 · `MTF-1120S-CORP` $795 · `MTF-1065-PART` $795 (conditional) · `MTF-UNK-INTAKE` quote after review. Add-ons: state +$50, Sch A +$75, Sch D +$100, Sch E +$120/unit, bookkeeping from +$250 | **APPROVED — internal register only** | Resolves row 9. Closes Website Plan v2 §14 blocker #6. Full detail in `.claude/skills/mytaxfile/references/price-book.md` |
+| 74 | Derived, 2026-08-01 | Pricing model | Website Plan v2 §12 bundle table retired in favour of base-plus-add-on (row 8). The $299 bundle point is reached arithmetically as $199 + $100 Sch D | **Approved as part of row 73** | Prevents two prices for the same work |
+| 75 | Seung Park, 2026-08-01 | Publication | Approving the register does **not** authorize publishing prices. Publication is a separate decision; when made, §14 requires "starting at"/"estimate" only | **Register approved; publication NOT approved** | No figure appears on the website today |
+| 76 | Workflow §7 | Price Book completeness | Tax year, effective date, minimum fee, discount authority, refund/cancellation rule, rush/amended/prior-year fees, per-SKU inclusions, state variation, and gross-margin validation | **TBD — block publication** | Workflow §10 3단계 requires unit-economics review before pricing is final |
+| 77 | Website Plan v2 §10.3 | Fee Calculator | Interactive "Simple Fee Calculator" approved in concept; was blocked pending the Price Book | **Unblocked by row 73 — still needs separate build approval** | Must display ranges, never fixed fees |
+| 78 | Website Plan v2 §12 | Out-of-scope pricing | C Corp $895 and Form 1041 $650 appear in the doc but the services are not in the approved Phase 1 catalog | **Excluded from the Price Book** | Add only after the service is approved |
+
+## Tier 2 decisions and Resources build — 2026-08-01
+
+Decided by Claude Code under the standing Tier 1–2 authority granted 2026-08-01. **All reversible.** Reasoning recorded so Seung can overturn any of them.
+
+| # | Subject | Decision | Reasoning | Reversible |
+|---|---|---|---|---|
+| 79 | Response-time promise — Workflow §2G (modified 2026-08-01) reinstates "We will contact you by email within one business day"; register row 26 removed it sitewide the same day | **Keep it off the website. Treat §2G as an internal operating target, not published copy.** | Workflow is the *operational specification* (internal); Website Plan v2 "governs customer-facing structure and messaging" and its §14 Truth Rules forbid promising filing time. Both can be true at once: internal target = 1 business day, published text = no promise. Launch is HOLD and staffing is unconfirmed, so a public promise is unbacked | Yes — one line of copy |
+| 80 | Palette — Website Plan v2 §8 says "white background and deep navy"; rows 21/23 approved the warm white-first system | **Keep warm white-first. §8's palette line is stale.** | Rows 21 and 23 are dated 2026-08-01, are detailed, and explicitly supersede the navy palette in row 19. §8 predates that decision and was not the subject of today's edit. Source priority item 1 (latest express approval) outranks a legacy line. **Action for Seung: update §8 in the Doc** so the two stop disagreeing | Yes — palette is tokenised |
+| 81 | Resources scope — §2/§3 define Resources as Process, Checklists, FAQ, Guides; the calculator suite appears in neither doc | **Add Tax Calculators & Estimators as an approved Resources subsection.** | Seung's express brief requested it (rule 11, latest approval controls), and §10.3 already approves an interactive calculator on the site. Recorded here so the next reader of the Docs does not treat it as unauthorised. **Action for Seung: add to Website Plan v2 §3** | Yes — one page |
+| 82 | `website/resources.html` created — Tax Calculators & Estimators hub | Nine Phase 1 calculators carded (6 federal, 3 Washington), 10 planned, 4 other resources, disclaimer section. **No calculator is operational**; every card says "Coming soon" in text, not by colour alone | Per §14, publish only what has a tested route. Cards state the plan without implying function | Yes |
+| 83 | Calculator scope — estate, inheritance, gift dropped from Phase 1 | Moved to referral, not built | Workflow §10C lists 상속세·증여세·신탁 as Referral/excluded; Seung confirmed hold until the frame is complete. Highest-liability tools in the set | Yes |
+| 84 | Washington calculators | REET, Capital Gains Excise, Combined Federal+WA. Card states WA has **no income tax and no inheritance tax**, and that the capital gains excise **does not apply to real estate or retirement accounts** | Website Plan v2 §10.1 supplies the exclusion; it is the most common error in WA estimators | Yes |
+| 85 | **Contrast defect fixed site-wide** — `--color-accent-dark` `#c2632f` measured 4.10:1 on white and 3.99:1 on the body background, below AA for normal text (open defect, row 69) | Added `--color-accent-text` `#9e4a1f` to the primary `:root`; remapped six **text** usages (global `a`, nav hover, outline-button label, content eyebrow, step numerals, trust-list marks). Fills, borders, and focus rings keep `--color-accent-dark` | Row 69 closed. Lowest measured text pair is now 5.04:1; focus ring 3.99:1 against a 3:1 UI threshold. Brand hue preserved | Yes |
+| 86 | **Professional-review claim corrected** — "Every return is reviewed by a qualified tax professional before filing" appeared twice on the homepage | Replaced with "Your return goes through a review step before it is filed" and "Every return goes through a review step before filing, and the preparer who signs your return is identified by name on it" | Website Plan v2 §14: "do not imply every preparer is a CPA or EA." Portal Doc §8 names guaranteed professional review as requiring verification. The replacement drops the credential implication and adds a factually grounded statement — paid preparers must sign | Yes |
+| 87 | Skip link added to `index.html`; `<main id="main">` added | Homepage previously lacked one, which the Accessibility page listed as a known limitation. Limitation entry updated | Accessibility defect fix under Tier 1 | Yes |
+| 88 | Resources linked from the primary nav on all five pages | The nav link was `href="#"` on every page | Dead nav link removed | Yes |
+
+## Drive folder scope — verified 2026-08-01
+
+| # | Subject | Finding |
+|---|---|---|
+| 89 | Designated folder scope | **Verified by Seung Park's screenshot of the live Drive UI.** Breadcrumb reads `My Drive › 2.1 myTaxfile`. The folder sits directly in My Drive root — there is **no parent project folder** and no sibling numbered folders. The folder ID in `CLAUDE.md` (`1-At9BI6PtD0rroP14TnF_aMsIwcjOAJy`) is confirmed correct against the address bar |
+| 90 | Inventory completeness | **Confirmed complete.** Six items visible in the UI match the six returned by the API listing: `Archive` (folder), Claude Code Work Order, Master Plan.docx, Private Operations Portal Requirements, Website Plan v2, Workflow. No document was missed |
+| 91 | Earlier scoping concern | **Withdrawn.** The worry that "2.1" implied an unread "2." parent was unfounded. The Price Book (row 73) and all prior reconciliation stand — they were not built on a partial view |
+| 92 | `Archive` subfolder | **Still unopened.** Workflow Phase 5 specifies "Archive only clearly superseded policies and plans," so it should hold superseded material only. Low risk, but unverified — open it when the Drive connector is available |
+
+## Tax Rules and Parameters system — 2026-08-01
+
+Built under standing Tier 1–2 authority. Governing document: `docs/tax-rules-framework.md`.
+
+| # | Subject | Status |
+|---|---|---|
+| 93 | **Tax Rules and Parameters framework approved and built.** Engine code contains no tax figures; parameter files contain no logic. Rates are integer basis points, money is integer cents — no tax figure passes through binary floating point | **Implemented.** `website/js/engine/`, `website/js/tax-rules/`, `website/js/calculators/` |
+| 94 | **Five-rung verification ladder** — `unverified` → `source_verified` → `professional_review_pending` → `professionally_reviewed` → `approved_for_publication`. Only the top rung may produce a customer-facing result | **Implemented and enforced.** `calculateReet()` throws `NotPublishableError` below the top rung |
+| 95 | **Consistency enforced, not trusted.** A set claiming `professionally_reviewed` without a named reviewer throws; claiming `source_verified` without a URL and verification date throws | **Implemented**, covered by test |
+| 96 | **Source registry** — a parameter may cite only a registered `.gov` authority publishing the rule itself. Summaries, news, and firm blogs are not sources | **Implemented.** Enforced by test: every registry root must end `.gov` |
+| 97 | **Effective-date versioning.** Half-open intervals; a sale computes under the rules in force on its own date. Past versions are never edited — a change adds a new version. Overlaps and uncovered dates throw | **Implemented**, covered by test |
+| 98 | **Change-review workflow** — `source detected → change compared → review pending → approved → effective-date activation → prior version retained`. `tools/check-sources.mjs` fingerprints each source and writes a change record; **it never edits a parameter** | **Implemented.** `npm run check-sources` |
+| 99 | **Automated test harness** — 35 tests covering version selection, effective dates, bracket boundaries, exemptions, rounding, missing parameters, malformed input, unapproved changes, and the no-invented-reviewer rule | **35/35 passing**, verified by direct run |
+| 100 | **Washington REET calculator implemented** — graduated state brackets, flat exception for agricultural land and timberland, optional user-supplied local rate, federal/state/local reported separately | **Implemented and tested. NOT publishable** |
+| 101 | **All REET parameters are `unverified`** — this environment cannot reach `dor.wa.gov` or `app.leg.wa.gov`; both return HTTP 403 at network egress, confirmed by direct fetch and by the source monitor. Candidate values recorded from a search summary, which is **not** a primary source and **not** verification | **Blocking publication.** `publicationReadiness()` returns `ready: false` and lists every blocker |
+| 102 | **Local REET deliberately unpopulated** — rates vary by city and county. The calculator asks the user rather than guessing | **By design** |
+| 103 | **2026 open questions** — whether the upper brackets moved on 2026-01-01, and the separate 1% real estate transfer tax reported above $3,025,000, which is **not modelled** | **Recorded in the parameter set**, unresolved |
+
+| 104 | Seung Park, 2026-08-01 | Calculator scope | **No calculator for Form 1040 and none for Form 1120.** Permanent exclusion, not a phase deferral | **Approved — excluded.** Federal Income Tax Estimator removed from `resources.html`; a plain-language note explains the boundary to visitors. Business Entity Tax Comparison remains permitted as comparative only, never a 1120 calculation | 1040 and 1120 are the returns myTAXfile sells. A public calculator computing a customer's own return undercuts the service and places the highest-liability computation on an unsupervised page. Transaction-specific estimators stay in scope |
+| 105 | Derived, 2026-08-01 | Scope boundary | Retained as in-scope because each estimates a **specific transaction or tax**, not a return: WA REET, WA capital gains excise, capital gains, home sale, rental sale with depreciation recapture, self-employment tax, quarterly estimated tax | **In scope** | If Seung intends a tighter boundary — for example excluding anything that feeds a 1040 schedule — say so and the list narrows |
 
 ## Missing / not yet approved
 
