@@ -236,9 +236,28 @@ Approved 2026-08-01. Three pages built: `website/privacy-notice.html`, `website/
 
 **Accessibility target: WCAG 2.2 Level AA — PROPOSED, not adopted.** No conformance claim may be published, and no audit has been performed. All legal-page colour pairs measure ≥5.04:1.
 
-**Known contrast defect in the existing design (unfixed, needs approval):** the global `a` colour `--color-accent-dark` `#c2632f` measures **4.10:1** on white — below AA. It affects index-page links and `.content-box__eyebrow`. The legal pages avoid it via a scoped `--color-accent-text` `#9e4a1f`; the site-wide fix was not applied because it changes approved index design.
+**Contrast — fixed site-wide 2026-08-01.** `--color-accent-dark` `#c2632f` measured 4.10:1 on white and 3.99:1 on the body background, below AA for normal text. `--color-accent-text` `#9e4a1f` now sits in the primary `:root` and carries **all text** usage; `--color-accent-dark` is reserved for fills, borders, and focus rings. Lowest text pair is 5.04:1. **Rule: never use `--color-accent-dark` for text.** Register rows 69 and 85.
 
 **No shared component system.** The approved stack is static HTML with no build step, so the header and footer are duplicated across all four pages. Any footer change must be applied to every page by hand.
+
+### 25. Resources and the calculator suite
+
+Approved 2026-08-01. `website/resources.html` — **Tax Calculators & Estimators**, linked from the primary nav on every page.
+
+**Nothing is operational.** Nine Phase 1 calculators are carded (6 federal, 3 Washington), 10 planned, plus Process / Checklists / FAQ / Guides. Every card reads "Coming soon" in text, never by colour alone.
+
+**Standing rules when these are built**
+
+- Calculations run **entirely in the browser**. No network call, no storage, no analytics, no values in the URL. This is what lets the Privacy Notice keep its "collects nothing" claim.
+- Never request an SSN, bank details, or a document upload.
+- Tax parameters live in **per-tax-year data files**, separate from interface code. Each value carries `source_url`, `source_name`, `tax_year`, `verified_by`, `verified_date`. **No calculator ships until those fields are populated** — the review gate is mechanical, not a promise.
+- Never populate a tax figure from model training data. Primary sources only, verified by the assigned professional.
+- Show tax year and last-updated on every tool; show ranges where an exact figure would mislead; separate federal, state, and combined results.
+- The result disclaimer is mandatory and verbatim (register row 63 area). It does not reduce myTAXfile's responsibilities.
+
+**Washington facts already established** (Website Plan v2 §10.1, Workflow): no state income tax, no inheritance tax. The capital gains **excise** tax does **not** apply to real-estate sales or to gains inside retirement accounts. Washington has an estate tax and a real estate excise tax.
+
+**Excluded from Phase 1:** estate, inheritance, and gift calculators — Referral/Specialist per Workflow §10C, and the highest-liability tools in the set. Tax Filing Fee Estimator is unblocked by the approved Price Book but still requires a published-fee-method decision.
 
 ## Proposed / unverified — never present as approved
 

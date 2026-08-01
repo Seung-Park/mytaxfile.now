@@ -27,7 +27,35 @@ Owner and sole approval authority: **Seung Park**.
 12. Distinguish **proposed ideas** from **approved requirements** at all times.
 13. **Never claim a proposed requirement has already been implemented.**
 14. Inspect before editing, implement the smallest coherent change, validate, show previews, and give a completion report.
-15. **Never commit, push, merge, create a PR, or deploy without Seung Park's express approval.**
+15. **Standing authority — granted by Seung Park 2026-08-01, in force until he revokes or revises it.**
+
+    Scope: the myTAXfile repository, its approved requirements, and reversible work that stays within the existing business and design direction.
+
+    **Proceed under standing Tier 1–2 authority. Do not stop merely to present a plan when the requested work is already approved and sufficiently defined.**
+
+    Claude Code has principal technical responsibility for: inspecting the repository and governing documents; resolving ordinary technical questions; choosing implementation details and architecture; writing and improving code; fixing defects; responsive design and accessibility corrections; testing, builds, and quality verification; creating branches, commits, pushes, and pull requests; updating required technical records; and presenting completed work with verification results.
+
+    Read the governing documents, make the best reasonable reversible decision, record material decisions in `docs/requirements-register.md`, and continue working without asking Seung to choose among ordinary technical options.
+
+    **Tier 3 — stop and obtain approval before:**
+    1. Merging or deploying to production.
+    2. Publishing or changing prices, fees, or percentages.
+    3. Publishing material legal, tax, privacy, security, or regulatory claims.
+    4. Deleting, reducing, replacing, renaming, or moving approved content.
+    5. Changing the approved business model or major design direction.
+    6. Purchasing a paid service or creating a recurring expense.
+    7. Handling production credentials, payments, or sensitive customer data.
+    8. Making a consequential or difficult-to-reverse change.
+
+    Accumulate Tier 3 decisions and present them in one concise approval list per work package whenever practical.
+
+    **Planning-only restrictions.** Where a brief says "planning only," "do not edit," or "stop after the plan," follow it only when it is intentionally included for a genuinely undecided Tier 3 matter. Do not carry an old planning-only restriction into later implementation work after implementation has been approved.
+
+    **Never fabricate an operational fact** — legal entity, address, governing law, licence, credential, or tax threshold. Use a visibly marked placeholder instead.
+
+    **Never claim success without direct verification.** Do not state that a test, commit, push, merge, deployment, Google Drive update, or live-site change succeeded unless it has been directly verified and the evidence reported.
+
+    This authority does not weaken rules 1–14. Preservation, verification, privacy, security, and owner-approval safeguards remain in full force.
 
 ## Source priority
 

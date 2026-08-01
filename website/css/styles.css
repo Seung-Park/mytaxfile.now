@@ -15,6 +15,11 @@
   --color-accent: #d97742;
   --color-accent-dark: #c2632f;
   --color-accent-tint: #fbe6d8;
+  /* Text-safe accent. --color-accent-dark (#c2632f) is 4.10:1 on white and
+     3.99:1 on the body background — below the WCAG AA 4.5:1 threshold for
+     normal-size text. Use --color-accent-dark for fills, borders, and focus
+     rings; use --color-accent-text for any text. */
+  --color-accent-text: #9e4a1f;
   --color-gold: #e3a857;
   --color-footer-bg: #3d2b20;
   --color-border: #efeae1;
@@ -78,7 +83,7 @@ h2 {
 }
 
 a {
-  color: var(--color-accent-dark);
+  color: var(--color-accent-text);
 }
 
 a:focus-visible,
@@ -130,7 +135,7 @@ button:focus-visible,
 }
 
 .site-nav a:hover {
-  color: var(--color-accent-dark);
+  color: var(--color-accent-text);
 }
 
 .cta-button {
@@ -157,7 +162,7 @@ button:focus-visible,
 .cta-button--outline {
   display: inline-block;
   background: transparent;
-  color: var(--color-accent-dark);
+  color: var(--color-accent-text);
   border: 1.5px solid var(--color-accent);
   padding: 10px 19px;
   border-radius: 6px;
@@ -329,7 +334,7 @@ button:focus-visible,
 }
 
 .content-box__eyebrow {
-  color: var(--color-accent-dark);
+  color: var(--color-accent-text);
   font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -454,7 +459,7 @@ button:focus-visible,
   height: 30px;
   border-radius: 50%;
   background: var(--color-accent-tint);
-  color: var(--color-accent-dark);
+  color: var(--color-accent-text);
   border: 1.5px solid var(--color-accent);
   font-weight: 700;
   font-size: 0.95rem;
@@ -488,7 +493,7 @@ button:focus-visible,
   content: "✓";
   position: absolute;
   left: 0;
-  color: var(--color-accent-dark);
+  color: var(--color-accent-text);
   font-weight: 700;
 }
 
@@ -623,15 +628,6 @@ button:focus-visible,
    Legal & information pages (Privacy Notice, Terms of Use,
    Accessibility). Additive only — no rules above are modified.
    ============================================================ */
-
-/* Text-safe accent. --color-accent-dark (#c2632f) measures 4.10:1 on white
-   and 3.40:1 on the accent tint, below the WCAG AA 4.5:1 threshold for
-   normal-size text. This darker sibling stays in the brand family and
-   clears 5.0:1 on every background used on these pages. Scoped to the
-   legal pages — the existing index design is untouched. */
-:root {
-  --color-accent-text: #9e4a1f;
-}
 
 /* Skip link — keyboard users jump past the nav to content. */
 .skip-link {
@@ -892,5 +888,142 @@ button:focus-visible,
   .legal-contact,
   .review-banner {
     padding: 16px 18px;
+  }
+}
+
+/* ============================================================
+   Resources / calculator cards. Additive only.
+   ============================================================ */
+
+.section-lede {
+  color: var(--color-ink-soft);
+  margin: 0 0 22px;
+  max-width: 70ch;
+}
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 20px;
+}
+
+.calc-card {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.calc-card h3 {
+  font-size: var(--fs-card-heading);
+  margin: 0 0 8px;
+}
+
+.calc-card p {
+  color: var(--color-ink-soft);
+  margin: 0 0 12px;
+  font-size: var(--fs-small);
+}
+
+.calc-card__scope {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 9px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  border: 1px solid;
+}
+
+/* Scope is carried by the label text, never by colour alone. */
+.calc-card__scope--federal {
+  color: #2f5d50;
+  background: #eaf3f0;
+  border-color: #cbe0d8;
+}
+
+.calc-card__scope--state {
+  color: #9e4a1f;
+  background: var(--color-accent-tint);
+  border-color: #f0c9ae;
+}
+
+.calc-card__scope--combined {
+  color: #5a4a86;
+  background: #efecf7;
+  border-color: #d8d0ea;
+}
+
+.calc-card__meta {
+  list-style: none;
+  margin: 0 0 14px;
+  padding: 0;
+  font-size: 0.875rem;
+  color: var(--color-ink-soft);
+  border-top: 1px solid var(--color-border);
+  padding-top: 12px;
+}
+
+.calc-card__meta li {
+  margin-bottom: 4px;
+}
+
+.calc-card__meta strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+.calc-card__caution {
+  border-left: 3px solid var(--color-gold);
+  background: #fdfaf5;
+  padding: 10px 14px;
+  border-radius: 0 6px 6px 0;
+}
+
+.calc-card__actions {
+  margin: auto 0 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.calc-card__soon {
+  display: inline-block;
+  background: #f3f0ea;
+  border: 1px solid var(--color-border);
+  color: #5c5145;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 5px;
+}
+
+.planned-list {
+  columns: 2;
+  column-gap: 36px;
+  margin: 0;
+  padding-left: 22px;
+  color: var(--color-ink-soft);
+}
+
+.planned-list li {
+  margin-bottom: 8px;
+  break-inside: avoid;
+}
+
+@media (max-width: 768px) {
+  .planned-list {
+    columns: 1;
+  }
+
+  .calc-card {
+    padding: 18px 20px;
   }
 }
