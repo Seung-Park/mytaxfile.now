@@ -52,7 +52,7 @@ Show results as **preliminary suggestions**, never final tax advice. Potential s
 Make this a primary conversion path from Home, Individual Tax, Business Tax, Find My Service, FAQ, and Contact.
 
 - Collect only name, email, optional phone, state, customer category, short non-sensitive description, and preferred contact method.
-- Display: "We will contact you within one business day, primarily by email and by phone when needed."
+- Display: "We'll review your request and explain the next step." (Supersedes the earlier "within one business day" wording, per Seung's 2026-08-01 correction — no specific response-time promise may appear anywhere on the site until staffing capacity and operating procedures are confirmed.)
 - After submission, route internally to one of: service available and quote; professional review required; referral/general guidance.
 - Clearly warn users not to enter or upload SSNs, tax documents, bank information, or identity documents on the public form.
 
@@ -64,7 +64,7 @@ Confirmed 2026-07-31:
 - Header: wordmark "myTAXfile" (working name — not separately confirmed, see register), nav (Home · Individual Tax · Business Tax · Find My Service · Resources/FAQ · About · Contact), persistent "Request a Review & Quote" CTA.
 - Main Box: full-width, **image-only, no text/overlay** (default per `design-stable-web-frames`; headline/value-prop lives in Content/Body instead).
 - Footer: contact, active-state list (WA/CA/NY/IL/TX/FL + "Coming Soon"), Privacy/Terms/Accessibility links.
-- Colors: White background, Deep Navy `#0B2545` (headings), Teal `#0F766E` (CTA/action), Muted Gold `#C58A2A` (limited accent).
+- Colors (updated 2026-08-01, supersedes the prior dark-navy palette): warm ivory background `#FDF8F0`, warm brown ink `#4A3728` (headings/text), terracotta `#D97742` (CTA/action), warm gold `#E3A857` (limited accent), warm dark-brown `#3D2B20` (footer background).
 - Sizing: desktop Content/Body 75% width, max 1600px, centered; mobile ~92%; breakpoint 768px; Header/Footer inner content max 1200px centered.
 
 **Category frames** (shared templates)
@@ -147,6 +147,35 @@ For each approved implementation batch:
 
 Phase 2 is complete only when the sitemap, page wireframes, customer-flow prototype, Find My Service, preliminary form recommendation, Review & Quote function, error/restart states, and validation report have been reviewed and approved by Seung.
 
+## White-first visual system (permanent rules, per Seung's 2026-08-01 Final Integrated Improvement Direction)
+
+**1. Approved permanent rules**
+- Body background near-white (`#FCFCFA`); content cards and primary content areas pure white (`#FFFFFF`).
+- Warm beige (`#EFEAE1` border, `#F7F2EA`-family tint) used only as a subtle accent/border — never a dominant fill.
+- Warm orange (`#D97742` / `#C2632F`) and dark brown (`#4A3728` ink, `#3D2B20` footer) brand identity preserved; orange/beige must never dominate the page.
+- Subtle but visible borders + very light, consistent shadow (`--card-shadow`) on white cards so they read distinct from the near-white body.
+- Larger, accessible typography via shared CSS variables (`--fs-*` scale) — body 17px, section headings ~30px, Hero headline 32/36/52px mobile/tablet/desktop, footer text ≥15px, WCAG AA contrast target.
+- Content width increased to ~1220px max / 83% (was effectively ~1080px), inter-section spacing reduced ~18%, via shared `--space-section` variables rather than isolated values.
+- Hero image (`.main-box`) is independently replaceable — it is a separate absolutely-positioned layer from the overlay and from the HTML-based headline/support/CTA text in `.hero__content`. Replacing the image never requires touching the text layer or vice versa.
+- Verified-claims-only trust policy: only factual, supportable trust statements may be published (see tier 3 below for what's excluded).
+- No removal, reduction, rename, move, or restructuring of approved sections/content without Seung's explicit approval; preview approval required before any commit/push/deploy.
+
+**2. Proposed wording — requires preview approval before treated as final**
+- Hero eyebrow/headline/support copy and "See How It Works" secondary CTA (currently implemented in the draft, pending sign-off).
+- Card CTA wording "Estimate My Fee" (replaces prior "Explore Individual/Business Tax →" — shown in preview per instruction, not silently finalized).
+- Trust row copy: "Secure Document Handling," "Clear Pricing Before Filing," "Guided Individual and Business Tax Support."
+
+**3. Claims awaiting factual verification — do not publish until Seung separately verifies**
+- Any EA/CPA/IRS Authorized e-file Provider badge or IRS affiliation/endorsement claim.
+- "Bank-grade security," "256-bit encryption," or any specific regulatory-compliance claim.
+- Guaranteed professional review, guaranteed response time, or guaranteed filing time. **No specific response-time promise may appear anywhere on the site.** The earlier "within one business day" wording was removed sitewide on 2026-08-01 and replaced with "We'll review your request and explain the next step."
+- Nationwide professional coverage, or any claim that Netlify hosting alone makes document upload secure.
+- "Expert Tax Preparation" wording, until professional qualifications and review structure are verified.
+
+Business Tax card intentionally excludes Form 1120 (C-Corp) and Payroll & Bookkeeping — these remain future-phase per the approved Phase 1 catalog; not added without separate approval.
+
 ## Change history
 
 - 2026-07-31 — Initial repo scaffold. English-only scope, 6-state launch list, static HTML/CSS/JS stack, frame hierarchy + palette, and Main Box image-only confirmed. Superseded the prior bilingual and Washington-only pilot requirements from the Workflow doc, Work Order, and Master Plan.
+- 2026-08-01 — Color palette changed to light/warm (supersedes the dark-navy palette). Home page moved from empty frame skeleton to finished draft content for all six Content/Body boxes, pending review.
+- 2026-08-01 — Brightened to near-white body with subtle card shadows. Applied the Final Integrated Improvement Direction: white-first visual system, wider content area, typography/spacing scale, Hero rebuilt with independently-replaceable image + HTML text/CTAs (supersedes the prior image-only Main Box decision), trust row, accessibility focus states. Pending preview approval before commit.
