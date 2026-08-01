@@ -194,7 +194,9 @@ Approved 2026-08-01 (Work Order: *Index Security Guidance & Personal Account Upl
 
 This supersedes the earlier absolutist Index wording ("We never ask for your SSN, tax documents, or bank details on this website." / "Sensitive documents are never collected on this website. After reviewing your request, we'll explain how to share them separately."), which was judged overly strict and alarming. Do not reuse the superseded wording on the Index page or in active instructions.
 
-**Publication gate — the copy is approved but not yet publishable.** The copy references a personal account and a secure upload link in the present tense. Neither exists. The site **must not imply that an account, portal, or secure link is already operational until it has actually been implemented and tested.** Where the account or upload system is not yet implemented, present the feature as *planned* or *coming after enrollment* — never as currently available. Publishing this copy verbatim therefore requires either (a) the account being live, or (b) Seung Park's express approval of a not-yet-live framing. See register row 48.
+**Applied to the website 2026-08-01**, in `website/index.html` section `HOME-C-004`, replacing the two superseded statements. The third bullet (professional review) was left untouched.
+
+**Availability qualifier.** The copy references a personal account and a secure upload link in the present tense; neither exists. The site **must not imply that an account, portal, or secure link is already operational until it has actually been implemented and tested.** The approved three sentences are therefore published verbatim followed by an italic qualifier — *"Personal accounts and secure upload are launching soon."* — so the page satisfies both the exact-copy requirement and the no-false-availability rule. **Remove the qualifier once the account is live and tested**, not before. See register row 48.
 
 **Approved customer experience**
 

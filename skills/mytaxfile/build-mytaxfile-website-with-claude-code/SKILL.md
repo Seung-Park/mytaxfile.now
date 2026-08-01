@@ -187,7 +187,7 @@ Business Tax card intentionally excludes Form 1120 (C-Corp) and Payroll & Bookke
 
 Both were judged overly strict and alarming. The replacement guides clients toward the personal account or a secure upload link instead of issuing absolute prohibitions.
 
-**Not yet applied to `website/index.html`.** The copy names a personal account and a secure upload link in the present tense; neither exists. Per the work order, the site must not imply an account, portal, or secure link is operational until it has been implemented and tested — so publishing this verbatim needs either the account to be live or Seung's express approval of a "planned / after enrollment" framing. The website text change is a separate approval step in any case.
+**Applied 2026-08-01** to `website/index.html` section `HOME-C-004`, on Seung's express approval. The two superseded `<li>` statements were replaced by a single `<li>` carrying the approved copy verbatim, followed by an italic qualifier — *"Personal accounts and secure upload are launching soon."* — because neither the account nor the secure link exists and the site must not imply otherwise. The `<ul class="trust-list">` structure, ✓ pseudo-elements, styling, and spacing are unchanged; the third bullet (professional review) was not touched. **Remove the qualifier only once the account is live and tested.**
 
 Unchanged by this entry: the public form must still not collect SSNs, tax documents, bank information, or identity documents. That is a system constraint, distinct from customer-facing wording.
 

@@ -36,7 +36,7 @@ The client's authenticated personal account is the primary place to view request
 
 > To protect your information, please do not send sensitive documents through this public page or regular email. After you start, you can securely upload documents from your personal account. We may also provide a secure upload link in your confirmation email.
 
-Supersedes the earlier absolutist Index wording. **Not yet published** — see canonical Skill area 23 for the publication gate.
+Supersedes the earlier absolutist Index wording. **Published 2026-08-01** in `website/index.html` §`HOME-C-004`, followed by the italic qualifier *"Personal accounts and secure upload are launching soon."* — required because no account or secure link exists yet. Remove the qualifier only once the account is live and tested. See canonical Skill area 23.
 
 ### Confirmation email
 
