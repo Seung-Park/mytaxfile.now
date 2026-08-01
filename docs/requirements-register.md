@@ -171,6 +171,18 @@ Built under standing Tier 1–2 authority. Governing document: `docs/tax-rules-f
 | 104 | Seung Park, 2026-08-01 | Calculator scope | **No calculator for Form 1040 and none for Form 1120.** Permanent exclusion, not a phase deferral | **Approved — excluded.** Federal Income Tax Estimator removed from `resources.html`; a plain-language note explains the boundary to visitors. Business Entity Tax Comparison remains permitted as comparative only, never a 1120 calculation | 1040 and 1120 are the returns myTAXfile sells. A public calculator computing a customer's own return undercuts the service and places the highest-liability computation on an unsupervised page. Transaction-specific estimators stay in scope |
 | 105 | Derived, 2026-08-01 | Scope boundary | Retained as in-scope because each estimates a **specific transaction or tax**, not a return: WA REET, WA capital gains excise, capital gains, home sale, rental sale with depreciation recapture, self-employment tax, quarterly estimated tax | **In scope** | If Seung intends a tighter boundary — for example excluding anything that feeds a 1040 schedule — say so and the list narrows |
 
+## Google Drive records written — 2026-08-01
+
+Connector became available. Four owed records cleared. Both documents were verified by reading them back after creation; the `fileSize: 1` returned at creation time was stale metadata.
+
+| # | Subject | Result |
+|---|---|---|
+| 106 | **Folder inventory COMPLETE.** `Archive/` opened at last — contains exactly one file, `myTAXfile \| Website Plan v1`, the superseded predecessor of v2. Matches Workflow Phase 5 ("archive only clearly superseded plans"); not build-authoritative | **Verified.** 7 items total in the canonical folder. Nothing unread governs anything |
+| 107 | **`myTAXfile \| Price Book` created in Drive** — Required Control Register #1, which had no Doc. 2,890 bytes verified | [Doc](https://docs.google.com/document/d/1sMDZ8aHJMFsiiVquqThcOC6WnD-nWek1EioiJy_vjTg) · mirrors `references/price-book.md` |
+| 108 | **`myTAXfile \| Decision and Implementation Log` created** — the Decision Log required by Workflow §10 Status Standard and the change log referenced in §9. Neither existed. 4,724 bytes verified | [Doc](https://docs.google.com/document/d/1S9OEIFimHFeqPY4HmgjvIj2tsggcicEi-6T-lPAa0Vo) · records what is live, the eight Tier 2 decisions, the tax rules system, and the six open items |
+| 109 | Existing Docs **not modified** | The Drive connector exposes `create_file` but no update or edit tool, so Website Plan v2 §8 and Workflow §2G could not be corrected from here. Both remain listed as actions for Seung |
+| 110 | No duplicate canonical document created | Both new Docs cover subjects with no existing Doc, per rule 9. Naming follows the Workflow standard `myTAXfile \| Short Summary`. Neither contains client names, SSNs, tax IDs, or sensitive data |
+
 ## Missing / not yet approved
 
 - Canonical Price Book, Service Catalog, State Eligibility Matrix, Responsibility Matrix, Vendor Register, Risk & Exception Register (Workflow's "Required Control Registers") — none exist yet.
