@@ -205,6 +205,13 @@ Connector became available. Four owed records cleared. Both documents were verif
 | 122 | Pricing method only, no figures | Base covers federal 1120-S, one state, and shareholder K-1s. Additional states per state; bookkeeping cleanup quoted after seeing records and named as the largest variable. Verified: zero dollar figures |
 | 123 | Navigation wired across all seven pages | "Business Tax" was `href="#"` everywhere; now resolves. Homepage card changed from a dead "Estimate My Fee" to "Explore Business Tax". Accessibility known-limitations updated — only Find My Service, About, and Contact remain unbuilt |
 
+## Color tokenization pass — 2026-08-01 (Step 1 of palette work, approved by Seung Park in conversation)
+
+| # | Subject | Detail |
+|---|---|---|
+| 124 | **All hue-carrying colours tokenized in `website/css/styles.css` — zero visual change** | 17 tokens added to `:root` with values identical to the raw hexes they replace; 21 hard-coded declarations remapped to `var()` (CTA pressed state, hero eyebrow, footer ink, accent-tint border, warm surfaces, warning placeholder/needs-review family, neutral chip, calculator scope badges — including the `#9e4a1f` literal at the state badge that duplicated `--color-accent-text`). Verified two ways: (a) resolving every `var()` in old and new CSS yields 641 identical declarations; (b) headless-Chromium screenshots of all 7 pages at desktop 1366px and mobile 390px are **byte-identical (14/14 SHA-256 matches)** before vs. after. Intentionally left un-tokenized: pure `#ffffff`/`#fff` whites, the placeholder hero gradient (replaced by an approved photo later, per the CSS comment), and alpha-derived `rgba()` values. A future palette retone is now a single `:root` edit |
+| 125 | **Open defect logged — primary CTA fails WCAG AA** (found during the 2026-08-01 palette review; NOT fixed by this pass, which changes no rendered colour) | `.cta-button` white label on `--color-accent` `#d97742` = **3.15:1**; hover `#c2632f` = **4.10:1**; both below the 4.5:1 normal-text threshold (button text is 17px/600 — not WCAG large text). Only `:active` `#a8531f` (5.35:1) passes. Row 85's "fixed site-wide" covered text-on-background usages only; white-on-accent **fills** were not in its scope. Fix requires darkening the brand CTA colour (candidate `#b8551f` ≈ 4.8:1) — **Tier 3 (brand colour change), awaiting Seung Park's decision.** Related: hero overlay minimum and semantic-token layer proposed as Steps 3–4, also awaiting go |
+
 ## Missing / not yet approved
 
 - Canonical Price Book, Service Catalog, State Eligibility Matrix, Responsibility Matrix, Vendor Register, Risk & Exception Register (Workflow's "Required Control Registers") — none exist yet.
