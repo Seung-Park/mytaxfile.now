@@ -257,6 +257,8 @@ Approved 2026-08-01. `website/resources.html` — **Tax Calculators & Estimators
 
 **Washington facts already established** (Website Plan v2 §10.1, Workflow): no state income tax, no inheritance tax. The capital gains **excise** tax does **not** apply to real-estate sales or to gains inside retirement accounts. Washington has an estate tax and a real estate excise tax.
 
+**Permanently excluded — no return-level income tax calculator.** Approved by Seung Park 2026-08-01: **no calculator for Form 1040 and none for Form 1120.** These are the returns myTAXfile sells; a public calculator that computes a customer's own return undercuts the service and puts the highest-liability computation on an unsupervised page. Transaction-specific estimators (REET, capital gains, home sale, depreciation recapture, self-employment, quarterly) remain in scope — they surface a situation that then needs professional help. "Business Entity Tax Comparison" stays permitted as a *comparative* tool only, never a 1120 calculation.
+
 **Excluded from Phase 1:** estate, inheritance, and gift calculators — Referral/Specialist per Workflow §10C, and the highest-liability tools in the set. Tax Filing Fee Estimator is unblocked by the approved Price Book but still requires a published-fee-method decision.
 
 ## Proposed / unverified — never present as approved

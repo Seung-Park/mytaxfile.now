@@ -168,6 +168,9 @@ Built under standing Tier 1–2 authority. Governing document: `docs/tax-rules-f
 | 102 | **Local REET deliberately unpopulated** — rates vary by city and county. The calculator asks the user rather than guessing | **By design** |
 | 103 | **2026 open questions** — whether the upper brackets moved on 2026-01-01, and the separate 1% real estate transfer tax reported above $3,025,000, which is **not modelled** | **Recorded in the parameter set**, unresolved |
 
+| 104 | Seung Park, 2026-08-01 | Calculator scope | **No calculator for Form 1040 and none for Form 1120.** Permanent exclusion, not a phase deferral | **Approved — excluded.** Federal Income Tax Estimator removed from `resources.html`; a plain-language note explains the boundary to visitors. Business Entity Tax Comparison remains permitted as comparative only, never a 1120 calculation | 1040 and 1120 are the returns myTAXfile sells. A public calculator computing a customer's own return undercuts the service and places the highest-liability computation on an unsupervised page. Transaction-specific estimators stay in scope |
+| 105 | Derived, 2026-08-01 | Scope boundary | Retained as in-scope because each estimates a **specific transaction or tax**, not a return: WA REET, WA capital gains excise, capital gains, home sale, rental sale with depreciation recapture, self-employment tax, quarterly estimated tax | **In scope** | If Seung intends a tighter boundary — for example excluding anything that feeds a 1040 schedule — say so and the list narrows |
+
 ## Missing / not yet approved
 
 - Canonical Price Book, Service Catalog, State Eligibility Matrix, Responsibility Matrix, Vendor Register, Risk & Exception Register (Workflow's "Required Control Registers") — none exist yet.
