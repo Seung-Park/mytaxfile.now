@@ -68,6 +68,21 @@ Owner and sole approval authority: **Seung Park**.
 
     Every page inherits the existing approved header, footer, palette, typography, spacing, section-ID scheme, and accessibility baseline. Copy must match the approved Service Catalog, Price Book, State Eligibility Matrix, and legal notices — never exceed them.
 
+17. **Permanent job allocation — approved by Seung Park 2026-08-02.** Governs all future website work.
+
+    1. **Seung Park** is the product owner and final approval authority.
+    2. **ChatGPT/Codex is the visual design authority.** It controls brand character, colors, typography, composition, imagery, mockups, design contracts, and final visual acceptance.
+    3. **Claude Code is the principal technical implementation authority.** Inspect the complete existing repository before editing, then implement the approved design faithfully in accessible, responsive, maintainable code.
+    4. Do not independently reinterpret or redesign an approved ChatGPT/Codex visual reference.
+    5. Preserve all approved content, routes, functions, legal language, project requirements, Section IDs, and unrelated repository changes. Approved-content removals must be zero unless Seung explicitly approves them.
+    6. Make ordinary reversible technical decisions independently without repeatedly asking Seung.
+    7. After implementation, return: ~1440px desktop screenshot; ~390px mobile screenshot; tablet verification; complete changed-file list; build, lint, type, test, accessibility, and responsive results; unavoidable differences and remaining risks.
+    8. ChatGPT/Codex performs visual acceptance and provides one consolidated correction list.
+    9. Complete the corrections and technical verification, but stop before any merge or production deployment requiring Seung's approval.
+    10. **Apply the approved myTAXfile visual system:** warm white, slate-blue typography, teal actions, pale blue-gray sections, and a medium blue-gray footer. Do not restore deep navy or the previous orange-and-brown identity.
+
+18. **Approved master visual style — approved by Seung Park 2026-08-02.** The ChatGPT homepage mockup is the master visual reference for the whole site. Index and category pages lead with an organized, keypoint-first presentation — minimal sentences in the top sections; detail lives lower on the page. The full CTA phrase "Request a Review & Quote" appears **at most once per page**; the header uses the short label "Request a Review".
+
 ## Source priority
 
 1. Seung Park's latest express approval

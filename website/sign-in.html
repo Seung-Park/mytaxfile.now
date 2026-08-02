@@ -1,12 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Sign In — myTAXfile.now</title><meta name="description" content="Preview of the future secure myTAXfile.now personal account sign-in experience." /><link rel="stylesheet" href="css/styles.css" /></head>
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Sign In — myTAXfile.now</title><meta name="description" content="Preview of the future secure myTAXfile.now personal account sign-in experience." /><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%23168782%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-family=%27Arial,sans-serif%27 font-size=%2716%27 font-weight=%27bold%27 fill=%27white%27 text-anchor=%27middle%27%3EmT%3C/text%3E%3C/svg%3E" /><link rel="stylesheet" href="css/styles.css" /></head>
 <body class="auth-page">
   <a class="skip-link" href="#main">Skip to main content</a>
-  <header class="site-header"><div class="site-header__inner"><a class="site-header__logo" href="index.html" aria-label="myTAXfile.now home"><span class="brand-core">myTAXfile</span><span class="brand-now">.now</span></a><nav class="site-nav" aria-label="Primary"><a href="individual-tax.html">Individual Tax</a><a href="business-tax.html">Business Tax</a><a href="find-my-service.html">Find My Service</a><a href="resources.html">Resources</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav><a class="site-header__sign-in" href="sign-in.html" aria-current="page">Sign In</a><a class="cta-button" href="request-review.html">Request a Review &amp; Quote</a></div></header>
+  <!-- ============ Header (approved master mockup: logo | nav | actions) ============ -->
+  <header class="site-header site-header--v2">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html" aria-label="myTAXfile.now home"><span class="brand-core">myTAXfile</span><span class="brand-now">.now</span></a>
+      <nav class="site-nav" id="primary-nav" aria-label="Primary">
+        <a href="individual-tax.html">Individual Tax</a>
+        <a href="business-tax.html">Business Tax</a>
+        <a href="find-my-service.html">Find My Service</a>
+        <a href="resources.html">Resources</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="site-header__actions">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <a class="btn-signin" href="sign-in.html">Sign In</a>
+        <a class="cta-button" href="request-review.html">Request a Review</a>
+      </div>
+    </div>
+  </header>
   <main class="auth-shell" id="main">
     <section class="auth-card" data-section-id="SIGNIN-C-001"><span class="section-id-label">SIGNIN-C-001</span><a class="site-header__logo auth-card__logo" href="index.html"><span class="brand-core">myTAXfile</span><span class="brand-now">.now</span></a><p class="status-pill">Personal accounts launching soon</p><h1>Sign In</h1><p>The secure personal account is not operational yet. No username, password, tax document, or payment information can be accepted on this preview page.</p><div class="auth-card__notice"><strong>Security note:</strong> Do not enter or send sensitive information until the verified account system is live.</div><a class="cta-button--outline" href="index.html">Return to Home</a><p class="auth-switch"><a href="sign-up.html">Sign Up</a></p></section>
   </main>
-  <footer class="site-footer"><div class="site-footer__inner"><div><h3>Get Started</h3><a href="find-my-service.html">Find My Service</a><br /><a href="request-review.html">Request a Review &amp; Quote</a></div><div><h3>Account</h3><a href="sign-in.html">Sign In</a></div><div><h3>Legal</h3><a href="privacy-notice.html">Privacy Notice</a><br /><a href="terms-of-use.html">Terms of Use</a><br /><a href="accessibility.html">Accessibility</a></div><div class="site-footer__legal">&copy; 2026 myTAXfile.now. All rights reserved.<br />Prototype — not a live production site.</div></div></footer>
+  <!-- ============ Footer (approved master mockup: brand | divider | columns) ============ -->
+  <footer class="site-footer site-footer--v2">
+    <div class="site-footer__inner">
+      <div>
+        <p class="site-footer__brand-name">myTAXfile</p>
+        <p class="site-footer__tagline">Tax preparation made clear, secure, and personal.</p>
+      </div>
+      <div class="site-footer__divider" aria-hidden="true"></div>
+      <div>
+        <h3>Services</h3>
+        <ul>
+          <li><a href="individual-tax.html">Individual Tax</a></li>
+          <li><a href="business-tax.html">Business Tax</a></li>
+          <li><a href="individual-tax.html">Real Estate Tax</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Service Areas</h3>
+        <ul class="state-list">
+          <li>Washington</li>
+          <li>California</li>
+          <li>New York</li>
+          <li>Illinois</li>
+          <li>Texas</li>
+          <li>Florida</li>
+          <li class="state-list__coming-soon">More states coming soon</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="resources.html">Tax Calculators &amp; Estimators</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="find-my-service.html">Find My Service</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Company &amp; Legal</h3>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy-notice.html">Privacy Notice</a></li>
+          <li><a href="terms-of-use.html">Terms of Use</a></li>
+          <li><a href="accessibility.html">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <div class="site-footer__bottom-inner">
+        <span>&copy; 2026 myTAXfile.now. All rights reserved.</span>
+        <span>Prototype &mdash; not a live production site.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="js/nav.js" defer></script>
 </body>
 </html>
