@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>myTAXfile — Simple, Guided Tax Filing</title>
   <meta name="description" content="Guided tax filing for individuals and small businesses in Washington, California, New York, Illinois, Texas, and Florida. Preliminary recommendations, reviewed by a qualified professional." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%23168782%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-family=%27Arial,sans-serif%27 font-size=%2716%27 font-weight=%27bold%27 fill=%27white%27 text-anchor=%27middle%27%3EmT%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <!-- ============ Header (Homepage v2: logo | centered nav | actions) ============ -->
+  <!-- ============ Header (approved master mockup: logo | nav | actions) ============ -->
   <header class="site-header site-header--v2">
     <div class="site-header__inner">
       <a class="site-header__logo" href="index.html">myTAXfile</a>
@@ -30,18 +31,20 @@
         <!-- Personal accounts are not live yet (approved copy, HOME-C-004);
              Sign In therefore routes to that explanation, not to a login. -->
         <a class="btn-signin" href="#HOME-C-004">Sign In</a>
-        <a class="cta-button" href="#">Request a Review &amp; Quote</a>
+        <!-- Header uses the short label; the full "Request a Review & Quote"
+             phrase appears exactly once per page (hero), per Seung Park's
+             2026-08-02 direction. -->
+        <a class="cta-button" href="#">Request a Review</a>
       </div>
     </div>
   </header>
 
-  <!-- ============ Hero v2 (two-column, bright) ============
+  <!-- ============ Hero (approved master mockup: curved photo, blobs) ============
        The <img> layer is independently replaceable — swap its src
        without touching the layout, blobs, or text column. -->
   <section class="hero-v2" aria-label="Introduction">
     <div class="hero-v2__inner">
       <div>
-        <p class="hero-v2__eyebrow">Individual &amp; Business Tax Services</p>
         <h1 class="hero-v2__headline">Tax preparation made clear, secure, and personal.</h1>
         <p class="hero-v2__support">Expert support for individuals, real estate investors, and small businesses.</p>
         <div class="hero-v2__ctas">
@@ -51,7 +54,7 @@
       </div>
       <div class="hero-v2__media">
         <div class="hero-v2__blob hero-v2__blob--light" aria-hidden="true"></div>
-        <img src="images/hero-tax-professional.jpg" alt="A friendly tax professional smiling while working at a laptop in a bright office." width="1600" height="1200" />
+        <img src="images/hero-tax-professional.webp" alt="A friendly tax professional smiling while working at a laptop in a bright office." width="1100" height="825" />
         <div class="hero-v2__blob hero-v2__blob--slate" aria-hidden="true"></div>
       </div>
     </div>
@@ -78,15 +81,6 @@
   <!-- ============ Content / Body ============ -->
   <main id="main">
 
-    <section class="band" data-section-id="HOME-C-001">
-      <div class="band__inner">
-        <span class="section-id-label">HOME-C-001</span>
-        <h2>Tax filing, made simple and guided.</h2>
-        <p class="band__lede">We help individuals, small businesses, and real estate investors file Form 1040, Schedule C, Schedule E, and Form 1120-S with confidence. Start with a simple base price and pay only for the forms and services you actually need — every recommendation and estimate is preliminary and confirmed by a qualified professional before you file.</p>
-        <p class="band__lede state-note">Currently serving Washington, California, New York, Illinois, Texas, and Florida — more states coming soon.</p>
-      </div>
-    </section>
-
     <section class="band" data-section-id="HOME-C-002">
       <div class="band__inner">
         <span class="section-id-label">HOME-C-002</span>
@@ -96,8 +90,8 @@
             <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.4"/><path d="M5 19.5c.8-3.6 3.5-5.5 7-5.5s6.2 1.9 7 5.5"/></svg>
             <div>
               <h3>Individual Tax</h3>
-              <p>Form 1040, Schedule C, Schedule E (Rental Property)</p>
-              <p class="service-card__note">For employees, freelancers, and rental property owners.</p>
+              <p>Personalized tax preparation for you and your family.</p>
+              <p class="service-card__note">Form 1040 &middot; Schedule C &middot; Schedule E (rental property)</p>
               <a href="individual-tax.html">Explore Individual Tax →</a>
             </div>
           </div>
@@ -105,8 +99,8 @@
             <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="8" width="17" height="11" rx="1.5"/><path d="M9 8V6.5A1.5 1.5 0 0 1 10.5 5h3A1.5 1.5 0 0 1 15 6.5V8M3.5 12.5h17"/></svg>
             <div>
               <h3>Business Tax</h3>
-              <p>Form 1120-S (S Corporation)</p>
-              <p class="service-card__note">Form 1065 offered when a qualified reviewer is available.</p>
+              <p>Smart solutions for small businesses.</p>
+              <p class="service-card__note">Form 1120-S &middot; Form 1065 when a qualified reviewer is available</p>
               <a href="business-tax.html">Explore Business Tax →</a>
             </div>
           </div>
@@ -114,8 +108,8 @@
             <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11l8-6.5L20 11"/><path d="M6 9.5V19h12V9.5"/><rect x="10" y="13.5" width="4" height="5.5"/></svg>
             <div>
               <h3>Real Estate Tax</h3>
-              <p>Schedule E rental income, expenses, and depreciation — handled within your individual return.</p>
-              <p class="service-card__note">For real estate investors and rental property owners.</p>
+              <p>Specialized support for real estate investors and properties.</p>
+              <p class="service-card__note">Schedule E &mdash; handled within your individual return</p>
               <a href="individual-tax.html">Explore Individual Tax →</a>
             </div>
           </div>
@@ -132,15 +126,27 @@
         <span class="section-id-label">HOME-C-003</span>
         <h2>A simpler way to file.</h2>
         <ol class="steps-v2">
-          <li><strong>Tell us about your situation.</strong> A few quick questions — no sensitive documents required.</li>
-          <li><strong>Get a preliminary recommendation.</strong> We suggest a service and you request a review.</li>
-          <li><strong>We confirm scope and quote.</strong> We'll review your request and explain the next step.</li>
-          <li><strong>File with confidence.</strong> Your return goes through a review step before it is filed.</li>
+          <li><strong>Share your needs</strong> Tell us about your tax situation in a few simple steps.</li>
+          <li><strong>Meet your tax professional</strong> We'll match you with the right expert for your needs.</li>
+          <li><strong>Review and file</strong> Work together, review with confidence, and file on time.</li>
         </ol>
       </div>
     </section>
 
-    <section class="band" data-section-id="HOME-C-004" id="HOME-C-004">
+    <section class="band" data-section-id="HOME-C-001">
+      <div class="band__inner">
+        <span class="section-id-label">HOME-C-001</span>
+        <h2>Tax filing, made simple and guided.</h2>
+        <ul class="trust-list trust-list--centered">
+          <li>Form 1040, Schedule C, Schedule E, and Form 1120-S &mdash; for individuals, small businesses, and real estate investors.</li>
+          <li>A simple base price &mdash; pay only for the forms and services you actually need.</li>
+          <li>Every recommendation and estimate is preliminary and confirmed by a qualified professional before you file.</li>
+          <li>Currently serving Washington, California, New York, Illinois, Texas, and Florida &mdash; more states coming soon.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="band band--light" data-section-id="HOME-C-004" id="HOME-C-004">
       <div class="band__inner">
         <span class="section-id-label">HOME-C-004</span>
         <h2>Your information, handled carefully</h2>
@@ -176,26 +182,16 @@
       </div>
     </section>
 
-    <section class="band band--light" data-section-id="HOME-C-006">
-      <div class="band__inner">
-        <span class="section-id-label">HOME-C-006</span>
-        <div class="final-cta">
-          <h2>Ready to get started?</h2>
-          <p>Send us a few details. We'll review your request and explain the next step.</p>
-          <a class="cta-button" href="#">Request a Review &amp; Quote</a>
-        </div>
-      </div>
-    </section>
-
   </main>
 
-  <!-- ============ Footer (Homepage v2: five columns) ============ -->
+  <!-- ============ Footer (approved master mockup: brand | divider | columns) ============ -->
   <footer class="site-footer site-footer--v2">
     <div class="site-footer__inner">
       <div>
         <p class="site-footer__brand-name">myTAXfile</p>
         <p class="site-footer__tagline">Tax preparation made clear, secure, and personal.</p>
       </div>
+      <div class="site-footer__divider" aria-hidden="true"></div>
       <div>
         <h3>Services</h3>
         <ul>
@@ -225,17 +221,20 @@
         </ul>
       </div>
       <div>
-        <h3>Contact &amp; Legal</h3>
+        <h3>Company &amp; Legal</h3>
         <ul>
-          <li><a href="#">Request a Review &amp; Quote</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
           <li><a href="privacy-notice.html">Privacy Notice</a></li>
           <li><a href="terms-of-use.html">Terms of Use</a></li>
           <li><a href="accessibility.html">Accessibility</a></li>
         </ul>
       </div>
-      <div class="site-footer__legal">
-        &copy; 2026 myTAXfile. All rights reserved.<br />
-        Prototype — not a live production site.
+    </div>
+    <div class="site-footer__bottom">
+      <div class="site-footer__bottom-inner">
+        <span>&copy; 2026 myTAXfile. All rights reserved.</span>
+        <span>Prototype &mdash; not a live production site.</span>
       </div>
     </div>
   </footer>

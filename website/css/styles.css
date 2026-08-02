@@ -515,6 +515,12 @@ button:focus-visible,
 
 /* ---------- Trust list (HOME-C-004) ---------- */
 
+.trust-list--centered {
+  max-width: 66ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .trust-list {
   list-style: none;
   padding: 0;
@@ -1140,6 +1146,7 @@ button:focus-visible,
 /* ---------- Hero v2: two-column, bright ---------- */
 
 .hero-v2 {
+  position: relative;
   background: var(--color-surface);
   overflow: hidden;
 }
@@ -1149,9 +1156,10 @@ button:focus-visible,
   margin: 0 auto;
   padding: 40px 24px 48px;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 46%) minmax(0, 1fr);
   gap: 40px;
   align-items: center;
+  min-height: 480px;
 }
 
 .hero-v2__eyebrow {
@@ -1198,11 +1206,16 @@ button:focus-visible,
   color: var(--color-heading);
 }
 
-/* Photo in a soft organic mask, with two decorative blobs behind it.
-   The img layer is independently replaceable. */
+/* Photo bleeds to the right viewport edge with a curved top-left sweep,
+   per the approved master mockup: pale circle at its lower left, slate
+   blob bleeding off the bottom-right. The img layer is independently
+   replaceable. */
 .hero-v2__media {
-  position: relative;
-  min-height: 320px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 52%;
 }
 
 .hero-v2__media img {
@@ -1210,37 +1223,36 @@ button:focus-visible,
   z-index: 2;
   width: 100%;
   height: 100%;
-  max-height: 460px;
   object-fit: cover;
-  object-position: center 30%;
-  border-radius: 44% 56% 52% 48% / 38% 42% 58% 62%;
+  object-position: 60% 30%;
+  border-radius: 46% 0 0 0 / 78% 0 0 0;
   display: block;
 }
 
 .hero-v2__blob {
   position: absolute;
-  border-radius: 52% 48% 44% 56% / 55% 48% 52% 45%;
   z-index: 1;
 }
 
 .hero-v2__blob--light {
   width: 46%;
-  height: 52%;
-  left: -6%;
-  bottom: -8%;
+  aspect-ratio: 1;
+  left: -7%;
+  bottom: -34%;
+  border-radius: 50%;
   background: var(--color-section-light);
 }
 
 .hero-v2__blob--slate {
-  width: 38%;
-  height: 44%;
-  right: -7%;
+  width: 34%;
+  aspect-ratio: 1.15;
+  right: -6%;
   bottom: -12%;
+  border-radius: 54% 46% 44% 56% / 58% 52% 48% 42%;
   background: var(--color-footer);
-  opacity: 0.85;
+  opacity: 0.96;
   z-index: 3;
   pointer-events: none;
-  clip-path: inset(0 0 12% 0);
 }
 
 /* ---------- Trust strip ---------- */
@@ -1365,8 +1377,8 @@ button:focus-visible,
   padding: 0;
   margin: 34px 0 0;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 26px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 44px;
 }
 
 .steps-v2 li {
@@ -1400,10 +1412,10 @@ button:focus-visible,
 .steps-v2 li:not(:last-child)::after {
   content: "";
   position: absolute;
-  top: 23px;
-  left: calc(100% - 8px);
-  width: 34px;
-  border-top: 2px dashed var(--color-border);
+  top: 22px;
+  left: calc(100% + 2px);
+  width: 40px;
+  border-top: 2.5px dashed var(--color-border);
 }
 
 .steps-v2 strong {
@@ -1443,13 +1455,36 @@ button:focus-visible,
   color: var(--color-body);
 }
 
-/* ---------- Footer v2: five columns ---------- */
+/* ---------- Footer v2: brand | divider | link columns, bottom bar ---------- */
 
 .site-footer--v2 .site-footer__inner {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1.3fr auto 1fr 1fr 1fr 1.15fr;
   gap: 36px;
-  padding: 44px 24px 28px;
+  padding: 48px 24px 36px;
+}
+
+.site-footer__divider {
+  width: 1px;
+  background: rgba(255, 255, 255, 0.35);
+  align-self: stretch;
+}
+
+.site-footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.site-footer__bottom-inner {
+  max-width: var(--header-footer-inner-max);
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--color-footer-ink);
+  opacity: 0.85;
 }
 
 .site-footer__brand-name {
@@ -1491,7 +1526,8 @@ button:focus-visible,
   }
 
   .steps-v2 {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 22px;
   }
 
   .steps-v2 li:not(:last-child)::after {
@@ -1500,6 +1536,10 @@ button:focus-visible,
 
   .site-footer--v2 .site-footer__inner {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .site-footer__divider {
+    display: none;
   }
 }
 
@@ -1541,14 +1581,29 @@ button:focus-visible,
 
   .btn-signin,
   .site-header--v2 .cta-button {
-    padding: 9px 13px;
-    font-size: 0.9375rem;
+    padding: 8px 10px;
+    font-size: 0.875rem;
+    white-space: nowrap;
+  }
+
+  .site-header--v2 .site-header__logo {
+    font-size: 1.15rem;
+  }
+}
+
+/* Small phones: the header CTA would force horizontal overflow next to
+   the logo, menu button, and Sign In. The hero CTA is immediately below,
+   so the header button yields — Sign In stays. */
+@media (max-width: 480px) {
+  .site-header--v2 .cta-button {
+    display: none;
   }
 
   /* Hero stacks: content above photograph */
   .hero-v2__inner {
     grid-template-columns: 1fr;
-    padding: 30px 20px 40px;
+    padding: 30px 20px 0;
+    min-height: 0;
   }
 
   .hero-v2__support {
@@ -1556,11 +1611,14 @@ button:focus-visible,
   }
 
   .hero-v2__media {
-    min-height: 0;
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin-top: 26px;
   }
 
   .hero-v2__media img {
-    max-height: 340px;
+    border-radius: 26% 0 0 0 / 60% 0 0 0;
   }
 
   .trust-strip__inner {
