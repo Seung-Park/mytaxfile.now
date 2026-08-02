@@ -256,12 +256,20 @@ Connector became available. Four owed records cleared. Both documents were verif
 | 144 | Display name and logo | **Approved and implemented on the feature branch.** Exact public name: `myTAXfile.now`. The logo places white `myTAXfile` inside a compact teal rectangle and keeps emphasized `.now` outside the rectangle. HTML and shared CSS control the mark; `.now` must not inherit the boxed background. Supersedes the earlier unconfirmed working wordmark. |
 | 145 | Temporary linked pages | **Approved and implemented on the feature branch; not deployed.** Added Find My Service, Request a Review & Quote, FAQ, About, Contact, Sign In, and Sign Up preview pages. Replaced dead `#` navigation and CTA links with real local routes. Sign In and Sign Up are non-operational previews with no input fields; the Sign In page keeps a standalone Sign Up link. Unavailable functions are labeled clearly. |
 
+## Hosting confirmed and first production deployment — 2026-08-02 (express approval by Seung Park: "Publish" / "호스팅 배포")
+
+| # | Subject | Detail |
+|---|---|---|
+| 146 | **Hosting target confirmed: Netlify** | Existing Netlify project `mytaxfilenow` (team plan `nf_team_pro`), custom domain **https://mytaxfile.now** with SSL, continuous deployment wired to GitHub `main`. Resolves the "hosting target unconfirmed" open item |
+| 147 | **First production deployment of the approved master style** | PR #7 merged to `main` (merge commit `de23656f`) auto-deployed by Netlify: deploy `6a6edd69d7e21800084dbbdc`, context `production`, state `ready`, published 2026-08-02T06:02:25Z, no errors. Verified via the authenticated Netlify API (deploy record binds the exact commit to https://mytaxfile.now). Browser-level verification from the dev container was not possible — its network policy blocks outbound requests to the production domain — so rendered-page spot-check on the live URL remains for Seung/Codex |
+| 148 | Open item raised by going live | The site footer still carries the approved "Prototype — not a live production site." disclaimer while now being served at the production domain. Given the pending attorney/privacy review, 15 legal placeholders, and preview-only Find My Service / Request Review / Sign In pages, keeping a caution line is defensible, but the exact wording is now inaccurate. **Tier 3 — Seung to decide the replacement wording (or approve removal)** |
+
 ## Missing / not yet approved
 
 - Canonical Price Book, Service Catalog, State Eligibility Matrix, Responsibility Matrix, Vendor Register, Risk & Exception Register (Workflow's "Required Control Registers") — none exist yet.
 - ~~Approved hero/brand imagery asset (Main Box is currently a placeholder pending an approved image).~~ **Resolved 2026-08-02** — approved hero photograph in place (row 134).
 - ~~Exact display name / logo treatment — "myTAXfile" used as an unconfirmed working wordmark.~~ **Resolved 2026-08-01** — exact public name `myTAXfile.now` with the boxed-teal logo treatment approved (row 144).
-- Hosting target (Netlify connector is available in this session but not explicitly confirmed as the deployment target).
+- ~~Hosting target.~~ **Resolved 2026-08-02** — Netlify confirmed, custom domain live (rows 146–147).
 - Real quote-approval mechanism, consultation-booking inclusion, email/SMS notification vendor — explicitly marked TBD in Workflow §"F. 현재 미확정 사항".
 
 ## Known internal document conflicts (not introduced by this project — flagged as found)
