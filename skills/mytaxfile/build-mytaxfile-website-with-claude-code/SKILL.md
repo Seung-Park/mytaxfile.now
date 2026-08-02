@@ -61,7 +61,7 @@ Make this a primary conversion path from Home, Individual Tax, Business Tax, Fin
 Confirmed 2026-07-31:
 
 **Global frames**
-- Header: wordmark "myTAXfile" (working name — not separately confirmed, see register), nav (Home · Individual Tax · Business Tax · Find My Service · Resources/FAQ · About · Contact), persistent "Request a Review & Quote" CTA.
+- Header: approved `myTAXfile.now` logo — white `myTAXfile` inside a compact teal rectangular box, with emphasized `.now` outside the box — plus nav (Home · Individual Tax · Business Tax · Find My Service · Resources/FAQ · About · Contact), Sign In, and persistent "Request a Review & Quote" CTA.
 - Main Box: full-width, **image-only, no text/overlay** (default per `design-stable-web-frames`; headline/value-prop lives in Content/Body instead).
 - Footer: contact, active-state list (WA/CA/NY/IL/TX/FL + "Coming Soon"), Privacy/Terms/Accessibility links.
 - Colors (updated 2026-08-02 — **approved master color system**, from the ChatGPT homepage mockup Seung Park adopted as the master visual reference; supersedes the 2026-08-01 cool/institutional navy palette, which superseded warm terracotta, which superseded the original dark navy): warm-white background `#FCFCFA`, white surfaces `#FFFFFF`, slate-blue headings `#294455`, slate body text `#526A78`, teal actions `#168782` (hover `#0F706C`; text links use the hover value — the base teal is fills/borders only), pale blue-gray section bands `#EFF6F7`, medium blue-gray footer `#4B7890` with full-white footer text. Target mix ~70–75% white/warm white, 15–20% pale blue-gray, 5–10% slate/teal. **Do not restore deep navy or the orange-and-brown identity.** All colors are tokenized in `website/css/styles.css` `:root` — a palette change is a single edit to that block; never hard-code a hue elsewhere.
@@ -175,6 +175,26 @@ Phase 2 is complete only when the sitemap, page wireframes, customer-flow protot
 
 Business Tax card intentionally excludes Form 1120 (C-Corp) and Payroll & Bookkeeping — these remain future-phase per the approved Phase 1 catalog; not added without separate approval.
 
+## Approved slate-blue and teal design system (controls; approved later 2026-08-01)
+
+This section supersedes only the earlier orange/brown/beige and deep-navy color directions above. Preserve the earlier text as history; do not restore those colors in active pages. All service scope, security wording, pricing gates, legal safeguards, Section IDs, and content-preservation rules remain in force.
+
+- ChatGPT/Codex is the visual-design and visual-acceptance authority. Claude Code implements the approved design faithfully, completes accessibility and responsive engineering, and returns technical evidence. Seung Park gives final approval for material design, merge, and deployment.
+- Shared CSS tokens: background `#FCFCFA`; surface `#FFFFFF`; heading `#173447`; body `#526A78`; primary accent `#168782`; accessible action/links `#0F706C`; pale section `#EFF6F7`; border `#D9E5E8`; footer `#4B7890`.
+- Approved display name is `myTAXfile.now`. The logo must keep `myTAXfile` inside its teal rectangle and `.now` as a separate emphasized element outside that rectangle. Use shared HTML/CSS rather than a rasterized logo.
+- Keep all visible colors in `website/css/styles.css`. Page HTML must contain no inline or embedded color values. Do not create a competing stylesheet or page-specific palette.
+- Primary service navigation contains two categories: **Individual Tax** and **Business Tax**. **Real Estate Tax Expertise** is a cross-category specialty feature.
+- Apply the coordinated design to Index, Individual Tax, and Business Tax while preserving all approved sections, detailed content, routes, legal links, security guidance, and IDs.
+- Use the approved local hero image `website/assets/mytaxfile-tax-professional.webp`; keep the text, buttons, and navigation as semantic HTML.
+- Required evidence: desktop, tablet, and mobile review; local target and image verification; Section-ID verification; accessibility/contrast review; applicable tests; diff review; and a changed-file report. Stop before production deployment.
+
+## Authentication navigation wording (approved 2026-08-01)
+
+- Keep a standalone **`Sign Up`** link directly below Sign In on the Sign In page.
+- Do not precede that link with “Don’t have an account?” or equivalent explanatory copy.
+- Do not show Sign Up as a global Header or Footer navigation item; its public entry point is the Sign In page.
+- Preserve the Sign Up page and route. Do not imply that preview authentication is operational.
+
 ## Index security guidance (approved 2026-08-01, Work Order: Index Security Guidance & Personal Account Upload)
 
 **Approved Index page copy — exact, verbatim:**
@@ -216,3 +236,6 @@ Pages: `website/privacy-notice.html`, `website/terms-of-use.html`, `website/acce
 - 2026-08-01 — Color palette changed to light/warm (supersedes the dark-navy palette). Home page moved from empty frame skeleton to finished draft content for all six Content/Body boxes, pending review.
 - 2026-08-01 — Brightened to near-white body with subtle card shadows. Applied the Final Integrated Improvement Direction: white-first visual system, wider content area, typography/spacing scale, Hero rebuilt with independently-replaceable image + HTML text/CTAs (supersedes the prior image-only Main Box decision), trust row, accessibility focus states. Pending preview approval before commit.
 - 2026-08-01 — All hue-carrying colors tokenized in `styles.css` `:root` (17 tokens added, 21 declarations remapped; verified pixel-identical). Then **cool/institutional palette adopted by Seung Park** after a side-by-side preview of all-pages screenshots: navy/teal/muted-gold (`#1C2B3A` ink, `#0F766E` action, `#0B2545` footer, `#C58A2A` gold) supersedes the warm terracotta palette. Fixes the open CTA contrast defect (was 3.15:1, now 5.47:1); all 18 measured pairs ≥ WCAG AA. White-first dominance rules, frame system, typography, and spacing unchanged. Register rows 124–128.
+- 2026-08-01 — Later approved design direction recorded: warm white, slate-blue, teal actions, pale blue-gray sections, and medium blue-gray footer. Central CSS controls all colors. Index, Individual Tax, and Business Tax form one approved design package; Real Estate Tax remains a cross-category specialty. Supersedes the prior orange/brown palette only.
+- 2026-08-01 — Display name finalized as `myTAXfile.now`; logo architecture fixed as boxed white `myTAXfile` with `.now` outside and emphasized. Seven linked preview routes added so public navigation no longer depends on dead `#` links; unavailable functions remain clearly labeled as previews.
+- 2026-08-01 — Sign In wording simplified: preserve the `Sign Up` link directly below Sign In and remove only the “Don’t have an account?” lead-in.
