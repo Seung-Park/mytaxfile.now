@@ -11,11 +11,11 @@
 
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <!-- ============ Header (Global frame) ============ -->
-  <header class="site-header">
+  <!-- ============ Header (Homepage v2: logo | centered nav | actions) ============ -->
+  <header class="site-header site-header--v2">
     <div class="site-header__inner">
       <a class="site-header__logo" href="index.html">myTAXfile</a>
-      <nav class="site-nav" aria-label="Primary">
+      <nav class="site-nav" id="primary-nav" aria-label="Primary">
         <a href="individual-tax.html">Individual Tax</a>
         <a href="business-tax.html">Business Tax</a>
         <a href="#">Find My Service</a>
@@ -23,122 +23,186 @@
         <a href="#">About</a>
         <a href="#">Contact</a>
       </nav>
-      <a class="cta-button" href="#">Request a Review &amp; Quote</a>
+      <div class="site-header__actions">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <!-- Personal accounts are not live yet (approved copy, HOME-C-004);
+             Sign In therefore routes to that explanation, not to a login. -->
+        <a class="btn-signin" href="#HOME-C-004">Sign In</a>
+        <a class="cta-button" href="#">Request a Review &amp; Quote</a>
+      </div>
     </div>
   </header>
 
-  <!-- ============ Hero (Global frame) ============
-       The .main-box image layer is independently replaceable — swap
-       its background/img without touching the overlay or text below. -->
-  <section class="hero" aria-label="Introduction">
-    <div class="main-box main-box--placeholder" role="img" aria-label="Hero image placeholder — pending approved brand image"></div>
-    <div class="hero__overlay"></div>
-    <div class="hero__content">
-      <p class="hero__eyebrow">Individual &amp; Business Tax Services</p>
-      <h1 class="hero__headline">Clear Tax Filing for Individuals, Small Businesses, and Real Estate Investors</h1>
-      <p class="hero__support">Start with a simple base price and pay only for the forms and services you actually need. We guide you clearly from document collection through filing.</p>
-      <div class="hero__ctas">
-        <a class="cta-button" href="#">Request a Review &amp; Quote</a>
-        <a class="cta-button--outline-light" href="#how-it-works">See How It Works</a>
+  <!-- ============ Hero v2 (two-column, bright) ============
+       The <img> layer is independently replaceable — swap its src
+       without touching the layout, blobs, or text column. -->
+  <section class="hero-v2" aria-label="Introduction">
+    <div class="hero-v2__inner">
+      <div>
+        <p class="hero-v2__eyebrow">Individual &amp; Business Tax Services</p>
+        <h1 class="hero-v2__headline">Tax preparation made clear, secure, and personal.</h1>
+        <p class="hero-v2__support">Expert support for individuals, real estate investors, and small businesses.</p>
+        <div class="hero-v2__ctas">
+          <a class="cta-button" href="#">Request a Review &amp; Quote</a>
+          <a class="text-link" href="#how-it-works">See How It Works</a>
+        </div>
       </div>
-      <ul class="hero__trust">
-        <li>Secure Document Handling</li>
-        <li>Clear Pricing Before Filing</li>
-        <li>Guided Individual and Business Tax Support</li>
-      </ul>
+      <div class="hero-v2__media">
+        <div class="hero-v2__blob hero-v2__blob--light" aria-hidden="true"></div>
+        <img src="images/hero-tax-professional.jpg" alt="A friendly tax professional smiling while working at a laptop in a bright office." width="1600" height="1200" />
+        <div class="hero-v2__blob hero-v2__blob--slate" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Trust strip ============ -->
+  <section class="trust-strip" data-section-id="HOME-C-007" aria-label="Why choose myTAXfile">
+    <div class="trust-strip__inner">
+      <p class="trust-strip__item">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><rect x="9.5" y="10" width="5" height="4.5" rx="0.8"/><path d="M10.5 10V8.8a1.5 1.5 0 0 1 3 0V10"/></svg>
+        Secure document handling
+      </p>
+      <p class="trust-strip__item">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8.5" r="3"/><path d="M3.5 19c.6-3 2.8-4.5 5.5-4.5s4.9 1.5 5.5 4.5"/><circle cx="16.5" cy="9.5" r="2.4"/><path d="M15.5 14.7c2.4.2 4.3 1.6 4.9 4.3"/></svg>
+        Clear pricing before filing
+      </p>
+      <p class="trust-strip__item">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-11 6.6L4 19.5l1.5-4.4A7.5 7.5 0 1 1 20 11.5z"/><path d="M8.5 10.5h7M8.5 13.5h4.5"/></svg>
+        Guided individual &amp; business tax support
+      </p>
     </div>
   </section>
 
   <!-- ============ Content / Body ============ -->
-  <main class="content" id="main">
+  <main id="main">
 
-    <section class="content-box" data-section-id="HOME-C-001">
-      <span class="section-id-label">HOME-C-001</span>
-      <h2>Tax filing, made simple and guided.</h2>
-      <p>We help individuals, small businesses, and real estate investors file Form 1040, Schedule C, Schedule E, and Form 1120-S with confidence. Every recommendation and estimate is preliminary and confirmed by a qualified professional before you file.</p>
-      <p class="state-note">Currently serving Washington, California, New York, Illinois, Texas, and Florida — more states coming soon.</p>
-    </section>
-
-    <section class="content-box" data-section-id="HOME-C-002">
-      <span class="section-id-label">HOME-C-002</span>
-      <h2>Find the right service for you</h2>
-      <div class="service-cards">
-        <div class="service-card">
-          <h3>Individual Tax</h3>
-          <p>Form 1040, Schedule C, Schedule E (Rental Property)</p>
-          <p class="service-card__note">For employees, freelancers, and rental property owners.</p>
-          <a href="individual-tax.html">Explore Individual Tax →</a>
-        </div>
-        <div class="service-card">
-          <h3>Business Tax</h3>
-          <p>Form 1120-S (S Corporation)</p>
-          <p class="service-card__note">Form 1065 offered when a qualified reviewer is available.</p>
-          <a href="business-tax.html">Explore Business Tax →</a>
-        </div>
-      </div>
-      <div class="find-service-prompt">
-        <p>Not sure what you need? Answer a few quick questions and we'll point you in the right direction.</p>
-        <a class="cta-button--outline" href="#">Find My Service</a>
+    <section class="band" data-section-id="HOME-C-001">
+      <div class="band__inner">
+        <span class="section-id-label">HOME-C-001</span>
+        <h2>Tax filing, made simple and guided.</h2>
+        <p class="band__lede">We help individuals, small businesses, and real estate investors file Form 1040, Schedule C, Schedule E, and Form 1120-S with confidence. Start with a simple base price and pay only for the forms and services you actually need — every recommendation and estimate is preliminary and confirmed by a qualified professional before you file.</p>
+        <p class="band__lede state-note">Currently serving Washington, California, New York, Illinois, Texas, and Florida — more states coming soon.</p>
       </div>
     </section>
 
-    <section class="content-box" data-section-id="HOME-C-003" id="how-it-works">
-      <span class="section-id-label">HOME-C-003</span>
-      <h2>How it works</h2>
-      <ol class="steps">
-        <li><strong>Tell us about your situation.</strong> A few quick questions — no sensitive documents required.</li>
-        <li><strong>Get a preliminary recommendation.</strong> We suggest a service and you request a review.</li>
-        <li><strong>We confirm scope and quote.</strong> We'll review your request and explain the next step.</li>
-        <li><strong>File with confidence.</strong> Your return goes through a review step before it is filed.</li>
-      </ol>
-    </section>
-
-    <section class="content-box" data-section-id="HOME-C-004">
-      <span class="section-id-label">HOME-C-004</span>
-      <h2>Your information, handled carefully</h2>
-      <ul class="trust-list">
-        <li>To protect your information, please do not send sensitive documents through this public page or regular email. After you start, you can securely upload documents from your personal account. We may also provide a secure upload link in your confirmation email. <em>Personal accounts and secure upload are launching soon.</em></li>
-        <li>Every return goes through a review step before filing, and the preparer who signs your return is identified by name on it.</li>
-      </ul>
-    </section>
-
-    <section class="content-box" data-section-id="HOME-C-005">
-      <span class="section-id-label">HOME-C-005</span>
-      <h2>Common questions</h2>
-      <div class="faq-list">
-        <div>
-          <p class="faq-q">What does it cost?</p>
-          <p class="faq-a">Pricing depends on your forms and state — you'll get an estimate after a quick review.</p>
+    <section class="band" data-section-id="HOME-C-002">
+      <div class="band__inner">
+        <span class="section-id-label">HOME-C-002</span>
+        <h2>Tax help built around your needs.</h2>
+        <div class="service-cards-v2">
+          <div class="service-card-v2">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.4"/><path d="M5 19.5c.8-3.6 3.5-5.5 7-5.5s6.2 1.9 7 5.5"/></svg>
+            <div>
+              <h3>Individual Tax</h3>
+              <p>Form 1040, Schedule C, Schedule E (Rental Property)</p>
+              <p class="service-card__note">For employees, freelancers, and rental property owners.</p>
+              <a href="individual-tax.html">Explore Individual Tax →</a>
+            </div>
+          </div>
+          <div class="service-card-v2">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="8" width="17" height="11" rx="1.5"/><path d="M9 8V6.5A1.5 1.5 0 0 1 10.5 5h3A1.5 1.5 0 0 1 15 6.5V8M3.5 12.5h17"/></svg>
+            <div>
+              <h3>Business Tax</h3>
+              <p>Form 1120-S (S Corporation)</p>
+              <p class="service-card__note">Form 1065 offered when a qualified reviewer is available.</p>
+              <a href="business-tax.html">Explore Business Tax →</a>
+            </div>
+          </div>
+          <div class="service-card-v2">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11l8-6.5L20 11"/><path d="M6 9.5V19h12V9.5"/><rect x="10" y="13.5" width="4" height="5.5"/></svg>
+            <div>
+              <h3>Real Estate Tax</h3>
+              <p>Schedule E rental income, expenses, and depreciation — handled within your individual return.</p>
+              <p class="service-card__note">For real estate investors and rental property owners.</p>
+              <a href="individual-tax.html">Explore Individual Tax →</a>
+            </div>
+          </div>
         </div>
-        <div>
-          <p class="faq-q">Which states do you cover?</p>
-          <p class="faq-a">Washington, California, New York, Illinois, Texas, and Florida today, with more states coming soon.</p>
-        </div>
-        <div>
-          <p class="faq-q">What if I'm not sure which form I need?</p>
-          <p class="faq-a">Use Find My Service — we'll point you in the right direction.</p>
+        <div class="find-service-prompt">
+          <p>Not sure what you need? Answer a few quick questions and we'll point you in the right direction.</p>
+          <a class="cta-button--outline" href="#">Find My Service</a>
         </div>
       </div>
-      <a href="#">View all FAQs →</a>
     </section>
 
-    <section class="content-box" data-section-id="HOME-C-006">
-      <span class="section-id-label">HOME-C-006</span>
-      <div class="final-cta">
-        <h2>Ready to get started?</h2>
-        <p>Send us a few details. We'll review your request and explain the next step.</p>
-        <a class="cta-button" href="#">Request a Review &amp; Quote</a>
+    <section class="band band--light" data-section-id="HOME-C-003" id="how-it-works">
+      <div class="band__inner">
+        <span class="section-id-label">HOME-C-003</span>
+        <h2>A simpler way to file.</h2>
+        <ol class="steps-v2">
+          <li><strong>Tell us about your situation.</strong> A few quick questions — no sensitive documents required.</li>
+          <li><strong>Get a preliminary recommendation.</strong> We suggest a service and you request a review.</li>
+          <li><strong>We confirm scope and quote.</strong> We'll review your request and explain the next step.</li>
+          <li><strong>File with confidence.</strong> Your return goes through a review step before it is filed.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="band" data-section-id="HOME-C-004" id="HOME-C-004">
+      <div class="band__inner">
+        <span class="section-id-label">HOME-C-004</span>
+        <h2>Your information, handled carefully</h2>
+        <div class="security-card">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><path d="M8.8 12l2.2 2.2 4.2-4.4"/></svg>
+          <ul>
+            <li>To protect your information, please do not send sensitive documents through this public page or regular email. After you start, you can securely upload documents from your personal account. We may also provide a secure upload link in your confirmation email. <em>Personal accounts and secure upload are launching soon.</em></li>
+            <li>Every return goes through a review step before filing, and the preparer who signs your return is identified by name on it.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" data-section-id="HOME-C-005">
+      <div class="band__inner">
+        <span class="section-id-label">HOME-C-005</span>
+        <h2>Common questions</h2>
+        <div class="faq-list">
+          <div>
+            <p class="faq-q">What does it cost?</p>
+            <p class="faq-a">Pricing depends on your forms and state — you'll get an estimate after a quick review.</p>
+          </div>
+          <div>
+            <p class="faq-q">Which states do you cover?</p>
+            <p class="faq-a">Washington, California, New York, Illinois, Texas, and Florida today, with more states coming soon.</p>
+          </div>
+          <div>
+            <p class="faq-q">What if I'm not sure which form I need?</p>
+            <p class="faq-a">Use Find My Service — we'll point you in the right direction.</p>
+          </div>
+        </div>
+        <a href="#">View all FAQs →</a>
+      </div>
+    </section>
+
+    <section class="band band--light" data-section-id="HOME-C-006">
+      <div class="band__inner">
+        <span class="section-id-label">HOME-C-006</span>
+        <div class="final-cta">
+          <h2>Ready to get started?</h2>
+          <p>Send us a few details. We'll review your request and explain the next step.</p>
+          <a class="cta-button" href="#">Request a Review &amp; Quote</a>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ============ Footer (Global frame) ============ -->
-  <footer class="site-footer">
+  <!-- ============ Footer (Homepage v2: five columns) ============ -->
+  <footer class="site-footer site-footer--v2">
     <div class="site-footer__inner">
       <div>
-        <h3>Contact</h3>
-        <a href="#">Request a Review &amp; Quote</a>
+        <p class="site-footer__brand-name">myTAXfile</p>
+        <p class="site-footer__tagline">Tax preparation made clear, secure, and personal.</p>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <ul>
+          <li><a href="individual-tax.html">Individual Tax</a></li>
+          <li><a href="business-tax.html">Business Tax</a></li>
+          <li><a href="individual-tax.html">Real Estate Tax</a></li>
+        </ul>
       </div>
       <div>
         <h3>Service Areas</h3>
@@ -153,10 +217,21 @@
         </ul>
       </div>
       <div>
-        <h3>Legal</h3>
-        <a href="privacy-notice.html">Privacy Notice</a><br />
-        <a href="terms-of-use.html">Terms of Use</a><br />
-        <a href="accessibility.html">Accessibility</a>
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="resources.html">Tax Calculators &amp; Estimators</a></li>
+          <li><a href="#HOME-C-005">Common Questions</a></li>
+          <li><a href="#">Find My Service</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact &amp; Legal</h3>
+        <ul>
+          <li><a href="#">Request a Review &amp; Quote</a></li>
+          <li><a href="privacy-notice.html">Privacy Notice</a></li>
+          <li><a href="terms-of-use.html">Terms of Use</a></li>
+          <li><a href="accessibility.html">Accessibility</a></li>
+        </ul>
       </div>
       <div class="site-footer__legal">
         &copy; 2026 myTAXfile. All rights reserved.<br />
@@ -165,5 +240,6 @@
     </div>
   </footer>
 
+  <script src="js/nav.js" defer></script>
 </body>
 </html>

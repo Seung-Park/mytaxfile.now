@@ -1,56 +1,69 @@
 /* myTAXfile — shared frame styles
    Frame hierarchy, sizing, and section-ID scheme per Seung Park's
    design-stable-web-frames standard.
-   Palette: cool/institutional — adopted 2026-08-01 by Seung Park after
-   a side-by-side preview (supersedes the warm terracotta palette from
-   earlier the same day). Anchored to the navy/teal/muted-gold family:
-   deep-navy footer #0b2545, teal action color #0f766e, cool near-white
-   body. White-first discipline unchanged: accents never dominate.
-   All 18 text/UI pairs verified >= WCAG AA on adoption; lowest is the
-   footer gold heading at 5.16:1.
+   Palette: approved master color system — adopted 2026-08-01 with the
+   homepage mockup Seung Park supplied as the approved master visual
+   reference (supersedes the navy/teal cool palette from earlier the
+   same day). Warm-white body, slate headings, teal actions, pale
+   blue-gray section bands, medium slate-blue footer. Target mix:
+   70–75% white/warm white, 15–20% pale blue-gray, 5–10% slate/teal.
+   AA notes: white on --color-primary measures 4.35:1, so primary
+   buttons and step numerals render at >=18.7px semibold (WCAG large
+   text, 3:1). Text links use --color-primary-hover (5.91:1 on white).
+   Footer text is full white on #4b7890 (4.79:1) — never dim it with
+   opacity below 1.
 */
 
 :root {
-  --color-bg: #fafbfc;
-  --color-card-bg: #ffffff;
-  --color-ink: #1c2b3a;
-  --color-ink-soft: #48596a;
-  --color-accent: #0f766e;
-  --color-accent-dark: #0c5f59;
-  --color-accent-tint: #d9eeeb;
-  /* Text-safe accent. Role rule kept from the warm palette era: text uses
-     --color-accent-text; --color-accent-dark is reserved for fills, borders,
-     and focus rings. (In this palette accent-dark happens to pass AA too —
-     7.51:1 on white — but keeping the role split means a future value change
-     cannot silently break text contrast.) --color-accent-text measures
-     6.35:1 on white, 6.13:1 on the body background, 5.26:1 on the tint. */
-  --color-accent-text: #0e6b64;
-  --color-gold: #c58a2a;
-  --color-footer-bg: #0b2545;
-  --color-border: #e2e8ee;
-  /* Extended tokens (added in the 2026-08-01 tokenization pass; retoned to
-     the cool palette the same day). A palette change is a single edit to
-     this block — never hard-code a hue below this line. */
-  --color-accent-pressed: #094c47;        /* CTA :active fill, 9.83:1 under white */
-  --color-accent-pale: #c9e6e2;           /* pale accent text on dark surfaces */
-  --color-accent-tint-border: #b3d8d2;    /* border partner of --color-accent-tint */
-  --color-footer-ink: #eef3f8;            /* footer text and links, 13.78:1 */
-  --color-surface-soft: #f4f8f7;          /* quoted-guidance / caution surfaces */
+  /* Approved color system — 2026-08-01 mockup brief (exact values). */
+  --color-background: #fcfcfa;
+  --color-surface: #ffffff;
+  --color-heading: #294455;
+  --color-body: #526a78;
+  --color-primary: #168782;
+  --color-primary-hover: #0f706c;
+  --color-section-light: #eff6f7;
+  --color-footer: #4b7890;
+  --color-footer-text: #ffffff;
+
+  /* Legacy token names used throughout this file, mapped onto the
+     approved system above. A palette change edits the block above —
+     never hard-code a hue below this line. */
+  --color-bg: var(--color-background);
+  --color-card-bg: var(--color-surface);
+  --color-ink: var(--color-heading);
+  --color-ink-soft: var(--color-body);
+  --color-accent: var(--color-primary);
+  --color-accent-dark: var(--color-primary-hover);
+  --color-accent-tint: var(--color-section-light);
+  /* Text-safe accent. Permanent role rule: text uses --color-accent-text;
+     --color-accent and --color-accent-dark are for fills, borders, icons,
+     and focus rings. --color-primary at 4.35:1 on white fails AA for
+     normal text; --color-primary-hover passes at 5.91:1. */
+  --color-accent-text: var(--color-primary-hover);
+  --color-gold: #c58a2a;                  /* retained token; no longer used */
+  --color-footer-bg: var(--color-footer);
+  --color-border: #d9e5e8;
+  --color-accent-pressed: var(--color-primary-hover);
+  --color-accent-pale: var(--color-section-light);
+  --color-accent-tint-border: #d9e5e8;
+  --color-footer-ink: var(--color-footer-text);
+  --color-surface-soft: var(--color-section-light);
   --color-warning: #b8860b;               /* placeholder + needs-review borders */
   --color-warning-text: #6b5300;
   --color-warning-tint: #fff3cd;          /* placeholder background */
   --color-warning-surface: #fffdf5;       /* needs-review background */
-  --color-neutral-tint: #eef1f4;          /* "Coming soon" chip background */
-  --color-neutral-text: #46525e;
+  --color-neutral-tint: var(--color-section-light);
+  --color-neutral-text: var(--color-body);
   --color-scope-federal-text: #2f5d50;    /* calculator scope badges */
   --color-scope-federal-tint: #eaf3f0;
   --color-scope-federal-border: #cbe0d8;
   --color-scope-combined-text: #5a4a86;
   --color-scope-combined-tint: #efecf7;
   --color-scope-combined-border: #d8d0ea;
-  --card-shadow: 0 1px 2px rgba(11, 37, 69, 0.06), 0 6px 16px rgba(11, 37, 69, 0.06);
-  --header-footer-inner-max: 1200px;
-  --content-max: 1220px;
+  --card-shadow: 0 1px 2px rgba(41, 68, 85, 0.05);
+  --header-footer-inner-max: 1320px;
+  --content-max: 1320px;
   --content-width-desktop: 83%;
   --content-width-mobile: 92%;
   --breakpoint: 768px;
@@ -63,7 +76,9 @@
   --fs-section-heading: 1.875rem;
   --fs-hero-headline: 2rem;
   --fs-hero-support: 1.125rem;
-  --fs-button: 1rem;
+  /* 1.17rem = 18.72px: with weight 600+ this qualifies as WCAG large
+     text, so white on --color-primary (4.35:1) passes its 3:1 bar. */
+  --fs-button: 1.17rem;
 
   /* Spacing scale (Section 5) */
   --space-section: 46px;
@@ -72,13 +87,14 @@
 
 @media (min-width: 768px) {
   :root {
-    --fs-hero-headline: 2.25rem;
+    --fs-hero-headline: 2.5rem;
+    --fs-section-heading: 2.25rem;
   }
 }
 
 @media (min-width: 1024px) {
   :root {
-    --fs-hero-headline: 3.25rem;
+    --fs-hero-headline: 3.5rem;
   }
 }
 
@@ -167,8 +183,8 @@ button:focus-visible,
   display: inline-block;
   background: var(--color-accent);
   color: #ffffff;
-  padding: 11px 20px;
-  border-radius: 6px;
+  padding: 12px 24px;
+  border-radius: 7px;
   text-decoration: none;
   font-weight: 600;
   font-size: var(--fs-button);
@@ -580,19 +596,19 @@ button:focus-visible,
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: var(--color-gold);
+  /* Full footer ink, never gold and never opacity-dimmed: white on the
+     slate footer is 4.79:1 — there is no headroom for dimming. */
+  color: var(--color-footer-ink);
   margin: 0 0 12px;
 }
 
 .site-footer a {
   color: var(--color-footer-ink);
-  opacity: 0.85;
   text-decoration: none;
   font-size: 0.9rem;
 }
 
 .site-footer a:hover {
-  opacity: 1;
   text-decoration: underline;
 }
 
@@ -607,17 +623,15 @@ button:focus-visible,
 }
 
 .state-list__coming-soon {
-  opacity: 0.6;
   font-style: italic;
 }
 
 .site-footer__legal {
   width: 100%;
-  border-top: 1px solid rgba(238, 243, 248, 0.15);
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
   margin-top: 24px;
   padding-top: 16px;
   font-size: var(--fs-small);
-  opacity: 0.75;
 }
 
 /* ---------- Responsive ---------- */
@@ -834,7 +848,7 @@ button:focus-visible,
 
 /* Quoted approved customer guidance. */
 .legal-quote {
-  border-left: 3px solid var(--color-gold);
+  border-left: 3px solid var(--color-primary);
   background: var(--color-surface-soft);
   padding: 16px 20px;
   margin: 0 0 14px;
@@ -1005,7 +1019,7 @@ button:focus-visible,
 }
 
 .calc-card__caution {
-  border-left: 3px solid var(--color-gold);
+  border-left: 3px solid var(--color-primary);
   background: var(--color-surface-soft);
   padding: 10px 14px;
   border-radius: 0 6px 6px 0;
@@ -1050,5 +1064,541 @@ button:focus-visible,
 
   .calc-card {
     padding: 18px 20px;
+  }
+}
+
+/* ============================================================
+   Homepage v2 — approved master mockup, 2026-08-01. Additive only:
+   these rules key off new "--v2" classes used by index.html, so the
+   six other pages (old header/footer markup) are unaffected except
+   for the shared palette tokens above.
+   ============================================================ */
+
+/* ---------- Header v2: logo | centered nav | actions ---------- */
+
+.site-header--v2 .site-header__inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 24px;
+}
+
+.site-header--v2 .site-nav {
+  justify-content: center;
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-signin {
+  display: inline-block;
+  background: var(--color-surface);
+  color: var(--color-heading);
+  border: 1px solid var(--color-body);
+  padding: 10px 20px;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: var(--fs-nav);
+}
+
+.btn-signin:hover {
+  border-color: var(--color-heading);
+  background: var(--color-section-light);
+}
+
+/* Header CTA stays compact so the header doesn't feel heavy; at nav
+   size it needs the text-safe fill to hold AA at normal-text scale. */
+.site-header--v2 .cta-button {
+  font-size: var(--fs-nav);
+  padding: 10px 20px;
+  background: var(--color-primary-hover);
+}
+
+.site-header--v2 .cta-button:hover {
+  background: var(--color-heading);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: 7px;
+  padding: 9px 11px;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.nav-toggle svg {
+  stroke: var(--color-heading);
+}
+
+/* ---------- Hero v2: two-column, bright ---------- */
+
+.hero-v2 {
+  background: var(--color-surface);
+  overflow: hidden;
+}
+
+.hero-v2__inner {
+  max-width: var(--header-footer-inner-max);
+  margin: 0 auto;
+  padding: 40px 24px 48px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-v2__eyebrow {
+  font-size: var(--fs-small);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-accent-text);
+  margin: 0 0 14px;
+}
+
+.hero-v2__headline {
+  font-size: var(--fs-hero-headline);
+  font-weight: 650;
+  color: var(--color-heading);
+  line-height: 1.15;
+  margin: 0 0 18px;
+  letter-spacing: -0.01em;
+}
+
+.hero-v2__support {
+  font-size: 1.1875rem;
+  color: var(--color-body);
+  margin: 0 0 28px;
+  max-width: 34ch;
+}
+
+.hero-v2__ctas {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  flex-wrap: wrap;
+}
+
+.text-link {
+  color: var(--color-accent-text);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 1.5px;
+}
+
+.text-link:hover {
+  color: var(--color-heading);
+}
+
+/* Photo in a soft organic mask, with two decorative blobs behind it.
+   The img layer is independently replaceable. */
+.hero-v2__media {
+  position: relative;
+  min-height: 320px;
+}
+
+.hero-v2__media img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  max-height: 460px;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 44% 56% 52% 48% / 38% 42% 58% 62%;
+  display: block;
+}
+
+.hero-v2__blob {
+  position: absolute;
+  border-radius: 52% 48% 44% 56% / 55% 48% 52% 45%;
+  z-index: 1;
+}
+
+.hero-v2__blob--light {
+  width: 46%;
+  height: 52%;
+  left: -6%;
+  bottom: -8%;
+  background: var(--color-section-light);
+}
+
+.hero-v2__blob--slate {
+  width: 38%;
+  height: 44%;
+  right: -7%;
+  bottom: -12%;
+  background: var(--color-footer);
+  opacity: 0.85;
+  z-index: 3;
+  pointer-events: none;
+  clip-path: inset(0 0 12% 0);
+}
+
+/* ---------- Trust strip ---------- */
+
+.trust-strip {
+  background: var(--color-section-light);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.trust-strip__inner {
+  max-width: var(--header-footer-inner-max);
+  margin: 0 auto;
+  padding: 22px 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.trust-strip__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 6px 18px;
+  color: var(--color-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.trust-strip__item + .trust-strip__item {
+  border-left: 1px solid var(--color-border);
+}
+
+.trust-strip__item svg {
+  flex: none;
+  stroke: var(--color-primary);
+}
+
+/* ---------- Section rhythm helpers ---------- */
+
+.band {
+  padding: var(--space-section) 0;
+}
+
+.band--light {
+  background: var(--color-section-light);
+}
+
+.band__inner {
+  position: relative;
+  width: var(--content-width-desktop);
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+.band h2 {
+  text-align: center;
+  margin: 0 0 10px;
+}
+
+.band__lede {
+  text-align: center;
+  color: var(--color-body);
+  max-width: 62ch;
+  margin: 0 auto 30px;
+}
+
+/* ---------- Service cards v2 ---------- */
+
+.service-cards-v2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin: 30px 0 26px;
+}
+
+.service-card-v2 {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 11px;
+  padding: 26px;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.service-card-v2 svg {
+  flex: none;
+  stroke: var(--color-primary);
+  margin-top: 2px;
+}
+
+.service-card-v2 h3 {
+  margin: 0 0 6px;
+  font-size: var(--fs-card-heading);
+  font-weight: 650;
+}
+
+.service-card-v2 p {
+  margin: 0 0 6px;
+  font-size: var(--fs-small);
+  color: var(--color-body);
+}
+
+.service-card-v2 .service-card__note {
+  font-style: italic;
+}
+
+.service-card-v2 a {
+  display: inline-block;
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* ---------- Steps v2 ---------- */
+
+.steps-v2 {
+  list-style: none;
+  counter-reset: step;
+  padding: 0;
+  margin: 34px 0 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+}
+
+.steps-v2 li {
+  counter-increment: step;
+  position: relative;
+  text-align: left;
+  padding-left: 62px;
+  font-size: var(--fs-small);
+  color: var(--color-body);
+}
+
+.steps-v2 li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #ffffff;
+  /* 18.72px bold numeral = WCAG large text on the 4.35:1 teal fill. */
+  font-size: 1.17rem;
+  font-weight: 700;
+}
+
+/* Light dashed connector between steps (desktop only). */
+.steps-v2 li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 23px;
+  left: calc(100% - 8px);
+  width: 34px;
+  border-top: 2px dashed var(--color-border);
+}
+
+.steps-v2 strong {
+  display: block;
+  color: var(--color-heading);
+  font-size: 1.0625rem;
+  margin-bottom: 4px;
+}
+
+/* ---------- Security section (approved copy, HOME-C-004) ---------- */
+
+.security-card {
+  background: var(--color-section-light);
+  border: 1px solid var(--color-border);
+  border-radius: 11px;
+  padding: 28px 30px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.security-card svg {
+  flex: none;
+  stroke: var(--color-primary);
+  margin-top: 4px;
+}
+
+.security-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.security-card li {
+  color: var(--color-body);
+}
+
+/* ---------- Footer v2: five columns ---------- */
+
+.site-footer--v2 .site-footer__inner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+  gap: 36px;
+  padding: 44px 24px 28px;
+}
+
+.site-footer__brand-name {
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin: 0 0 10px;
+  color: var(--color-footer-ink);
+}
+
+.site-footer__tagline {
+  margin: 0;
+  font-size: var(--fs-small);
+  max-width: 24ch;
+}
+
+.site-footer--v2 .state-list {
+  display: block;
+}
+
+.site-footer--v2 .state-list li {
+  margin-bottom: 7px;
+}
+
+.site-footer--v2 ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-footer--v2 ul li {
+  margin-bottom: 7px;
+}
+
+/* ---------- Homepage v2 responsive ---------- */
+
+@media (max-width: 1023px) {
+  .hero-v2__inner {
+    gap: 28px;
+  }
+
+  .steps-v2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .steps-v2 li:not(:last-child)::after {
+    display: none;
+  }
+
+  .site-footer--v2 .site-footer__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Collapsible nav */
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .site-header--v2 .site-header__inner {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+  }
+
+  .site-header--v2 .site-nav {
+    display: none;
+    grid-column: 1 / -1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding-top: 10px;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .site-header--v2 .site-nav.is-open {
+    display: flex;
+  }
+
+  .site-header--v2 .site-nav a {
+    display: block;
+    width: 100%;
+    padding: 11px 4px;
+    font-size: 1.0625rem;
+  }
+
+  .site-header__actions {
+    gap: 8px;
+  }
+
+  .btn-signin,
+  .site-header--v2 .cta-button {
+    padding: 9px 13px;
+    font-size: 0.9375rem;
+  }
+
+  /* Hero stacks: content above photograph */
+  .hero-v2__inner {
+    grid-template-columns: 1fr;
+    padding: 30px 20px 40px;
+  }
+
+  .hero-v2__support {
+    max-width: none;
+  }
+
+  .hero-v2__media {
+    min-height: 0;
+  }
+
+  .hero-v2__media img {
+    max-height: 340px;
+  }
+
+  .trust-strip__inner {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 16px 20px;
+  }
+
+  .trust-strip__item {
+    justify-content: flex-start;
+    padding: 8px 2px;
+  }
+
+  .trust-strip__item + .trust-strip__item {
+    border-left: none;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .band__inner {
+    width: var(--content-width-mobile);
+  }
+
+  .service-cards-v2 {
+    grid-template-columns: 1fr;
+  }
+
+  .steps-v2 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .security-card {
+    flex-direction: column;
+    padding: 22px 20px;
+  }
+
+  .site-footer--v2 .site-footer__inner {
+    grid-template-columns: 1fr;
+    gap: 26px;
   }
 }
