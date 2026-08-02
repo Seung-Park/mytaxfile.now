@@ -1255,6 +1255,93 @@ button:focus-visible,
   pointer-events: none;
 }
 
+/* ---------- Compact category hero (approved 2026-08-02: every category
+   page opens with a main image + slogan band directly below the nav,
+   shorter than the homepage hero; img layer independently replaceable) ---------- */
+
+.page-hero {
+  position: relative;
+  background: var(--color-surface);
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.page-hero__inner {
+  max-width: var(--header-footer-inner-max);
+  margin: 0 auto;
+  padding: 30px 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 52%) minmax(0, 1fr);
+  align-items: center;
+  min-height: 280px;
+}
+
+.page-hero__eyebrow {
+  font-size: var(--fs-small);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-accent-text);
+  margin: 0 0 10px;
+}
+
+.page-hero__slogan {
+  font-size: clamp(1.55rem, 2.8vw, 2.15rem);
+  font-weight: 750;
+  color: var(--color-heading);
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  margin: 0 0 12px;
+  text-wrap: balance;
+}
+
+.page-hero__keywords {
+  margin: 0;
+  color: var(--color-body);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.page-hero__keywords span {
+  color: var(--color-accent-text);
+}
+
+.page-hero__media {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 44%;
+}
+
+.page-hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  border-radius: 30% 0 0 0 / 62% 0 0 0;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .page-hero__inner {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    padding: 26px 20px 0;
+  }
+
+  .page-hero__media {
+    position: relative;
+    width: 100%;
+    height: 170px;
+    margin-top: 20px;
+  }
+
+  .page-hero__media img {
+    border-radius: 18% 0 0 0 / 52% 0 0 0;
+  }
+}
+
 /* ---------- Trust strip ---------- */
 
 .trust-strip {
