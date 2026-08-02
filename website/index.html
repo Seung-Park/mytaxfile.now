@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>myTAXfile — Simple, Guided Tax Filing</title>
-  <meta name="description" content="Guided tax filing for individuals and small businesses in Washington, California, New York, Illinois, Texas, and Florida. Preliminary recommendations, reviewed by a qualified professional." />
+  <title>myTAXfile.now — Simple, Guided Tax Filing</title>
+  <meta name="description" content="Guided tax filing for individuals and small businesses in Washington, California, New York, Illinois, Texas, and Florida. Start with a simple, non-sensitive overview." />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -14,16 +14,17 @@
   <!-- ============ Header (Global frame) ============ -->
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">myTAXfile</a>
+      <a class="site-header__logo" href="index.html" aria-label="myTAXfile.now home"><span class="brand-core">myTAXfile</span><span class="brand-now">.now</span></a>
       <nav class="site-nav" aria-label="Primary">
         <a href="individual-tax.html">Individual Tax</a>
         <a href="business-tax.html">Business Tax</a>
-        <a href="#">Find My Service</a>
+        <a href="find-my-service.html">Find My Service</a>
         <a href="resources.html">Resources</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
       </nav>
-      <a class="cta-button" href="#">Request a Review &amp; Quote</a>
+      <a class="site-header__sign-in" href="sign-in.html">Sign In</a>
+      <a class="cta-button" href="request-review.html">Request a Review &amp; Quote</a>
     </div>
   </header>
 
@@ -31,18 +32,20 @@
        The .main-box image layer is independently replaceable — swap
        its background/img without touching the overlay or text below. -->
   <section class="hero" aria-label="Introduction">
-    <div class="main-box main-box--placeholder" role="img" aria-label="Hero image placeholder — pending approved brand image"></div>
+    <div class="main-box">
+      <img src="assets/mytaxfile-tax-professional.webp" alt="Tax professional smiling at her desk with a laptop" width="1804" height="872" fetchpriority="high" />
+    </div>
     <div class="hero__overlay"></div>
     <div class="hero__content">
-      <p class="hero__eyebrow">Individual &amp; Business Tax Services</p>
+      <p class="hero__eyebrow">Professional tax guidance, made personal</p>
       <h1 class="hero__headline">Clear Tax Filing for Individuals, Small Businesses, and Real Estate Investors</h1>
       <p class="hero__support">Start with a simple base price and pay only for the forms and services you actually need. We guide you clearly from document collection through filing.</p>
       <div class="hero__ctas">
-        <a class="cta-button" href="#">Request a Review &amp; Quote</a>
+        <a class="cta-button" href="request-review.html">Request a Review &amp; Quote</a>
         <a class="cta-button--outline-light" href="#how-it-works">See How It Works</a>
       </div>
       <ul class="hero__trust">
-        <li>Secure Document Handling</li>
+        <li>Careful document guidance</li>
         <li>Clear Pricing Before Filing</li>
         <li>Guided Individual and Business Tax Support</li>
       </ul>
@@ -55,7 +58,7 @@
     <section class="content-box" data-section-id="HOME-C-001">
       <span class="section-id-label">HOME-C-001</span>
       <h2>Tax filing, made simple and guided.</h2>
-      <p>We help individuals, small businesses, and real estate investors file Form 1040, Schedule C, Schedule E, and Form 1120-S with confidence. Every recommendation and estimate is preliminary and confirmed by a qualified professional before you file.</p>
+      <p>We help individuals, small businesses, and real estate investors prepare Form 1040, Schedule C, Schedule E, and Form 1120-S. Every recommendation and estimate is preliminary and confirmed after reviewing your situation.</p>
       <p class="state-note">Currently serving Washington, California, New York, Illinois, Texas, and Florida — more states coming soon.</p>
     </section>
 
@@ -64,21 +67,32 @@
       <h2>Find the right service for you</h2>
       <div class="service-cards">
         <div class="service-card">
+          <span class="service-icon" aria-hidden="true">◎</span>
           <h3>Individual Tax</h3>
           <p>Form 1040, Schedule C, Schedule E (Rental Property)</p>
           <p class="service-card__note">For employees, freelancers, and rental property owners.</p>
           <a href="individual-tax.html">Explore Individual Tax →</a>
         </div>
         <div class="service-card">
+          <span class="service-icon" aria-hidden="true">▣</span>
           <h3>Business Tax</h3>
           <p>Form 1120-S (S Corporation)</p>
           <p class="service-card__note">Form 1065 offered when a qualified reviewer is available.</p>
           <a href="business-tax.html">Explore Business Tax →</a>
         </div>
       </div>
+      <div class="real-estate-feature">
+        <div>
+          <p class="content-box__eyebrow">Specialty across both categories</p>
+          <h3>Real Estate Tax Expertise</h3>
+        </div>
+        <div class="real-estate-feature__copy">
+          <p>Rental properties, property sales, depreciation, and real estate businesses can affect either an individual return or a business return. We place the work in the correct category and explain the next step clearly.</p>
+        </div>
+      </div>
       <div class="find-service-prompt">
         <p>Not sure what you need? Answer a few quick questions and we'll point you in the right direction.</p>
-        <a class="cta-button--outline" href="#">Find My Service</a>
+        <a class="cta-button--outline" href="find-my-service.html">Find My Service</a>
       </div>
     </section>
 
@@ -119,7 +133,7 @@
           <p class="faq-a">Use Find My Service — we'll point you in the right direction.</p>
         </div>
       </div>
-      <a href="#">View all FAQs →</a>
+      <a href="faq.html">View all FAQs →</a>
     </section>
 
     <section class="content-box" data-section-id="HOME-C-006">
@@ -127,7 +141,7 @@
       <div class="final-cta">
         <h2>Ready to get started?</h2>
         <p>Send us a few details. We'll review your request and explain the next step.</p>
-        <a class="cta-button" href="#">Request a Review &amp; Quote</a>
+        <a class="cta-button" href="request-review.html">Request a Review &amp; Quote</a>
       </div>
     </section>
 
@@ -138,7 +152,7 @@
     <div class="site-footer__inner">
       <div>
         <h3>Contact</h3>
-        <a href="#">Request a Review &amp; Quote</a>
+        <a href="request-review.html">Request a Review &amp; Quote</a>
       </div>
       <div>
         <h3>Service Areas</h3>
@@ -159,7 +173,7 @@
         <a href="accessibility.html">Accessibility</a>
       </div>
       <div class="site-footer__legal">
-        &copy; 2026 myTAXfile. All rights reserved.<br />
+        &copy; 2026 myTAXfile.now. All rights reserved.<br />
         Prototype — not a live production site.
       </div>
     </div>

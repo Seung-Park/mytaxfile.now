@@ -22,12 +22,12 @@ skills:
     supported_platforms:
       - claude (native Skill discovery)
     last_approved_change: >
-      2026-08-01: Canonical project Skill created at
-      .claude/skills/mytaxfile/SKILL.md so Claude Code discovers and
-      auto-invokes it. Six-language requirement approved as planning
-      requirement (supersedes register row 7 "English only"); website
-      implementation not authorized. Private portal requirement areas
-      recorded, pending reconciliation against the canonical Google Doc.
+      2026-08-01: Display name finalized as myTAXfile.now. Logo uses boxed
+      white myTAXfile text on teal with emphasized .now outside the box.
+      Seven linked preview routes approved and prepared; unavailable forms,
+      authentication, and portal functions remain explicitly non-operational.
+      Sign In is the public entry point for a standalone Sign Up link without
+      the “Don’t have an account?” lead-in; global navigation does not show it.
 
   - name: build-mytaxfile-website-with-claude-code
     project: mytaxfile

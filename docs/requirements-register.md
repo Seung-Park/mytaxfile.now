@@ -205,11 +205,35 @@ Connector became available. Four owed records cleared. Both documents were verif
 | 122 | Pricing method only, no figures | Base covers federal 1120-S, one state, and shareholder K-1s. Additional states per state; bookkeeping cleanup quoted after seeing records and named as the largest variable. Verified: zero dollar figures |
 | 123 | Navigation wired across all seven pages | "Business Tax" was `href="#"` everywhere; now resolves. Homepage card changed from a dead "Estimate My Fee" to "Explore Business Tax". Accessibility known-limitations updated — only Find My Service, About, and Contact remain unbuilt |
 
+## Approved three-page visual design — 2026-08-01
+
+| # | Subject | Detail |
+|---|---|---|
+| 124 | Visual authority and implementation roles | **Approved.** ChatGPT/Codex controls visual design and visual acceptance; Claude Code controls repository implementation and technical verification; Seung Park controls business decisions, merge, and deployment approval |
+| 125 | Palette | **Approved.** Warm white `#FCFCFA`, white surfaces `#FFFFFF`, slate headings `#173447`, slate body `#526A78`, teal accent `#168782`, accessible teal actions `#0F706C`, pale blue-gray sections `#EFF6F7`, border `#D9E5E8`, medium blue-gray footer `#4B7890`. Supersedes the prior orange/brown palette only |
+| 126 | Central CSS color control | **Approved.** Visible page colors are controlled through shared `website/css/styles.css`; page HTML contains no inline or embedded color values |
+| 127 | Primary service architecture | **Approved.** Top services are **Individual Tax** and **Business Tax**. **Real Estate Tax Expertise** spans both categories and is highlighted as a specialty, not a third primary category |
+| 128 | Three-page design package | **Implemented on feature branch for review.** Index, Individual Tax, and Business Tax share the approved header, palette, typography, spacing, cards, responsive behavior, footer, and stable Section-ID labels. Existing service scope and security/legal content preserved |
+| 129 | Hero image | **Approved asset added.** `website/assets/mytaxfile-tax-professional.webp`; image is separate from semantic HTML content and can be replaced independently. Optimized to approximately 40 KB for page performance |
+| 130 | Publication gate | **Not deployed.** Desktop/mobile visual acceptance, Claude Code technical review, merge approval, and production deployment approval remain separate gates |
+
+## Authentication navigation — approved 2026-08-01
+
+| # | Subject | Detail |
+|---|---|---|
+| 131 | Sign In / Sign Up navigation | **Preview pages built; authentication not built. Latest wording approved 2026-08-01.** The Sign In preview is the public entry point for a standalone “Sign Up” link directly below Sign In and omits “Don’t have an account?” Sign Up is not shown in global Header/Footer navigation. The Sign Up page may retain the reciprocal “Already have an account? Sign In” link. Both links require keyboard access, visible focus, and mobile readability. No credential form, authentication engine, or secure portal route exists yet. |
+
+## Display name, logo, and temporary linked pages — approved 2026-08-01
+
+| # | Subject | Detail |
+|---|---|---|
+| 132 | Display name and logo | **Approved and implemented on the feature branch.** Exact public name: `myTAXfile.now`. The logo places white `myTAXfile` inside a compact teal rectangle and keeps emphasized `.now` outside the rectangle. HTML and shared CSS control the mark; `.now` must not inherit the boxed background. Supersedes the earlier unconfirmed working wordmark. |
+| 133 | Temporary linked pages | **Approved and implemented on the feature branch; not deployed.** Added Find My Service, Request a Review & Quote, FAQ, About, Contact, Sign In, and Sign Up preview pages. Replaced dead `#` navigation and CTA links with real local routes. Sign In and Sign Up are non-operational previews with no input fields; the Sign In page keeps a standalone Sign Up link. Unavailable functions are labeled clearly. |
+
 ## Missing / not yet approved
 
 - Canonical Price Book, Service Catalog, State Eligibility Matrix, Responsibility Matrix, Vendor Register, Risk & Exception Register (Workflow's "Required Control Registers") — none exist yet.
 - Approved hero/brand imagery asset (Main Box is currently a placeholder pending an approved image).
-- Exact display name / logo treatment ("myTAXfile" vs "MyTaxFileNow" vs "mytaxfile.now") — used "myTAXfile" as the working wordmark per Drive doc-title convention; not separately confirmed.
 - Hosting target (Netlify connector is available in this session but not explicitly confirmed as the deployment target).
 - Real quote-approval mechanism, consultation-booking inclusion, email/SMS notification vendor — explicitly marked TBD in Workflow §"F. 현재 미확정 사항".
 

@@ -75,6 +75,13 @@ ordinary email · public-page forms · source code · logs · analytics · URL q
 
 The site must not imply the account, portal, or secure link is operational until it has actually been implemented **and tested**. Until then, present these as planned or as coming after enrollment.
 
+### Authentication navigation
+
+- On the **Sign In** screen, place **“Don’t have an account? Sign Up”** directly below the form and link `Sign Up` to the real account-registration route.
+- On the **Sign Up** screen, place **“Already have an account? Sign In”** directly below the form and link `Sign In` to the real authentication route.
+- Both links must be keyboard accessible, have a visible focus state, remain clearly readable on mobile, and must not point to `#` or another placeholder.
+- The current public-site Sign In and Sign Up pages are **non-operational previews only**. They contain no credential fields and link to each other so navigation can be tested. Replace their destinations with the real, separately hosted portal routes only after authentication is implemented and tested.
+
 ## 2. Roles and authority
 
 Access is **role-based, default-deny, and least-privilege**. Every user gets the minimum access their role requires and nothing more.
