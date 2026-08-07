@@ -110,6 +110,7 @@ Prototype only: do not accept real tax files, process payments, make final profe
 - Keep secure-document upload separate from the public website. Show only a future secure-portal handoff location until an approved provider is connected.
 - Use accessible semantic HTML, keyboard navigation, visible focus states, sufficient contrast, meaningful labels, clear errors, and screen-reader-friendly status messages.
 - Add page titles, meta descriptions, canonical structure, and a proposed analytics event map, but do not activate tracking or advertising tools without approval.
+- **Every page carries `<meta name="robots" content="noindex, nofollow" />` immediately after the viewport meta** (approved 2026-08-07, canonical Skill area 27). The whole site stays `noindex` until Seung Park gives final launch approval. `website/_headers` sends the matching `X-Robots-Tag: noindex, nofollow` for all paths and must stay in the publish directory (`website/`). A new page without the meta tag is incomplete. Do not add a `robots.txt` `Disallow: /` rule — it would stop crawlers from ever reading the `noindex`.
 
 ## Change-control rules
 
@@ -119,6 +120,7 @@ Prototype only: do not accept real tax files, process payments, make final profe
 - Never expose secrets or commit `.env`, credentials, client information, or tax data.
 - Do not push directly to a protected production branch unless Seung explicitly authorizes it. Prefer a named feature branch and an intentional commit.
 - Do not deploy publicly, change DNS, purchase software, connect payments, or enable real data collection without separate approval.
+- **Pre-launch narrowing (2026-08-07).** Committing, pushing, deploying, and publishing each require Seung Park's separate express approval — they are no longer Tier 1–2. Never deactivate, delete, unpublish, lock, disable, or rename the Netlify site, and make no custom-domain or DNS change at all; Seung disconnects `mytaxfile.now` himself. Keep the site reachable at `https://mytaxfilenow.netlify.app` for review. Canonical Skill area 27.
 
 ## Questions and decision gates
 
@@ -143,8 +145,9 @@ For each approved implementation batch:
 4. Verify that public forms reject or warn against sensitive information and do not provide upload fields for tax documents.
 5. Check accessibility, console errors, broken links, missing content, and accidental placeholder text left in a "final" page.
 6. Inspect the full diff; approved removals should be zero unless specifically authorized.
-7. Report changed files, tests and observable results, unresolved `TBD` items, and the exact next approval needed.
-8. Commit and push only the approved scope. Confirm the branch and remote result; never claim deployment or push success without evidence.
+7. Verify every changed or added page carries the `noindex, nofollow` robots meta tag, and that `website/_headers` is still present in the publish directory. After any deployment, confirm `X-Robots-Tag: noindex, nofollow` on the response headers of **both** the netlify.app review URL and the custom domain while it is connected.
+8. Report changed files, tests and observable results, unresolved `TBD` items, and the exact next approval needed.
+9. Commit and push only the approved scope, and only with Seung Park's separate express approval (pre-launch narrowing, 2026-08-07). Confirm the branch and remote result; never claim deployment or push success without evidence.
 
 Phase 2 is complete only when the sitemap, page wireframes, customer-flow prototype, Find My Service, preliminary form recommendation, Review & Quote function, error/restart states, and validation report have been reviewed and approved by Seung.
 
@@ -239,3 +242,4 @@ Pages: `website/privacy-notice.html`, `website/terms-of-use.html`, `website/acce
 - 2026-08-01 — Later approved design direction recorded: warm white, slate-blue, teal actions, pale blue-gray sections, and medium blue-gray footer. Central CSS controls all colors. Index, Individual Tax, and Business Tax form one approved design package; Real Estate Tax remains a cross-category specialty. Supersedes the prior orange/brown palette only.
 - 2026-08-01 — Display name finalized as `myTAXfile.now`; logo architecture fixed as boxed white `myTAXfile` with `.now` outside and emphasized. Seven linked preview routes added so public navigation no longer depends on dead `#` links; unavailable functions remain clearly labeled as previews.
 - 2026-08-01 — Sign In wording simplified: preserve the `Sign Up` link directly below Sign In and remove only the “Don’t have an account?” lead-in.
+- 2026-08-07 — Pre-launch indexing protection approved and applied: `<meta name="robots" content="noindex, nofollow" />` added to all 14 public pages and a new `website/_headers` sending `X-Robots-Tag: noindex, nofollow` for all paths. Added to the design/content rules, the change-control rules, and the validation checklist (new step 7). Committing, pushing, deploying, and publishing narrowed to require separate express approval. No content, design, palette, route, Section ID, or copy changed. Canonical Skill area 27; register rows 152–161.

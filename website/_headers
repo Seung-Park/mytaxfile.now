@@ -1,0 +1,20 @@
+# Netlify header rules. This file must stay in the publish directory (website/).
+#
+# Pre-launch search-engine protection — approved by Seung Park 2026-08-07.
+# The entire site stays noindex until Seung gives final launch approval.
+# These headers apply to every path on every domain this project serves,
+# including https://mytaxfile.now, https://mytaxfilenow.netlify.app,
+# branch deploys, and deploy previews. They back up the
+# <meta name="robots" content="noindex, nofollow" /> tag carried by every page,
+# and additionally cover non-HTML assets, which cannot carry a meta tag.
+#
+# Deliberately NOT paired with a "robots.txt: Disallow: /" rule. Blocking the
+# crawl would stop search engines from ever reading the noindex directive,
+# which is the common way a site stays indexed by accident.
+#
+# Removing these headers is a launch decision and requires Seung Park's
+# express approval. See canonical Skill area 27 and requirements-register
+# rows 152-158.
+
+/*
+  X-Robots-Tag: noindex, nofollow
