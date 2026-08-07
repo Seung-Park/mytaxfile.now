@@ -33,7 +33,9 @@ Owner and sole approval authority: **Seung Park**.
 
     **Proceed under standing Tier 1–2 authority. Do not stop merely to present a plan when the requested work is already approved and sufficiently defined.**
 
-    Claude Code has principal technical responsibility for: inspecting the repository and governing documents; resolving ordinary technical questions; choosing implementation details and architecture; writing and improving code; fixing defects; responsive design and accessibility corrections; testing, builds, and quality verification; creating branches, commits, pushes, and pull requests; updating required technical records; and presenting completed work with verification results.
+    Claude Code has principal technical responsibility for: inspecting the repository and governing documents; resolving ordinary technical questions; choosing implementation details and architecture; writing and improving code; fixing defects; responsive design and accessibility corrections; testing, builds, and quality verification; creating branches and preparing commits and pull requests; updating required technical records; and presenting completed work with verification results.
+
+    **Amended 2026-08-07 — pre-launch narrowing.** Committing, pushing, deploying, and publishing are **no longer Tier 1–2**. For the duration of the pre-launch period they each require Seung Park's separate express approval (Tier 3 item 9 below). Claude Code may still create branches and prepare changes locally. This resolves the contradiction between this rule and canonical Skill area 22, in favour of area 22. It reverts only when Seung Park gives final launch approval or expressly restores the earlier authority.
 
     Read the governing documents, make the best reasonable reversible decision, record material decisions in `docs/requirements-register.md`, and continue working without asking Seung to choose among ordinary technical options.
 
@@ -46,6 +48,8 @@ Owner and sole approval authority: **Seung Park**.
     6. Purchasing a paid service or creating a recurring expense.
     7. Handling production credentials, payments, or sensitive customer data.
     8. Making a consequential or difficult-to-reverse change.
+    9. **Committing, pushing, deploying, or publishing** (added 2026-08-07 — see the pre-launch narrowing above and rule 19).
+    10. **Any hosting change** — deactivating, deleting, unpublishing, locking, disabling, or renaming the Netlify site; changing its netlify.app subdomain; adding password or SSO gating; or altering custom-domain, DNS, HTTPS, or certificate settings. Items 3 and 4 of rule 19 make the hosting and DNS prohibitions absolute during pre-launch, not merely approval-gated.
 
     Accumulate Tier 3 decisions and present them in one concise approval list per work package whenever practical.
 
@@ -82,6 +86,16 @@ Owner and sole approval authority: **Seung Park**.
     10. **Apply the approved myTAXfile visual system:** warm white, slate-blue typography, teal actions, pale blue-gray sections, and a medium blue-gray footer. Do not restore deep navy or the previous orange-and-brown identity.
 
 18. **Approved master visual style — approved by Seung Park 2026-08-02.** The ChatGPT homepage mockup is the master visual reference for the whole site. Index and category pages lead with an organized, keypoint-first presentation — minimal sentences in the top sections; detail lives lower on the page. The full CTA phrase "Request a Review & Quote" appears **at most once per page**; the header uses the short label "Request a Review".
+
+19. **Pre-launch hosting, indexing, and publication rules — approved by Seung Park 2026-08-07.** In force until he gives final launch approval. Full text: canonical Skill area 27. Register rows 152–158.
+
+    1. Keep the Netlify site reachable for review through its netlify.app URL — `https://mytaxfilenow.netlify.app`. Add no password, SSO, or other gate that breaks review access.
+    2. Keep the **entire website `noindex`** until final launch approval. Every page carries `<meta name="robots" content="noindex, nofollow" />` and `website/_headers` sends `X-Robots-Tag: noindex, nofollow` for all paths. Every new page carries the meta tag from creation. Do not add a `robots.txt` `Disallow: /` rule — it would stop crawlers from ever reading the `noindex`.
+    3. **Never deactivate, delete, unpublish, lock, disable, or rename the Netlify site**, or change its netlify.app subdomain.
+    4. **Make no custom-domain or DNS change.** Seung Park disconnects `mytaxfile.now` himself.
+    5. Invent no contact information, legal company information, integrations, or operational claims (restates the fabrication ban in rule 15).
+    6. Preserve all approved pages, sections, content, functions, and project-specific requirements (restates rules 3–4 and 17.5).
+    7. **Do not commit, push, deploy, or publish without separate approval** (Tier 3 item 9).
 
 ## Source priority
 
